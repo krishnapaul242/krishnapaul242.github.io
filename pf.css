@@ -5,10 +5,12 @@ body {
     background-color: black;
     color: aliceblue;
     font-family: 'Oswald', sans-serif;
+    cursor: default;
 }
 
 a {
     color: blueviolet;
+    cursor: pointer;
 }
 
 i {
