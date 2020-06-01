@@ -4,7 +4,7 @@ body {
     padding: 2em;
     background-color: black;
     color: aliceblue;
-    font-family: cursive;
+    font-family: 'Oswald', sans-serif;
 }
 
 a {
@@ -18,6 +18,7 @@ i {
 .pf-name {
     font-size: 10vw;
     align-self: center;
+    font-family: 'Dancing Script', cursive;
 }
 
 .pf-motto {
