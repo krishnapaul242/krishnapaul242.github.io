@@ -48,6 +48,11 @@ i {
 .pf-social-button {
     padding-left: 0.5em;
     padding-right: 0.5em;
+    transition: color 1s ease-in-out;
+}
+
+.pf-social-button:hover {
+    color: aliceblue;
 }
 
 .pf-services {
