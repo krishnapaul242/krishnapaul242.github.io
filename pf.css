@@ -15,6 +15,11 @@ a {
 
 i {
     font-size: 2rem;
+    transition: color 0.5s ease-in-out;
+}
+
+i:hover {
+    color: aliceblue;
 }
 
 .pf-name {
@@ -48,11 +53,6 @@ i {
 .pf-social-button {
     padding-left: 0.5em;
     padding-right: 0.5em;
-    transition: color 1s ease-in-out;
-}
-
-.pf-social-button:hover {
-    color: aliceblue;
 }
 
 .pf-services {
