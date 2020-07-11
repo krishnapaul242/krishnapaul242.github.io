@@ -55,18 +55,15 @@ i:hover {
     display: flex;
     align-content: center;
     justify-content: center;
-    padding-bottom: 1em;
+    padding: 1em;
     flex-wrap: wrap;
-    width: 150px;
-    height: 150px;
 }
 
 img {
+     width: 150px;
+    height: auto;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
 }
-
 .pf-social-button {
     padding-left: 0.5em;
     padding-right: 0.5em;
