@@ -50,6 +50,23 @@ i:hover {
     flex-wrap: wrap;
 }
 
+.pf-social-pic {
+    align-self: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 1em;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 150px;
+}
+
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
 .pf-social-button {
     padding-left: 0.5em;
     padding-right: 0.5em;
