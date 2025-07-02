@@ -1,121 +1,148 @@
 body {
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    background-color: black;
-    color: aliceblue;
-    font-family: 'Oswald', sans-serif;
-    cursor: default;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  background-color: black;
+  color: aliceblue;
+  font-family: "Oswald", sans-serif;
+  cursor: default;
 }
 
 a {
-    color: blueviolet;
-    cursor: pointer;
+  color: blueviolet;
+  cursor: pointer;
 }
 
 i {
-    font-size: 2rem;
-    transition: color 0.5s ease-in-out;
+  font-size: 2rem;
+  transition: color 0.5s ease-in-out;
 }
 
 i:hover {
-    color: aliceblue;
+  color: aliceblue;
 }
 
 .pf-name {
-    font-size: 10vw;
-    align-self: center;
-    font-family: 'Dancing Script', cursive;
+  font-size: 10vw;
+  align-self: center;
+  font-family: "Dancing Script", cursive;
 }
 
 .pf-motto {
-    background-color: rgba(138,43,226,0.2);
-    padding: 0.2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: fit-content;
-    border-radius: 1rem;
-    align-self: center;
-    font-size: 1rem;
+  background-color: rgba(138, 43, 226, 0.2);
+  padding: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: fit-content;
+  border-radius: 1rem;
+  align-self: center;
+  font-size: 1rem;
 }
 
-.pf-description {align-self: center;margin: 2em;padding: 1em;font-family: monospace;font-size: 1.5em;}
+.pf-description {
+  align-self: center;
+  text-align: center;
+  margin: 2em;
+  padding: 1em;
+  font-family: monospace;
+  font-size: 1.5em;
+}
 
 .pf-social {
-    align-self: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding-bottom: 1em;
-    flex-wrap: wrap;
+  align-self: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 1em;
+  flex-wrap: wrap;
 }
 
 .pf-social-pic {
-    align-self: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 1em;
-    flex-wrap: wrap;
-}
-
-img {
-     width: 150px;
+  align-self: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 1em;
+  flex-wrap: wrap;
+  & > img {
+    width: 150px;
     height: auto;
     border-radius: 50%;
+    /* box-shadow: 0 0 0 8px rgba(138, 43, 226, 0.2); */
+    box-shadow: inset 0 -3em 3em rgb(138 43 226 / 30%);
+    /* background: radial-gradient(
+      circle,
+      rgba(138, 43, 226, 0.15) 60%,
+      transparent 100%
+    ); */
+    filter: brightness(0.6) contrast(1.4);
+  }
 }
+
 .pf-social-button {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .pf-services {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin: 2em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em;
 }
 
 .pf-services-item {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  gap: 0.6em;
+  padding: 1em;
+
+  &:hover {
+    background-color: rgba(138, 43, 226, 0.1);
+    box-shadow: inset 0 0 2em rgb(138 43 226 / 30%);
+    border-radius: 1em;
+    transition: background-color 0.3s ease-in-out;
+  }
 }
 
 .pf-services-item-title {
-    background-color: blueviolet;
-    align-self: center;
-    padding: 0.5em;
-    border-radius: 1.5em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+  background-color: blueviolet;
+  align-self: center;
+  padding: 0.5em;
+  border-radius: 1.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
 }
 
 .pf-footer {
-    align-items: center;
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 @media screen and (min-width: 320px) {
-    .pf-services{
-        flex-direction: column;
-    }
+  .pf-services {
+    flex-direction: column;
+  }
 
-    .pf-services-item {
-        margin-bottom: 1em;
-        margin-top: 1em;
-    }
+  .pf-services-item {
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
 }
 
 @media screen and (min-width: 800px) {
-    .pf-services{
-        flex-direction: row;
-    }
-    .pf-services-item {
-        margin-bottom: 0em;
-        margin-top: 0em;
-    }
+  .pf-services {
+    flex-direction: row;
+  }
+  .pf-services-item {
+    margin-bottom: 0em;
+    margin-top: 0em;
+  }
 }
