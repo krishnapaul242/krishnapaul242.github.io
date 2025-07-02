@@ -94,12 +94,20 @@ i:hover {
 
 .pf-services {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 1em;
+  position: relative;
+}
+
+.pf-services-content {
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
-  margin: 1em;
+  width: 100%;
 }
 
 .pf-services-item {
@@ -150,6 +158,16 @@ i:hover {
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   font-family: monospace;
+}
+
+.pf-services-title {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  background-color: rgba(138, 43, 226, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  font-family: monospace;
+  align-self: center;
 }
 
 .pf-timeline {
@@ -362,7 +380,10 @@ i:hover {
   }
 
   .pf-services {
-    margin: 0.5em;
+    margin: 1em 0.5em;
+  }
+
+  .pf-services-content {
     gap: 0.8em;
   }
 
@@ -406,6 +427,12 @@ i:hover {
   }
 
   .pf-experience-title {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    padding: 0.4rem 1rem;
+  }
+
+  .pf-services-title {
     font-size: 1.8em;
     margin-bottom: 1em;
     padding: 0.4rem 1rem;
@@ -477,6 +504,10 @@ i:hover {
     font-size: 2.2em;
   }
 
+  .pf-services-title {
+    font-size: 2.2em;
+  }
+
   .pf-projects-title {
     font-size: 2.2em;
   }
@@ -536,8 +567,11 @@ i:hover {
   }
 
   .pf-services {
+    margin: 2em 1.5em;
+  }
+
+  .pf-services-content {
     gap: 1.5em;
-    margin: 1.5em;
   }
 
   .pf-services-item {
@@ -565,8 +599,11 @@ i:hover {
   }
 
   .pf-services {
+    margin: 3em 2em;
+  }
+
+  .pf-services-content {
     gap: 2em;
-    margin: 2em;
   }
 
   .pf-services-item {
@@ -594,13 +631,19 @@ i:hover {
     padding: 0.5rem 2rem;
   }
 
+  .pf-services-title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    padding: 0.5rem 2rem;
+  }
+
   .pf-timeline-items {
     padding: 0 2em;
   }
 }
 
 @media screen and (min-width: 320px) {
-  .pf-services {
+  .pf-services-content {
     flex-direction: column;
   }
 
@@ -611,7 +654,7 @@ i:hover {
 }
 
 @media screen and (min-width: 800px) {
-  .pf-services {
+  .pf-services-content {
     flex-direction: row;
   }
   .pf-services-item {
@@ -754,56 +797,44 @@ i:hover {
   font-family: monospace;
 }
 
+/* Projects Grid */
 .pf-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2em;
   width: 100%;
-  max-width: 1200px;
-  align-items: stretch;
+  max-width: 1400px;
+  margin-top: 1em;
 }
 
 .pf-project-card {
   background-color: rgba(138, 43, 226, 0.1);
   border: 1px solid rgba(138, 43, 226, 0.3);
   border-radius: 1em;
-  padding: 1.5em;
+  padding: 2em;
   transition: all 0.3s ease-in-out;
-  position: relative;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
-  min-height: 500px;
-  max-height: 700px;
-  box-sizing: border-box;
+  gap: 1em;
 }
 
 .pf-project-card:hover {
   background-color: rgba(138, 43, 226, 0.15);
-  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.5);
   transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
 }
 
 .pf-project-header {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 .pf-project-name {
   color: blueviolet;
-  font-size: 1.3em;
+  font-size: 1.4em;
   font-weight: bold;
-  margin: 0 0 0.5em 0;
-  line-height: 1.3;
-}
-
-.pf-project-status {
-  background-color: rgba(138, 43, 226, 0.3);
-  color: aliceblue;
-  padding: 0.3em 0.8em;
-  border-radius: 15px;
-  font-size: 0.8em;
-  display: inline-block;
-  font-weight: 500;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
 
 .pf-project-description {
@@ -814,48 +845,41 @@ i:hover {
 }
 
 .pf-project-details {
-  margin-bottom: 1em;
+  font-family: monospace;
   font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
 }
 
 .pf-project-details > div {
-  margin-bottom: 0.4em;
-  line-height: 1.4;
-}
-
-.pf-project-details strong {
-  color: blueviolet;
+  margin-bottom: 0.5em;
 }
 
 .pf-project-responsibilities {
-  margin-bottom: 1em;
+  font-family: monospace;
   font-size: 0.9em;
   line-height: 1.5;
-  flex-grow: 1;
-}
-
-.pf-project-responsibilities strong {
-  color: blueviolet;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
 }
 
 .pf-project-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.8em;
+  gap: 1em;
   margin-top: auto;
-  padding-top: 1em;
 }
 
 .pf-project-link {
+  background-color: blueviolet;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  background-color: blueviolet;
-  color: white !important;
-  padding: 0.5em 1em;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.85em;
+  font-size: 0.9em;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
 }
@@ -863,42 +887,297 @@ i:hover {
 .pf-project-link:hover {
   background-color: rgba(138, 43, 226, 0.8);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
 }
 
+.pf-project-link i {
+  font-size: 0.9em;
+}
+
+/* Show More Projects Button */
 .pf-projects-show-more {
-  margin-top: 2em;
+  margin-top: 3em;
   text-align: center;
 }
 
 .pf-show-more-btn {
   background-color: rgba(138, 43, 226, 0.2);
-  border: 2px solid rgba(138, 43, 226, 0.5);
+  border: 2px solid rgba(138, 43, 226, 0.4);
   color: aliceblue;
-  padding: 0.8em 1.5em;
-  border-radius: 25px;
-  cursor: pointer;
+  padding: 1em 2em;
+  border-radius: 2em;
   font-size: 1em;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
+  font-weight: 600;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin: 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
 }
 
 .pf-show-more-btn:hover {
   background-color: rgba(138, 43, 226, 0.3);
-  border-color: blueviolet;
+  border-color: rgba(138, 43, 226, 0.6);
   transform: translateY(-2px);
+}
+
+.pf-show-more-btn.expanded {
+  background-color: blueviolet;
+  border-color: blueviolet;
+}
+
+.pf-show-more-btn.expanded .pf-show-more-icon {
+  transform: rotate(180deg);
 }
 
 .pf-show-more-icon {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Projects Grid */
+.pf-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2em;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 1em;
+}
+
+.pf-project-card {
+  background-color: rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 1em;
+  padding: 2em;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.pf-project-card:hover {
+  background-color: rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+}
+
+.pf-project-header {
+  margin-bottom: 0.5em;
+}
+
+.pf-project-name {
+  color: blueviolet;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.pf-project-description {
+  font-family: monospace;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.9);
+}
+
+.pf-project-details {
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.pf-project-details > div {
+  margin-bottom: 0.5em;
+}
+
+.pf-project-responsibilities {
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.pf-project-links {
+  display: flex;
+  gap: 1em;
+  margin-top: auto;
+}
+
+.pf-project-link {
+  background-color: blueviolet;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-project-link:hover {
+  background-color: rgba(138, 43, 226, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.pf-project-link i {
+  font-size: 0.9em;
+}
+
+/* Show More Projects Button */
+.pf-projects-show-more {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.pf-show-more-btn {
+  background-color: rgba(138, 43, 226, 0.2);
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  color: aliceblue;
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.pf-show-more-btn:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-2px);
+}
+
+.pf-show-more-btn.expanded {
+  background-color: blueviolet;
+  border-color: blueviolet;
+}
+
 .pf-show-more-btn.expanded .pf-show-more-icon {
   transform: rotate(180deg);
+}
+
+.pf-show-more-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Technology Filter Section */
+.pf-projects-filter {
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pf-filter-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.9);
+  font-weight: 600;
+}
+
+.pf-filter-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+.pf-filter-badge {
+  background-color: rgba(138, 43, 226, 0.2);
+  color: aliceblue;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.85em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 500;
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
+.pf-filter-badge:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-1px);
+}
+
+.pf-filter-badge.active {
+  background-color: blueviolet;
+  border-color: blueviolet;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.pf-filter-badge i {
+  font-size: 0.9em;
+}
+
+.pf-filter-badge .filter-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  margin-left: 0.3em;
+}
+
+.pf-filter-badge.active .filter-count {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Show More Filter Badge */
+.pf-filter-show-more {
+  background-color: rgba(138, 43, 226, 0.3) !important;
+  border-color: rgba(138, 43, 226, 0.6) !important;
+  color: aliceblue !important;
+  cursor: pointer;
+}
+
+.pf-filter-show-more:hover {
+  background-color: rgba(138, 43, 226, 0.5) !important;
+  border-color: rgba(138, 43, 226, 0.8) !important;
+}
+
+.pf-filter-show-more.expanded {
+  background-color: blueviolet !important;
+  border-color: blueviolet !important;
+  color: white !important;
+}
+
+/* Hidden Filter Badges */
+.pf-filter-badge-hidden {
+  display: none !important;
+}
+
+/* Animation for showing/hiding badges */
+.pf-filter-badge {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Hidden projects initially - show only projects with links */
@@ -1180,7 +1459,73 @@ i:hover {
 }
 
 .pf-project-tech-badge.component {
-  background-color: rgba(76, 175, 80, 0.2);
-  border-color: rgba(76, 175, 80, 0.4);
-  color: #4CAF50;
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #FFC107;
+}
+
+/* Responsive styles for technology filters */
+@media screen and (max-width: 480px) {
+  .pf-projects-filter {
+    margin-bottom: 1.5em;
+  }
+
+  .pf-filter-title {
+    font-size: 1em;
+    margin-bottom: 0.8em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.5em;
+  }
+
+  .pf-filter-badge {
+    padding: 0.4em 0.8em;
+    font-size: 0.75em;
+    border-radius: 15px;
+  }
+
+  .pf-filter-badge i {
+    font-size: 0.8em;
+  }
+
+  .pf-filter-badge .filter-count {
+    padding: 0.15em 0.4em;
+    font-size: 0.7em;
+  }
+
+  .pf-filter-show-more {
+    font-size: 0.75em !important;
+    padding: 0.4em 0.8em !important;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .pf-projects-filter {
+    margin-bottom: 1.8em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.6em;
+  }
+
+  .pf-filter-badge {
+    padding: 0.45em 0.9em;
+    font-size: 0.8em;
+  }
+
+  .pf-filter-show-more {
+    font-size: 0.8em !important;
+    padding: 0.45em 0.9em !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pf-projects-filter {
+    margin-bottom: 2em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.8em;
+  }
 }
