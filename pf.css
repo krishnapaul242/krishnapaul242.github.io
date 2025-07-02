@@ -39,6 +39,14 @@ i:hover {
   font-size: 1rem;
 }
 
+.pf-motto-mobile {
+  display: none;
+}
+
+.pf-motto-desktop {
+  display: block;
+}
+
 .pf-description {
   align-self: center;
   text-align: center;
@@ -321,6 +329,16 @@ i:hover {
     font-size: 0.9rem;
     padding: 0.3rem 0.8rem;
     margin-bottom: 0.5em;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .pf-motto-desktop {
+    display: none;
+  }
+
+  .pf-motto-mobile {
+    display: block;
   }
 
   .pf-description {
@@ -357,6 +375,34 @@ i:hover {
 
   .pf-experience {
     margin: 1em 0.5em;
+  }
+
+  .pf-projects {
+    margin: 1em 0.5em;
+  }
+
+  .pf-projects-title {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    padding: 0.4rem 1rem;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .pf-project-card {
+    padding: 1em;
+  }
+
+  .pf-project-name {
+    font-size: 1.1em;
+  }
+
+  .pf-project-details, 
+  .pf-project-responsibilities {
+    font-size: 0.85em;
   }
 
   .pf-experience-title {
@@ -431,6 +477,19 @@ i:hover {
     font-size: 2.2em;
   }
 
+  .pf-projects-title {
+    font-size: 2.2em;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+
+  .pf-project-card {
+    padding: 1.2em;
+  }
+
   .pf-timeline-items {
     padding: 0 0.5em 0 2.2em;
   }
@@ -489,6 +548,14 @@ i:hover {
   .pf-experience {
     margin: 2em 1.5em;
   }
+
+  .pf-projects {
+    margin: 2em 1.5em;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
 
 /* Desktop and larger screens */
@@ -509,6 +576,16 @@ i:hover {
 
   .pf-experience {
     margin: 3em 2em;
+  }
+
+  .pf-projects {
+    margin: 3em 2em;
+  }
+
+  .pf-projects-title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    padding: 0.5rem 2rem;
   }
 
   .pf-experience-title {
@@ -627,6 +704,15 @@ i:hover {
     margin-left: 1.5em;
   }
 
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .pf-project-card {
+    padding: 1em;
+  }
+
   /* Mobile: revert to single column layout with left alignment */
   .pf-timeline-header {
     flex-direction: column;
@@ -648,4 +734,453 @@ i:hover {
     margin-left: 0;
     text-align: left;
   }
+}
+
+/* Projects Section */
+.pf-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 1em;
+  position: relative;
+}
+
+.pf-projects-title {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  background-color: rgba(138, 43, 226, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  font-family: monospace;
+}
+
+.pf-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2em;
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+}
+
+.pf-project-card {
+  background-color: rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 1em;
+  padding: 1.5em;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  max-height: 700px;
+  box-sizing: border-box;
+}
+
+.pf-project-card:hover {
+  background-color: rgba(138, 43, 226, 0.15);
+  box-shadow: 0 8px 25px rgba(138, 43, 226, 0.2);
+  transform: translateY(-5px);
+}
+
+.pf-project-header {
+  margin-bottom: 1em;
+}
+
+.pf-project-name {
+  color: blueviolet;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0 0 0.5em 0;
+  line-height: 1.3;
+}
+
+.pf-project-status {
+  background-color: rgba(138, 43, 226, 0.3);
+  color: aliceblue;
+  padding: 0.3em 0.8em;
+  border-radius: 15px;
+  font-size: 0.8em;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.pf-project-description {
+  font-family: monospace;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.9);
+}
+
+.pf-project-details {
+  margin-bottom: 1em;
+  font-size: 0.9em;
+}
+
+.pf-project-details > div {
+  margin-bottom: 0.4em;
+  line-height: 1.4;
+}
+
+.pf-project-details strong {
+  color: blueviolet;
+}
+
+.pf-project-responsibilities {
+  margin-bottom: 1em;
+  font-size: 0.9em;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.pf-project-responsibilities strong {
+  color: blueviolet;
+}
+
+.pf-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  margin-top: auto;
+  padding-top: 1em;
+}
+
+.pf-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: blueviolet;
+  color: white !important;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-project-link:hover {
+  background-color: rgba(138, 43, 226, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.pf-projects-show-more {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.pf-show-more-btn {
+  background-color: rgba(138, 43, 226, 0.2);
+  border: 2px solid rgba(138, 43, 226, 0.5);
+  color: aliceblue;
+  padding: 0.8em 1.5em;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+}
+
+.pf-show-more-btn:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: blueviolet;
+  transform: translateY(-2px);
+}
+
+.pf-show-more-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.pf-show-more-btn.expanded .pf-show-more-icon {
+  transform: rotate(180deg);
+}
+
+/* Hidden projects initially - show only projects with links */
+.pf-project-card:not(.pf-project-with-link) {
+  display: none;
+}
+
+/* Ensure consistent spacing for projects without links */
+.pf-project-card:not(.pf-project-with-link) .pf-project-responsibilities {
+  margin-bottom: 0;
+  padding-bottom: 2.5em;
+}
+
+.pf-projects-grid.show-all .pf-project-card {
+  display: block;
+}
+
+/* Technology badges */
+.pf-project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+}
+
+.pf-project-tech-badge {
+  background-color: rgba(138, 43, 226, 0.2);
+  color: aliceblue;
+  padding: 0.25em 0.6em;
+  border-radius: 12px;
+  font-size: 0.75em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-weight: 500;
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-project-tech-badge:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-1px);
+}
+
+.pf-project-tech-badge i {
+  font-size: 0.9em;
+}
+
+/* Specific technology colors */
+.pf-project-tech-badge.react {
+  background-color: rgba(97, 218, 251, 0.2);
+  border-color: rgba(97, 218, 251, 0.4);
+  color: #61DAFB;
+}
+
+.pf-project-tech-badge.typescript {
+  background-color: rgba(49, 120, 198, 0.2);
+  border-color: rgba(49, 120, 198, 0.4);
+  color: #3178C6;
+}
+
+.pf-project-tech-badge.javascript {
+  background-color: rgba(247, 223, 30, 0.2);
+  border-color: rgba(247, 223, 30, 0.4);
+  color: #F7DF1E;
+}
+
+.pf-project-tech-badge.nodejs {
+  background-color: rgba(104, 160, 99, 0.2);
+  border-color: rgba(104, 160, 99, 0.4);
+  color: #68A063;
+}
+
+.pf-project-tech-badge.android {
+  background-color: rgba(164, 198, 57, 0.2);
+  border-color: rgba(164, 198, 57, 0.4);
+  color: #A4C639;
+}
+
+.pf-project-tech-badge.ios {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.web {
+  background-color: rgba(255, 165, 0, 0.2);
+  border-color: rgba(255, 165, 0, 0.4);
+  color: #FFA500;
+}
+
+.pf-project-tech-badge.npm {
+  background-color: rgba(203, 56, 55, 0.2);
+  border-color: rgba(203, 56, 55, 0.4);
+  color: #CB3837;
+}
+
+/* Additional technology badge colors */
+.pf-project-tech-badge.swift {
+  background-color: rgba(250, 95, 85, 0.2);
+  border-color: rgba(250, 95, 85, 0.4);
+  color: #FA5F55;
+}
+
+.pf-project-tech-badge.docker {
+  background-color: rgba(0, 122, 204, 0.2);
+  border-color: rgba(0, 122, 204, 0.4);
+  color: #007ACC;
+}
+
+.pf-project-tech-badge.material-ui {
+  background-color: rgba(0, 129, 255, 0.2);
+  border-color: rgba(0, 129, 255, 0.4);
+  color: #0081FF;
+}
+
+.pf-project-tech-badge.nextjs {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.expo {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.blockchain {
+  background-color: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
+  color: #FFD700;
+}
+
+.pf-project-tech-badge.charts {
+  background-color: rgba(255, 99, 132, 0.2);
+  border-color: rgba(255, 99, 132, 0.4);
+  color: #FF6384;
+}
+
+.pf-project-tech-badge.maps {
+  background-color: rgba(52, 168, 83, 0.2);
+  border-color: rgba(52, 168, 83, 0.4);
+  color: #34A853;
+}
+
+.pf-project-tech-badge.dashboard {
+  background-color: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.4);
+  color: #8A2BE2;
+}
+
+.pf-project-tech-badge.location {
+  background-color: rgba(66, 165, 245, 0.2);
+  border-color: rgba(66, 165, 245, 0.4);
+  color: #42A5F5;
+}
+
+.pf-project-tech-badge.realtime {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
+}
+
+.pf-project-tech-badge.mqtt {
+  background-color: rgba(156, 39, 176, 0.2);
+  border-color: rgba(156, 39, 176, 0.4);
+  color: #9C27B0;
+}
+
+.pf-project-tech-badge.nfc {
+  background-color: rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.4);
+  color: #FF9800;
+}
+
+.pf-project-tech-badge.health {
+  background-color: rgba(233, 30, 99, 0.2);
+  border-color: rgba(233, 30, 99, 0.4);
+  color: #E91E63;
+}
+
+.pf-project-tech-badge.environment {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
+}
+
+.pf-project-tech-badge.parking {
+  background-color: rgba(96, 125, 139, 0.2);
+  border-color: rgba(96, 125, 139, 0.4);
+  color: #607D8B;
+}
+
+.pf-project-tech-badge.sanitization {
+  background-color: rgba(0, 188, 212, 0.2);
+  border-color: rgba(0, 188, 212, 0.4);
+  color: #00BCD4;
+}
+
+.pf-project-tech-badge.transit {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #FFC107;
+}
+
+.pf-project-tech-badge.chatbot {
+  background-color: rgba(121, 85, 72, 0.2);
+  border-color: rgba(121, 85, 72, 0.4);
+  color: #795548;
+}
+
+.pf-project-tech-badge.food-delivery {
+  background-color: rgba(255, 87, 34, 0.2);
+  border-color: rgba(255, 87, 34, 0.4);
+  color: #FF5722;
+}
+
+.pf-project-tech-badge.vendor {
+  background-color: rgba(63, 81, 181, 0.2);
+  border-color: rgba(63, 81, 181, 0.4);
+  color: #3F51B5;
+}
+
+.pf-project-tech-badge.admin {
+  background-color: rgba(158, 158, 158, 0.2);
+  border-color: rgba(158, 158, 158, 0.4);
+  color: #9E9E9E;
+}
+
+.pf-project-tech-badge.radio {
+  background-color: rgba(233, 30, 99, 0.2);
+  border-color: rgba(233, 30, 99, 0.4);
+  color: #E91E63;
+}
+
+.pf-project-tech-badge.audio {
+  background-color: rgba(156, 39, 176, 0.2);
+  border-color: rgba(156, 39, 176, 0.4);
+  color: #9C27B0;
+}
+
+.pf-project-tech-badge.tree {
+  background-color: rgba(56, 142, 60, 0.2);
+  border-color: rgba(56, 142, 60, 0.4);
+  color: #388E3C;
+}
+
+.pf-project-tech-badge.air-quality {
+  background-color: rgba(3, 169, 244, 0.2);
+  border-color: rgba(3, 169, 244, 0.4);
+  color: #03A9F4;
+}
+
+.pf-project-tech-badge.display {
+  background-color: rgba(103, 58, 183, 0.2);
+  border-color: rgba(103, 58, 183, 0.4);
+  color: #673AB7;
+}
+
+.pf-project-tech-badge.drag-drop {
+  background-color: rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.4);
+  color: #FF9800;
+}
+
+.pf-project-tech-badge.google-drive {
+  background-color: rgba(66, 165, 245, 0.2);
+  border-color: rgba(66, 165, 245, 0.4);
+  color: #42A5F5;
+}
+
+.pf-project-tech-badge.hook {
+  background-color: rgba(97, 218, 251, 0.2);
+  border-color: rgba(97, 218, 251, 0.4);
+  color: #61DAFB;
+}
+
+.pf-project-tech-badge.component {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
 }

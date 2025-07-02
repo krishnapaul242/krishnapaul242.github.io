@@ -90,3 +90,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Projects Show More functionality
+function toggleProjects() {
+  const projectsGrid = document.querySelector('.pf-projects-grid');
+  const showMoreBtn = document.querySelector('.pf-show-more-btn');
+  const showMoreText = document.querySelector('.pf-show-more-text');
+  const showMoreIcon = document.querySelector('.pf-show-more-icon');
+  
+  if (projectsGrid.classList.contains('show-all')) {
+    // Hide extra projects
+    projectsGrid.classList.remove('show-all');
+    showMoreText.textContent = 'Show More Projects';
+    showMoreBtn.classList.remove('expanded');
+    
+    // Smooth scroll to projects section when collapsing
+    document.querySelector('.pf-projects').scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  } else {
+    // Show all projects
+    projectsGrid.classList.add('show-all');
+    showMoreText.textContent = 'Show Less Projects';
+    showMoreBtn.classList.add('expanded');
+  }
+}
