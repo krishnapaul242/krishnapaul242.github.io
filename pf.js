@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const timelineDetails = document.querySelectorAll(".pf-timeline-details");
   let currentIndex = 0;
   let autoRotateInterval;
+  let clickPauseTimeout;
+  let isMouseOverDetails = false;
+  let isClickPaused = false;
 
   function showExperience(index) {
     // Remove active class from all items and details
@@ -22,11 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function nextExperience() {
+    // Don't auto-advance if mouse is over details or click-paused
+    if (isMouseOverDetails || isClickPaused) {
+      return;
+    }
     const nextIndex = (currentIndex + 1) % timelineItems.length;
     showExperience(nextIndex);
   }
 
   function startAutoRotation() {
+    if (autoRotateInterval) {
+      clearInterval(autoRotateInterval);
+    }
     autoRotateInterval = setInterval(nextExperience, 5000); // 5 seconds
   }
 
@@ -36,24 +46,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function pauseForClick() {
+    isClickPaused = true;
+    if (clickPauseTimeout) {
+      clearTimeout(clickPauseTimeout);
+    }
+    clickPauseTimeout = setTimeout(() => {
+      isClickPaused = false;
+    }, 30000); // 30 seconds
+  }
+
   // Add click event listeners to timeline items
   timelineItems.forEach((item, index) => {
     item.addEventListener("click", function () {
-      stopAutoRotation();
       showExperience(index);
-      // Restart auto-rotation after user interaction
-      setTimeout(startAutoRotation, 1000);
+      pauseForClick(); // Pause for 30 seconds after click
     });
-
-    // Pause auto-rotation on hover
-    item.addEventListener("mouseenter", stopAutoRotation);
-    item.addEventListener("mouseleave", startAutoRotation);
   });
 
-  // Also pause on details hover
+  // Handle mouse over/out for timeline details
   timelineDetails.forEach((detail) => {
-    detail.addEventListener("mouseenter", stopAutoRotation);
-    detail.addEventListener("mouseleave", startAutoRotation);
+    detail.addEventListener("mouseenter", function() {
+      isMouseOverDetails = true;
+    });
+    detail.addEventListener("mouseleave", function() {
+      isMouseOverDetails = false;
+    });
   });
 
   // Start auto-rotation when page loads
