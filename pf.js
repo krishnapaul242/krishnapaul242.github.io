@@ -1,3 +1,113 @@
+// Sticky Navigation Header functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const stickyHeader = document.getElementById('stickyHeader');
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  const navLinks = document.querySelectorAll('.pf-nav-link');
+  const sections = document.querySelectorAll('section, main');
+  
+  let isScrolled = false;
+  let ticking = false;
+
+  // Show/hide sticky header based on scroll
+  function updateStickyHeader() {
+    const isAtTop = window.scrollY <= 50;
+    
+    if (isAtTop !== !isScrolled) {
+      isScrolled = !isAtTop;
+      if (isAtTop) {
+        stickyHeader.classList.remove('scrolled');
+        stickyHeader.style.background = 'rgba(0, 0, 0, 0.7)';
+      } else {
+        stickyHeader.classList.add('scrolled');
+        stickyHeader.style.background = 'rgba(0, 0, 0, 0.95)';
+      }
+    }
+  }
+
+  // Throttled scroll handler
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateStickyHeader();
+        updateActiveNavLink();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  // Update active navigation link based on current section
+  function updateActiveNavLink() {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const offset = 120; // Account for header height
+      
+      if (rect.top <= offset && rect.bottom >= offset) {
+        currentSection = section.id;
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Mobile menu toggle
+  navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // Close mobile menu when clicking nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Close mobile menu
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = '';
+      
+      // Smooth scroll to section
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      
+      if (targetSection) {
+        const headerHeight = 80;
+        const targetPosition = targetSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!stickyHeader.contains(e.target) && navMenu.classList.contains('active')) {
+      navToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Listen for scroll events
+  window.addEventListener('scroll', onScroll, { passive: true });
+  
+  // Initial calls
+  updateStickyHeader();
+  updateActiveNavLink();
+});
+
 // Timeline auto-rotation functionality
 document.addEventListener("DOMContentLoaded", function () {
   const timelineItems = document.querySelectorAll(".pf-timeline-item");
