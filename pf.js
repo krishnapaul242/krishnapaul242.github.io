@@ -359,19 +359,6 @@ function toggleHiddenFilters(filterContainer) {
     // Show badges
     hiddenBadges.forEach(badge => {
       badge.classList.remove('pf-filter-badge-hidden');
-      // Add click event listener to newly shown badges
-      badge.addEventListener('click', function() {
-        const filterValue = this.getAttribute('data-filter');
-        
-        // Update active state
-        const allFilterBadges = filterContainer.querySelectorAll('.pf-filter-badge:not(.pf-filter-show-more)');
-        allFilterBadges.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Filter projects
-        const projectCards = document.querySelectorAll('.pf-project-card');
-        filterProjects(filterValue, projectCards);
-      });
     });
     showMoreText.textContent = 'Show Less';
     showMoreIcon.className = 'fas fa-minus';
