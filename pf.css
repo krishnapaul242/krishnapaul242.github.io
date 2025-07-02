@@ -6,6 +6,7 @@ body {
   color: aliceblue;
   font-family: "Oswald", sans-serif;
   cursor: default;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 a {
@@ -1119,7 +1120,7 @@ section {
 /* Projects Grid */
 .pf-projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2em;
   width: 100%;
   max-width: 1400px;
@@ -1259,6 +1260,7 @@ section {
   text-align: center;
   width: 100%;
   max-width: 1200px;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .pf-filter-title {
@@ -1274,6 +1276,8 @@ section {
   gap: 0.8em;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
 .pf-filter-badge {
@@ -1290,6 +1294,9 @@ section {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   user-select: none;
+  flex-shrink: 1; /* Allow badges to shrink */
+  min-width: 0; /* Allow badges to shrink below content width */
+  max-width: 100%; /* Prevent badges from exceeding container width */
 }
 
 .pf-filter-badge:hover {
