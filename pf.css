@@ -26,6 +26,7 @@ i:hover {
   font-size: 10vw;
   align-self: center;
   font-family: "Dancing Script", cursive;
+  text-align: center;
 }
 
 .pf-motto {
@@ -37,6 +38,17 @@ i:hover {
   border-radius: 1rem;
   align-self: center;
   font-size: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.pf-motto-mobile {
+  display: none;
+}
+
+.pf-motto-desktop {
+  display: block;
 }
 
 .pf-description {
@@ -86,12 +98,20 @@ i:hover {
 
 .pf-services {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 1em;
+  position: relative;
+}
+
+.pf-services-content {
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 1em;
-  margin: 1em;
+  width: 100%;
 }
 
 .pf-services-item {
@@ -142,6 +162,16 @@ i:hover {
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
   font-family: monospace;
+}
+
+.pf-services-title {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  background-color: rgba(138, 43, 226, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  font-family: monospace;
+  align-self: center;
 }
 
 .pf-timeline {
@@ -306,10 +336,207 @@ i:hover {
   text-align: right;
 }
 
+/* Sticky Header */
+.pf-sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pf-sticky-header.scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+.pf-sticky-header.hidden {
+  transform: translateY(-100%);
+}
+
+.pf-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pf-nav-brand a {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.8rem;
+  color: blueviolet;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease-in-out;
+}
+
+.pf-nav-brand a:hover {
+  color: #a855f7;
+}
+
+.pf-nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.pf-nav-link {
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.pf-nav-link:hover {
+  color: blueviolet;
+}
+
+.pf-nav-link.active {
+  color: blueviolet;
+}
+
+.pf-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: blueviolet;
+  transition: width 0.3s ease-in-out;
+}
+
+.pf-nav-link:hover::after,
+.pf-nav-link.active::after {
+  width: 100%;
+}
+
+/* Mobile Menu Toggle */
+.pf-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.pf-nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: aliceblue;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.pf-nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.pf-nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Main Content Padding */
+.pf-main-content {
+  scroll-margin-top: 80px;
+  padding-top: 80px; /* Add padding to account for fixed header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Add padding to sections to account for sticky header */
+section {
+  scroll-margin-top: 80px;
+}
+
 /* Mobile-first approach for very small devices */
 @media screen and (max-width: 480px) {
   body {
     padding: 0.5em;
+  }
+
+  /* Main content adjustment for mobile */
+  .pf-main-content {
+    padding-top: 55px; /* Further reduced padding for smaller header */
+  }
+
+  /* Sections adjustment for mobile */
+  section {
+    scroll-margin-top: 55px;
+  }
+
+  /* Ensure header stays fixed on mobile */
+  .pf-sticky-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  /* Navigation responsive styles - smaller header */
+  .pf-nav {
+    padding: 0.5rem 1rem; /* Reduced vertical padding */
+  }
+
+  .pf-nav-brand a {
+    font-size: 1.2rem; /* Smaller brand text */
+  }
+
+  .pf-nav-menu {
+    position: fixed;
+    top: 45px; /* Adjusted for smaller header */
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 45px); /* Adjusted for smaller header */
+    background-color: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 3rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    border-right: 1px solid rgba(138, 43, 226, 0.3);
+  }
+
+  .pf-nav-menu.active {
+    left: 0;
+  }
+
+  .pf-nav-link {
+    font-size: 1.1rem; /* Slightly smaller */
+    padding: 0.5rem 1rem;
+  }
+
+  .pf-nav-toggle {
+    display: flex;
+  }
+
+  /* Optimize toggle button size */
+  .pf-nav-toggle {
+    padding: 6px; /* Smaller padding */
+  }
+
+  .pf-nav-toggle span {
+    width: 22px; /* Smaller width */
+    height: 2px; /* Thinner lines */
   }
 
   .pf-name {
@@ -321,6 +548,16 @@ i:hover {
     font-size: 0.9rem;
     padding: 0.3rem 0.8rem;
     margin-bottom: 0.5em;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .pf-motto-desktop {
+    display: none;
+  }
+
+  .pf-motto-mobile {
+    display: block;
   }
 
   .pf-description {
@@ -344,7 +581,10 @@ i:hover {
   }
 
   .pf-services {
-    margin: 0.5em;
+    margin: 1em 0.5em;
+  }
+
+  .pf-services-content {
     gap: 0.8em;
   }
 
@@ -359,7 +599,41 @@ i:hover {
     margin: 1em 0.5em;
   }
 
+  .pf-projects {
+    margin: 1em 0.5em;
+  }
+
+  .pf-projects-title {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    padding: 0.4rem 1rem;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .pf-project-card {
+    padding: 1em;
+  }
+
+  .pf-project-name {
+    font-size: 1.1em;
+  }
+
+  .pf-project-details, 
+  .pf-project-responsibilities {
+    font-size: 0.85em;
+  }
+
   .pf-experience-title {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    padding: 0.4rem 1rem;
+  }
+
+  .pf-services-title {
     font-size: 1.8em;
     margin-bottom: 1em;
     padding: 0.4rem 1rem;
@@ -416,10 +690,111 @@ i:hover {
   }
 }
 
+/* Extra small mobile devices (320px and below) - Ultra compact header */
+@media screen and (max-width: 320px) {
+  /* Even smaller header for tiny screens */
+  .pf-main-content {
+    padding-top: 45px; /* Minimal padding for ultra small header */
+  }
+
+  section {
+    scroll-margin-top: 45px;
+  }
+
+  /* Ensure header stays fixed on extra small screens */
+  .pf-sticky-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .pf-nav {
+    padding: 0.3rem 0.8rem; /* Minimal vertical padding */
+  }
+
+  .pf-nav-brand a {
+    font-size: 1rem; /* Very small brand text */
+  }
+
+  .pf-nav-menu {
+    top: 38px; /* Adjusted for ultra small header */
+    height: calc(100vh - 38px);
+  }
+
+  .pf-nav-toggle {
+    padding: 4px; /* Minimal padding */
+  }
+
+  .pf-nav-toggle span {
+    width: 18px; /* Even smaller hamburger */
+    height: 2px;
+  }
+
+  .pf-nav-link {
+    font-size: 1rem; /* Smaller nav links */
+  }
+}
+
 /* Small mobile devices */
 @media screen and (min-width: 481px) and (max-width: 767px) {
   body {
     padding: 0.8em;
+  }
+
+  /* Main content adjustment for tablets */
+  .pf-main-content {
+    padding-top: 75px;
+  }
+
+  /* Ensure header stays fixed on tablet */
+  .pf-sticky-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  /* Navigation responsive styles */
+  .pf-nav {
+    padding: 0.8rem 1.2rem;
+  }
+
+  .pf-nav-brand a {
+    font-size: 1.6rem;
+  }
+
+  .pf-nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    border-right: 1px solid rgba(138, 43, 226, 0.3);
+  }
+
+  .pf-nav-menu.active {
+    left: 0;
+  }
+
+  .pf-nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .pf-nav-toggle {
+    display: flex;
   }
 
   .pf-services-item {
@@ -429,6 +804,23 @@ i:hover {
 
   .pf-experience-title {
     font-size: 2.2em;
+  }
+
+  .pf-services-title {
+    font-size: 2.2em;
+  }
+
+  .pf-projects-title {
+    font-size: 2.2em;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+
+  .pf-project-card {
+    padding: 1.2em;
   }
 
   .pf-timeline-items {
@@ -476,9 +868,29 @@ i:hover {
     padding: 1.5em;
   }
 
+  /* Navigation responsive styles */
+  .pf-nav {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .pf-nav-brand a {
+    font-size: 1.7rem;
+  }
+
+  .pf-nav-link {
+    font-size: 0.95rem;
+  }
+
+  .pf-nav-menu {
+    gap: 1.5rem;
+  }
+
   .pf-services {
+    margin: 2em 1.5em;
+  }
+
+  .pf-services-content {
     gap: 1.5em;
-    margin: 1.5em;
   }
 
   .pf-services-item {
@@ -489,6 +901,14 @@ i:hover {
   .pf-experience {
     margin: 2em 1.5em;
   }
+
+  .pf-projects {
+    margin: 2em 1.5em;
+  }
+
+  .pf-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
 }
 
 /* Desktop and larger screens */
@@ -498,8 +918,11 @@ i:hover {
   }
 
   .pf-services {
+    margin: 3em 2em;
+  }
+
+  .pf-services-content {
     gap: 2em;
-    margin: 2em;
   }
 
   .pf-services-item {
@@ -511,7 +934,23 @@ i:hover {
     margin: 3em 2em;
   }
 
+  .pf-projects {
+    margin: 3em 2em;
+  }
+
+  .pf-projects-title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    padding: 0.5rem 2rem;
+  }
+
   .pf-experience-title {
+    font-size: 3em;
+    margin-bottom: 2em;
+    padding: 0.5rem 2rem;
+  }
+
+  .pf-services-title {
     font-size: 3em;
     margin-bottom: 2em;
     padding: 0.5rem 2rem;
@@ -523,7 +962,7 @@ i:hover {
 }
 
 @media screen and (min-width: 320px) {
-  .pf-services {
+  .pf-services-content {
     flex-direction: column;
   }
 
@@ -534,7 +973,7 @@ i:hover {
 }
 
 @media screen and (min-width: 800px) {
-  .pf-services {
+  .pf-services-content {
     flex-direction: row;
   }
   .pf-services-item {
@@ -627,6 +1066,15 @@ i:hover {
     margin-left: 1.5em;
   }
 
+  .pf-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+
+  .pf-project-card {
+    padding: 1em;
+  }
+
   /* Mobile: revert to single column layout with left alignment */
   .pf-timeline-header {
     flex-direction: column;
@@ -647,5 +1095,619 @@ i:hover {
     padding-left: 0;
     margin-left: 0;
     text-align: left;
+  }
+}
+
+/* Projects Section */
+.pf-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 1em;
+  position: relative;
+}
+
+.pf-projects-title {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  background-color: rgba(138, 43, 226, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  font-family: monospace;
+}
+
+/* Projects Grid */
+.pf-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2em;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 1em;
+}
+
+.pf-project-card {
+  background-color: rgba(138, 43, 226, 0.1);
+  border: 1px solid rgba(138, 43, 226, 0.3);
+  border-radius: 1em;
+  padding: 2em;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.pf-project-card:hover {
+  background-color: rgba(138, 43, 226, 0.15);
+  border-color: rgba(138, 43, 226, 0.5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+}
+
+.pf-project-header {
+  margin-bottom: 0.5em;
+}
+
+.pf-project-name {
+  color: blueviolet;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
+.pf-project-description {
+  font-family: monospace;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.9);
+}
+
+.pf-project-details {
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.pf-project-details > div {
+  margin-bottom: 0.5em;
+}
+
+.pf-project-responsibilities {
+  font-family: monospace;
+  font-size: 0.9em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.8);
+}
+
+.pf-project-links {
+  display: flex;
+  gap: 1em;
+  margin-top: auto;
+}
+
+.pf-project-link {
+  background-color: blueviolet;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9em;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-project-link:hover {
+  background-color: rgba(138, 43, 226, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+.pf-project-link i {
+  font-size: 0.9em;
+}
+
+/* Show More Projects Button */
+.pf-projects-show-more {
+  margin-top: 3em;
+  text-align: center;
+}
+
+.pf-show-more-btn {
+  background-color: rgba(138, 43, 226, 0.2);
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  color: aliceblue;
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8em;
+}
+
+.pf-show-more-btn:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-2px);
+}
+
+.pf-show-more-btn.expanded {
+  background-color: blueviolet;
+  border-color: blueviolet;
+}
+
+.pf-show-more-btn.expanded .pf-show-more-icon {
+  transform: rotate(180deg);
+}
+
+.pf-show-more-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Technology Filter Section */
+.pf-projects-filter {
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pf-filter-title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: rgba(173, 216, 230, 0.9);
+  font-weight: 600;
+}
+
+.pf-filter-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+.pf-filter-badge {
+  background-color: rgba(138, 43, 226, 0.2);
+  color: aliceblue;
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  font-size: 0.85em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 500;
+  border: 2px solid rgba(138, 43, 226, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
+.pf-filter-badge:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-1px);
+}
+
+.pf-filter-badge.active {
+  background-color: blueviolet;
+  border-color: blueviolet;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.pf-filter-badge i {
+  font-size: 0.9em;
+}
+
+.pf-filter-badge .filter-count {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+  margin-left: 0.3em;
+}
+
+.pf-filter-badge.active .filter-count {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Show More Filter Badge */
+.pf-filter-show-more {
+  background-color: rgba(138, 43, 226, 0.3) !important;
+  border-color: rgba(138, 43, 226, 0.6) !important;
+  color: aliceblue !important;
+  cursor: pointer;
+}
+
+.pf-filter-show-more:hover {
+  background-color: rgba(138, 43, 226, 0.5) !important;
+  border-color: rgba(138, 43, 226, 0.8) !important;
+}
+
+.pf-filter-show-more.expanded {
+  background-color: blueviolet !important;
+  border-color: blueviolet !important;
+  color: white !important;
+}
+
+/* Hidden Filter Badges */
+.pf-filter-badge-hidden {
+  display: none !important;
+}
+
+/* Animation for showing/hiding badges */
+.pf-filter-badge {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hidden projects initially - show only projects with links */
+.pf-project-card:not(.pf-project-with-link) {
+  display: none;
+}
+
+/* Ensure consistent spacing for projects without links */
+.pf-project-card:not(.pf-project-with-link) .pf-project-responsibilities {
+  margin-bottom: 0;
+  padding-bottom: 2.5em;
+}
+
+.pf-projects-grid.show-all .pf-project-card {
+  display: block;
+}
+
+/* Technology badges */
+.pf-project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 0.8em;
+  margin-bottom: 1em;
+}
+
+.pf-project-tech-badge {
+  background-color: rgba(138, 43, 226, 0.2);
+  color: aliceblue;
+  padding: 0.25em 0.6em;
+  border-radius: 12px;
+  font-size: 0.75em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-weight: 500;
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+.pf-project-tech-badge:hover {
+  background-color: rgba(138, 43, 226, 0.3);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-1px);
+}
+
+.pf-project-tech-badge i {
+  font-size: 0.9em;
+}
+
+/* Specific technology colors */
+.pf-project-tech-badge.react {
+  background-color: rgba(97, 218, 251, 0.2);
+  border-color: rgba(97, 218, 251, 0.4);
+  color: #61DAFB;
+}
+
+.pf-project-tech-badge.typescript {
+  background-color: rgba(49, 120, 198, 0.2);
+  border-color: rgba(49, 120, 198, 0.4);
+  color: #3178C6;
+}
+
+.pf-project-tech-badge.javascript {
+  background-color: rgba(247, 223, 30, 0.2);
+  border-color: rgba(247, 223, 30, 0.4);
+  color: #F7DF1E;
+}
+
+.pf-project-tech-badge.nodejs {
+  background-color: rgba(104, 160, 99, 0.2);
+  border-color: rgba(104, 160, 99, 0.4);
+  color: #68A063;
+}
+
+.pf-project-tech-badge.android {
+  background-color: rgba(164, 198, 57, 0.2);
+  border-color: rgba(164, 198, 57, 0.4);
+  color: #A4C639;
+}
+
+.pf-project-tech-badge.ios {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.web {
+  background-color: rgba(255, 165, 0, 0.2);
+  border-color: rgba(255, 165, 0, 0.4);
+  color: #FFA500;
+}
+
+.pf-project-tech-badge.npm {
+  background-color: rgba(203, 56, 55, 0.2);
+  border-color: rgba(203, 56, 55, 0.4);
+  color: #CB3837;
+}
+
+/* Additional technology badge colors */
+.pf-project-tech-badge.swift {
+  background-color: rgba(250, 95, 85, 0.2);
+  border-color: rgba(250, 95, 85, 0.4);
+  color: #FA5F55;
+}
+
+.pf-project-tech-badge.docker {
+  background-color: rgba(0, 122, 204, 0.2);
+  border-color: rgba(0, 122, 204, 0.4);
+  color: #007ACC;
+}
+
+.pf-project-tech-badge.material-ui {
+  background-color: rgba(0, 129, 255, 0.2);
+  border-color: rgba(0, 129, 255, 0.4);
+  color: #0081FF;
+}
+
+.pf-project-tech-badge.nextjs {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.expo {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.pf-project-tech-badge.blockchain {
+  background-color: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
+  color: #FFD700;
+}
+
+.pf-project-tech-badge.charts {
+  background-color: rgba(255, 99, 132, 0.2);
+  border-color: rgba(255, 99, 132, 0.4);
+  color: #FF6384;
+}
+
+.pf-project-tech-badge.maps {
+  background-color: rgba(52, 168, 83, 0.2);
+  border-color: rgba(52, 168, 83, 0.4);
+  color: #34A853;
+}
+
+.pf-project-tech-badge.dashboard {
+  background-color: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.4);
+  color: #8A2BE2;
+}
+
+.pf-project-tech-badge.location {
+  background-color: rgba(66, 165, 245, 0.2);
+  border-color: rgba(66, 165, 245, 0.4);
+  color: #42A5F5;
+}
+
+.pf-project-tech-badge.realtime {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
+}
+
+.pf-project-tech-badge.mqtt {
+  background-color: rgba(156, 39, 176, 0.2);
+  border-color: rgba(156, 39, 176, 0.4);
+  color: #9C27B0;
+}
+
+.pf-project-tech-badge.nfc {
+  background-color: rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.4);
+  color: #FF9800;
+}
+
+.pf-project-tech-badge.health {
+  background-color: rgba(233, 30, 99, 0.2);
+  border-color: rgba(233, 30, 99, 0.4);
+  color: #E91E63;
+}
+
+.pf-project-tech-badge.environment {
+  background-color: rgba(76, 175, 80, 0.2);
+  border-color: rgba(76, 175, 80, 0.4);
+  color: #4CAF50;
+}
+
+.pf-project-tech-badge.parking {
+  background-color: rgba(96, 125, 139, 0.2);
+  border-color: rgba(96, 125, 139, 0.4);
+  color: #607D8B;
+}
+
+.pf-project-tech-badge.sanitization {
+  background-color: rgba(0, 188, 212, 0.2);
+  border-color: rgba(0, 188, 212, 0.4);
+  color: #00BCD4;
+}
+
+.pf-project-tech-badge.transit {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #FFC107;
+}
+
+.pf-project-tech-badge.chatbot {
+  background-color: rgba(121, 85, 72, 0.2);
+  border-color: rgba(121, 85, 72, 0.4);
+  color: #795548;
+}
+
+.pf-project-tech-badge.food-delivery {
+  background-color: rgba(255, 87, 34, 0.2);
+  border-color: rgba(255, 87, 34, 0.4);
+  color: #FF5722;
+}
+
+.pf-project-tech-badge.vendor {
+  background-color: rgba(63, 81, 181, 0.2);
+  border-color: rgba(63, 81, 181, 0.4);
+  color: #3F51B5;
+}
+
+.pf-project-tech-badge.admin {
+  background-color: rgba(158, 158, 158, 0.2);
+  border-color: rgba(158, 158, 158, 0.4);
+  color: #9E9E9E;
+}
+
+.pf-project-tech-badge.radio {
+  background-color: rgba(233, 30, 99, 0.2);
+  border-color: rgba(233, 30, 99, 0.4);
+  color: #E91E63;
+}
+
+.pf-project-tech-badge.audio {
+  background-color: rgba(156, 39, 176, 0.2);
+  border-color: rgba(156, 39, 176, 0.4);
+  color: #9C27B0;
+}
+
+.pf-project-tech-badge.tree {
+  background-color: rgba(56, 142, 60, 0.2);
+  border-color: rgba(56, 142, 60, 0.4);
+  color: #388E3C;
+}
+
+.pf-project-tech-badge.air-quality {
+  background-color: rgba(3, 169, 244, 0.2);
+  border-color: rgba(3, 169, 244, 0.4);
+  color: #03A9F4;
+}
+
+.pf-project-tech-badge.display {
+  background-color: rgba(103, 58, 183, 0.2);
+  border-color: rgba(103, 58, 183, 0.4);
+  color: #673AB7;
+}
+
+.pf-project-tech-badge.drag-drop {
+  background-color: rgba(255, 152, 0, 0.2);
+  border-color: rgba(255, 152, 0, 0.4);
+  color: #FF9800;
+}
+
+.pf-project-tech-badge.google-drive {
+  background-color: rgba(66, 165, 245, 0.2);
+  border-color: rgba(66, 165, 245, 0.4);
+  color: #42A5F5;
+}
+
+.pf-project-tech-badge.hook {
+  background-color: rgba(97, 218, 251, 0.2);
+  border-color: rgba(97, 218, 251, 0.4);
+  color: #61DAFB;
+}
+
+.pf-project-tech-badge.component {
+  background-color: rgba(255, 193, 7, 0.2);
+  border-color: rgba(255, 193, 7, 0.4);
+  color: #FFC107;
+}
+
+/* Responsive styles for technology filters */
+@media screen and (max-width: 480px) {
+  .pf-projects-filter {
+    margin-bottom: 1.5em;
+  }
+
+  .pf-filter-title {
+    font-size: 1em;
+    margin-bottom: 0.8em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.5em;
+  }
+
+  .pf-filter-badge {
+    padding: 0.4em 0.8em;
+    font-size: 0.75em;
+    border-radius: 15px;
+  }
+
+  .pf-filter-badge i {
+    font-size: 0.8em;
+  }
+
+  .pf-filter-badge .filter-count {
+    padding: 0.15em 0.4em;
+    font-size: 0.7em;
+  }
+
+  .pf-filter-show-more {
+    font-size: 0.75em !important;
+    padding: 0.4em 0.8em !important;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .pf-projects-filter {
+    margin-bottom: 1.8em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.6em;
+  }
+
+  .pf-filter-badge {
+    padding: 0.45em 0.9em;
+    font-size: 0.8em;
+  }
+
+  .pf-filter-show-more {
+    font-size: 0.8em !important;
+    padding: 0.45em 0.9em !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pf-projects-filter {
+    margin-bottom: 2em;
+  }
+
+  .pf-filter-badges {
+    gap: 0.8em;
   }
 }
