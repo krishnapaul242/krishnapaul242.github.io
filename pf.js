@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isMouseOverDetails || isClickPaused) {
       return;
     }
+    // Guard against empty timelineItems
+    if (timelineItems.length === 0) {
+      return;
+    }
     const nextIndex = (currentIndex + 1) % timelineItems.length;
     showExperience(nextIndex);
   }
