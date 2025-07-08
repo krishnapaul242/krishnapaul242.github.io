@@ -1132,9 +1132,13 @@ section {
   border-radius: 1em;
   padding: 2em;
   transition: all 0.3s ease-in-out;
+}
+
+.pf-project-card-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  height: 100%;
 }
 
 .pf-project-card:hover {
@@ -1368,17 +1372,12 @@ section {
   }
 }
 
-/* Hidden projects initially - show only projects with links */
+/* Show only projects with links by default, others will be controlled by JavaScript */
 .pf-project-card:not(.pf-project-with-link) {
   display: none;
 }
 
-/* Ensure consistent spacing for projects without links */
-.pf-project-card:not(.pf-project-with-link) .pf-project-responsibilities {
-  margin-bottom: 0;
-  padding-bottom: 2.5em;
-}
-
+/* When show-all is active, display all projects */
 .pf-projects-grid.show-all .pf-project-card {
   display: block;
 }
