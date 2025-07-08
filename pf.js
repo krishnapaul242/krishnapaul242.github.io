@@ -108,98 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
   updateActiveNavLink();
 });
 
-// Timeline auto-rotation functionality
-document.addEventListener("DOMContentLoaded", function () {
-  const timelineItems = document.querySelectorAll(".pf-timeline-item");
-  const timelineDetails = document.querySelectorAll(".pf-timeline-details");
-  let currentIndex = 0;
-  let autoRotateInterval;
-  let clickPauseTimeout;
-  let isMouseOverDetails = false;
-  let isClickPaused = false;
-
-  function showExperience(index) {
-    // Remove active class from all items and details
-    timelineItems.forEach((item) => item.classList.remove("active"));
-    timelineDetails.forEach((detail) => detail.classList.remove("active"));
-
-    // Add active class to current item and detail
-    if (timelineItems[index]) {
-      timelineItems[index].classList.add("active");
-    }
-    if (timelineDetails[index]) {
-      timelineDetails[index].classList.add("active");
-    }
-
-    currentIndex = index;
-  }
-
-  function nextExperience() {
-    // Don't auto-advance if mouse is over details or click-paused
-    if (isMouseOverDetails || isClickPaused) {
-      return;
-    }
-    // Guard against empty timelineItems
-    if (timelineItems.length === 0) {
-      return;
-    }
-    const nextIndex = (currentIndex + 1) % timelineItems.length;
-    showExperience(nextIndex);
-  }
-
-  function startAutoRotation() {
-    if (autoRotateInterval) {
-      clearInterval(autoRotateInterval);
-    }
-    autoRotateInterval = setInterval(nextExperience, 5000); // 5 seconds
-  }
-
-  function stopAutoRotation() {
-    if (autoRotateInterval) {
-      clearInterval(autoRotateInterval);
-    }
-  }
-
-  function pauseForClick() {
-    isClickPaused = true;
-    if (clickPauseTimeout) {
-      clearTimeout(clickPauseTimeout);
-    }
-    clickPauseTimeout = setTimeout(() => {
-      isClickPaused = false;
-    }, 30000); // 30 seconds
-  }
-
-  // Add click event listeners to timeline items
-  timelineItems.forEach((item, index) => {
-    item.addEventListener("click", function () {
-      showExperience(index);
-      pauseForClick(); // Pause for 30 seconds after click
-    });
-  });
-
-  // Handle mouse over/out for timeline details
-  timelineDetails.forEach((detail) => {
-    detail.addEventListener("mouseenter", function() {
-      isMouseOverDetails = true;
-    });
-    detail.addEventListener("mouseleave", function() {
-      isMouseOverDetails = false;
-    });
-  });
-
-  // Start auto-rotation when page loads
-  startAutoRotation();
-
-  // Pause auto-rotation when page is not visible
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      stopAutoRotation();
-    } else {
-      startAutoRotation();
-    }
-  });
-});
+// Timeline auto-rotation functionality (replaced with dynamic loading)
+// This functionality is now handled by initializeTimeline() function
+// which is called after loading experience data from experience.json
 
 // Projects Show More functionality
 function toggleProjects() {
@@ -704,7 +615,249 @@ function updateFilterCountsForJSON() {
   });
 }
 
-// Load projects when page loads
+// Load experience data from experience.json
+async function loadExperience() {
+  try {
+    const response = await fetch('./experience.json');
+    const data = await response.json();
+    
+    const timelineItemsContainer = document.getElementById('timelineItems');
+    const timelineDetailsContainer = document.getElementById('timelineDetails');
+    
+    if (!timelineItemsContainer || !timelineDetailsContainer) {
+      console.error('Timeline containers not found');
+      return;
+    }
+
+    // Clear existing content
+    timelineItemsContainer.innerHTML = '';
+    timelineDetailsContainer.innerHTML = '';
+
+    // Generate timeline items and details
+    data.experience.forEach((exp, index) => {
+      // Create timeline item
+      const timelineItem = document.createElement('div');
+      timelineItem.className = `pf-timeline-item${exp.active ? ' active' : ''}`;
+      timelineItem.setAttribute('data-index', index);
+      timelineItem.innerHTML = `
+        <div class="pf-timeline-company">${exp.company}</div>
+        <div class="pf-timeline-dot"></div>
+        <div class="pf-timeline-year">${exp.year}</div>
+      `;
+      timelineItemsContainer.appendChild(timelineItem);
+
+      // Create timeline details
+      const timelineDetails = document.createElement('div');
+      timelineDetails.className = `pf-timeline-details${exp.active ? ' active' : ''}`;
+      timelineDetails.setAttribute('data-index', index);
+      
+      const responsibilitiesList = exp.responsibilities.map(resp => `<li>${resp}</li>`).join('');
+      
+      timelineDetails.innerHTML = `
+        <div class="pf-timeline-header">
+          <div class="pf-timeline-header-left">
+            <div class="pf-timeline-company">${exp.company}</div>
+            <div class="pf-timeline-location">${exp.location}</div>
+          </div>
+          <div class="pf-timeline-header-right">
+            <div class="pf-timeline-position">${exp.position}</div>
+            <div class="pf-timeline-duration">${exp.duration}</div>
+          </div>
+        </div>
+        <div class="pf-timeline-description">
+          <ul>
+            ${responsibilitiesList}
+          </ul>
+        </div>
+      `;
+      timelineDetailsContainer.appendChild(timelineDetails);
+    });
+
+    // Reinitialize timeline functionality after loading data
+    initializeTimeline();
+    
+  } catch (error) {
+    console.error('Error loading experience data:', error);
+  }
+}
+
+// Initialize timeline functionality
+function initializeTimeline() {
+  const timelineItems = document.querySelectorAll(".pf-timeline-item");
+  const timelineDetails = document.querySelectorAll(".pf-timeline-details");
+  let currentIndex = 0;
+  let autoRotateInterval;
+  let clickPauseTimeout;
+  let isMouseOverDetails = false;
+  let isClickPaused = false;
+
+  function showExperience(index) {
+    // Remove active class from all items and details
+    timelineItems.forEach((item) => item.classList.remove("active"));
+    timelineDetails.forEach((detail) => detail.classList.remove("active"));
+
+    // Add active class to current item and detail
+    if (timelineItems[index]) {
+      timelineItems[index].classList.add("active");
+    }
+    if (timelineDetails[index]) {
+      timelineDetails[index].classList.add("active");
+    }
+
+    currentIndex = index;
+  }
+
+  function nextExperience() {
+    // Don't auto-advance if mouse is over details or click-paused
+    if (isMouseOverDetails || isClickPaused) {
+      return;
+    }
+    // Guard against empty timelineItems
+    if (timelineItems.length === 0) {
+      return;
+    }
+    const nextIndex = (currentIndex + 1) % timelineItems.length;
+    showExperience(nextIndex);
+  }
+
+  function startAutoRotation() {
+    if (autoRotateInterval) {
+      clearInterval(autoRotateInterval);
+    }
+    autoRotateInterval = setInterval(nextExperience, 5000); // 5 seconds
+  }
+
+  function stopAutoRotation() {
+    if (autoRotateInterval) {
+      clearInterval(autoRotateInterval);
+    }
+  }
+
+  function pauseForClick() {
+    isClickPaused = true;
+    if (clickPauseTimeout) {
+      clearTimeout(clickPauseTimeout);
+    }
+    clickPauseTimeout = setTimeout(() => {
+      isClickPaused = false;
+    }, 30000); // 30 seconds
+  }
+
+  // Add click event listeners to timeline items
+  timelineItems.forEach((item, index) => {
+    item.addEventListener("click", function () {
+      showExperience(index);
+      pauseForClick(); // Pause for 30 seconds after click
+    });
+  });
+
+  // Handle mouse over/out for timeline details
+  timelineDetails.forEach((detail) => {
+    detail.addEventListener("mouseenter", function() {
+      isMouseOverDetails = true;
+    });
+    detail.addEventListener("mouseleave", function() {
+      isMouseOverDetails = false;
+    });
+  });
+
+  // Start auto-rotation when timeline is initialized
+  startAutoRotation();
+
+  // Pause auto-rotation when page is not visible
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      stopAutoRotation();
+    } else {
+      startAutoRotation();
+    }
+  });
+}
+
+// Load social links data from social-links.json
+async function loadSocialLinks() {
+  try {
+    const response = await fetch('./social-links.json');
+    const data = await response.json();
+    
+    const socialContainer = document.getElementById('socialLinksContainer');
+    
+    if (!socialContainer) {
+      console.error('Social links container not found');
+      return;
+    }
+
+    // Clear existing content
+    socialContainer.innerHTML = '';
+
+    // Sort social links by order
+    const sortedLinks = data.socialLinks.sort((a, b) => a.order - b.order);
+
+    // Generate social link buttons
+    sortedLinks.forEach(link => {
+      const socialButton = document.createElement('div');
+      socialButton.className = 'pf-social-button';
+      socialButton.innerHTML = `
+        <a href="${link.url}" title="${link.name}">
+          <i class="${link.icon}"></i>
+        </a>
+      `;
+      socialContainer.appendChild(socialButton);
+    });
+    
+  } catch (error) {
+    console.error('Error loading social links data:', error);
+  }
+}
+
+// Load services data from services.json
+async function loadServices() {
+  try {
+    const response = await fetch('./services.json');
+    const data = await response.json();
+    
+    const servicesContainer = document.getElementById('servicesContainer');
+    
+    if (!servicesContainer) {
+      console.error('Services container not found');
+      return;
+    }
+
+    // Clear existing content
+    servicesContainer.innerHTML = '';
+
+    // Sort services by order
+    const sortedServices = data.services.sort((a, b) => a.order - b.order);
+
+    // Generate service items
+    sortedServices.forEach(service => {
+      const serviceItem = document.createElement('div');
+      serviceItem.className = 'pf-services-item';
+      
+      const examplesList = service.examples.map(example => 
+        `<div class="pf-services-item-example">${example}</div>`
+      ).join('');
+      
+      serviceItem.innerHTML = `
+        <div class="pf-services-item-image"></div>
+        <div class="pf-services-item-title">${service.title}</div>
+        <div class="pf-services-item-description">${service.description}</div>
+        <div class="pf-services-item-examples">
+          ${examplesList}
+        </div>
+      `;
+      servicesContainer.appendChild(serviceItem);
+    });
+    
+  } catch (error) {
+    console.error('Error loading services data:', error);
+  }
+}
+
+// Load projects and experience when page loads
 document.addEventListener("DOMContentLoaded", function () {
   loadProjects();
+  loadExperience(); // Load experience data
+  loadSocialLinks(); // Load social links data
+  loadServices(); // Load services data
 });

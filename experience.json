@@ -1,0 +1,65 @@
+{
+  "experience": [
+    {
+      "id": 0,
+      "company": "Cloudgarner Solutions Pvt. Ltd",
+      "location": "Ranchi, Jharkhand, India",
+      "position": "Software Engineer",
+      "duration": "February 2025 - Current",
+      "year": "2025",
+      "active": true,
+      "responsibilities": [
+        "Built and maintained multiple dynamic pages for a social media platform, enhancing functionality and resolving three major production issues.",
+        "Led a cross-functional team of frontend and web developers to deliver a full-stack MERN application, successfully deployed on AWS.",
+        "Developed robust backend APIs and services using Node.js, TypeScript, and Express, ensuring scalability and performance.",
+        "Engineered a React Native mobile app with integrated NFC functionality and QR code scanning for seamless user interactions."
+      ]
+    },
+    {
+      "id": 1,
+      "company": "Daynil Group Solutions Pvt Ltd",
+      "location": "Deoghar, Jharkhand, India",
+      "position": "React.js Developer",
+      "duration": "November 2022 - December 2024",
+      "year": "2022-2024",
+      "active": false,
+      "responsibilities": [
+        "Implemented 20+ interactive user interfaces for the cell culture laboratory platform using React.js, enhancing user experience and accessibility by 43%.",
+        "Integrated 32 third-party APIs with the fintech application, ensuring smooth data flow and interaction between components.",
+        "Expanded existing platform features based on user feedback and evolving project requirements, significantly improving the software's capabilities.",
+        "Launched a fintech mobile application based on React Native on the Google Play Store, reaching a wider audience (1K+ downloads) and increasing user engagement."
+      ]
+    },
+    {
+      "id": 2,
+      "company": "Zeeve DeepTech Pvt Ltd",
+      "location": "Dehradoon, Uttarakhand, India",
+      "position": "Software Engineer - Frontend",
+      "duration": "April 2022 - October 2022",
+      "year": "2022",
+      "active": false,
+      "responsibilities": [
+        "Collaborated with backend developers to design and integrate APIs, facilitating smooth data flow between the front-end and blockchain services.",
+        "Engineered 19 responsive web components using modern JavaScript frameworks, ensuring seamless interactions across various devices.",
+        "Deployed user onboarding and registration dashboards on the Phaeton Blockchain, streamlining the user entry process for enhanced accessibility, gaining user landing by 121%.",
+        "Led efforts to establish best practices in code quality, contributing to improved project documentation and team productivity."
+      ]
+    },
+    {
+      "id": 3,
+      "company": "Distronix LLC",
+      "location": "Kolkata, West Bengal, India",
+      "position": "Junior Software Engineer",
+      "duration": "November 2020 - March 2022",
+      "year": "2020-2022",
+      "active": false,
+      "responsibilities": [
+        "Developed 30+ web and mobile applications for various business sectors, enhancing user engagement and operational efficiency.",
+        "Implemented responsive design principles in 30+ applications to ensure compatibility across multiple devices and platforms.",
+        "Deployed 5 applications using CI/CD pipelines, streamlining the release process and minimizing downtime for end users by OTA updates.",
+        "Integrated 12 third-party APIs and services to enhance application functionality, providing users with enriched features and services.",
+        "Maintained 4 existing applications by performing regular updates and troubleshooting to mitigate performance issues and bugs."
+      ]
+    }
+  ]
+}

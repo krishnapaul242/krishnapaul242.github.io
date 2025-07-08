@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "id": "react-native-mobile",
+      "title": "React Native & Mobile Development",
+      "description": "Cross-platform mobile applications for Android and iOS with native performance and user experience.",
+      "examples": [
+        "📱 Native mobile apps",
+        "🔄 Cross-platform development"
+      ],
+      "order": 1
+    },
+    {
+      "id": "react-nextjs",
+      "title": "React & Next.js",
+      "description": "Modern web applications with server-side rendering, static generation, and optimized performance.",
+      "examples": [
+        "⚡ SSR & SSG",
+        "🎯 Performance optimization"
+      ],
+      "order": 2
+    },
+    {
+      "id": "backend-development",
+      "title": "Backend Development",
+      "description": "Scalable APIs and microservices using Node.js, Express, and modern backend technologies.",
+      "examples": [
+        "🔌 RESTful APIs",
+        "🏗️ Microservices architecture"
+      ],
+      "order": 3
+    },
+    {
+      "id": "cloud-devops",
+      "title": "Cloud & DevOps",
+      "description": "Cloud deployment, CI/CD pipelines, and infrastructure management for scalable applications.",
+      "examples": [
+        "☁️ Cloud deployment",
+        "🔄 CI/CD automation"
+      ],
+      "order": 4
+    },
+    {
+      "id": "open-source",
+      "title": "Open Source Libraries",
+      "description": "Contributing to and maintaining NPM packages and open source projects for the developer community.",
+      "examples": [
+        "📦 NPM packages",
+        "🤝 Community contributions"
+      ],
+      "order": 5
+    },
+    {
+      "id": "full-stack",
+      "title": "Full Stack Solutions",
+      "description": "End-to-end application development from database design to user interface implementation.",
+      "examples": [
+        "🎨 Frontend & Backend",
+        "💾 Database design"
+      ],
+      "order": 6
+    }
+  ]
+}
