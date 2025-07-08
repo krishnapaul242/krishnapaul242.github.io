@@ -1,13 +1,29 @@
 {
   "projects": [
     {
+      "name": "Amalgamate",
+      "description": "React Native-based social media application with Votes, Shorts, Chat and Social.",
+      "technologies": ["React Native", "TypeScript", "JavaScript", "Android", "iOS", "Camera"],
+      "tools": ["VS Code", "Android Studio", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React Native", "Stylesheet", "React Native Vision Camera"],
+      "duration": "February 2025 - Ongoing",
+      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=com.amalgamate"
+        }
+      ]
+    },
+    {
       "name": "My Cash Book",
       "description": "React Native-based Accounting and GST mobile application for small and medium businesses.",
       "technologies": ["React Native", "TypeScript", "JavaScript", "Android", "Expo"],
       "tools": ["VS Code", "Android Studio", "Figma"],
       "languages": ["TypeScript", "JavaScript"],
       "libraries": ["ReactJS", "React Native", "Tailwind + Nativewind", "Expo"],
-      "duration": "May 2024 - Ongoing",
+      "duration": "May 2024 - September 2024",
       "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
       "links": [
         {
