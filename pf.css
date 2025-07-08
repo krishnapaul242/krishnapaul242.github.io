@@ -1123,7 +1123,6 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2em;
   width: 100%;
-  max-width: 1400px;
   margin-top: 1em;
 }
 
