@@ -126,9 +126,9 @@ i:hover {
 
   &:hover {
     background-color: rgba(138, 43, 226, 0.1);
-    box-shadow: inset 0 0 2em rgb(138 43 226 / 30%);
+    box-shadow: 0 0 2em rgb(138 43 226 / 30%);
     border-radius: 1em;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -154,11 +154,12 @@ i:hover {
   align-items: center;
   margin: 2em 1em;
   position: relative;
+  width: 100%;
 }
 
 .pf-experience-title {
   font-size: 2.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   background-color: rgba(138, 43, 226, 0.2);
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
@@ -167,7 +168,7 @@ i:hover {
 
 .pf-services-title {
   font-size: 2.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   background-color: rgba(138, 43, 226, 0.2);
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
@@ -348,13 +349,14 @@ i:hover {
   border-bottom: 1px solid rgba(138, 43, 226, 0.3);
   z-index: 1000;
   transition: all 0.3s ease-in-out;
-  transform: translateY(0);
+  transform: translateY(-100%);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pf-sticky-header.scrolled {
   background-color: rgba(0, 0, 0, 0.95);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  transform: translateY(0);
 }
 
 .pf-sticky-header.hidden {
@@ -454,7 +456,6 @@ i:hover {
 /* Main Content Padding */
 .pf-main-content {
   scroll-margin-top: 80px;
-  padding-top: 80px; /* Add padding to account for fixed header */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -488,6 +489,8 @@ section {
     left: 0 !important;
     right: 0 !important;
     z-index: 1000 !important;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
   }
 
   /* Navigation responsive styles - smaller header */
@@ -709,6 +712,8 @@ section {
     left: 0 !important;
     right: 0 !important;
     z-index: 1000 !important;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
   }
 
   .pf-nav {
@@ -756,6 +761,8 @@ section {
     left: 0 !important;
     right: 0 !important;
     z-index: 1000 !important;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
   }
 
   /* Navigation responsive styles */
@@ -805,14 +812,17 @@ section {
 
   .pf-experience-title {
     font-size: 2.2em;
+    margin-bottom: 1em;
   }
 
   .pf-services-title {
     font-size: 2.2em;
+    margin-bottom: 1em;
   }
 
   .pf-projects-title {
     font-size: 2.2em;
+    margin-bottom: 1em;
   }
 
   .pf-projects-grid {
@@ -941,19 +951,19 @@ section {
 
   .pf-projects-title {
     font-size: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
     padding: 0.5rem 2rem;
   }
 
   .pf-experience-title {
     font-size: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
     padding: 0.5rem 2rem;
   }
 
   .pf-services-title {
     font-size: 3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.3em;
     padding: 0.5rem 2rem;
   }
 
@@ -1110,7 +1120,7 @@ section {
 
 .pf-projects-title {
   font-size: 2.5em;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   background-color: rgba(138, 43, 226, 0.2);
   padding: 0.5rem 1.5rem;
   border-radius: 1rem;
@@ -1132,9 +1142,13 @@ section {
   border-radius: 1em;
   padding: 2em;
   transition: all 0.3s ease-in-out;
+}
+
+.pf-project-card-wrapper {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  height: 100%;
 }
 
 .pf-project-card:hover {
@@ -1368,17 +1382,12 @@ section {
   }
 }
 
-/* Hidden projects initially - show only projects with links */
+/* Show only projects with links by default, others will be controlled by JavaScript */
 .pf-project-card:not(.pf-project-with-link) {
   display: none;
 }
 
-/* Ensure consistent spacing for projects without links */
-.pf-project-card:not(.pf-project-with-link) .pf-project-responsibilities {
-  margin-bottom: 0;
-  padding-bottom: 2.5em;
-}
-
+/* When show-all is active, display all projects */
 .pf-projects-grid.show-all .pf-project-card {
   display: block;
 }

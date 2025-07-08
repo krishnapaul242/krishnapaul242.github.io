@@ -1,0 +1,60 @@
+{
+  "socialLinks": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "url": "https://github.com/krishnapaul242/",
+      "icon": "fab fa-github",
+      "order": 1
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/krishna-paul-129391148/",
+      "icon": "fab fa-linkedin",
+      "order": 2
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "url": "mailto:krishnapaulmailbox@gmail.com",
+      "icon": "fas fa-envelope",
+      "order": 3
+    },
+    {
+      "id": "codepen",
+      "name": "CodePen",
+      "url": "https://codepen.io/krishna-paul",
+      "icon": "fab fa-codepen",
+      "order": 4
+    },
+    {
+      "id": "freecodecamp",
+      "name": "FreeCodeCamp",
+      "url": "https://www.freecodecamp.org/krishnapaul",
+      "icon": "fab fa-free-code-camp",
+      "order": 5
+    },
+    {
+      "id": "npm",
+      "name": "NPM",
+      "url": "http://npmjs.com/~krishna.paul",
+      "icon": "fab fa-npm",
+      "order": 6
+    },
+    {
+      "id": "gitlab",
+      "name": "GitLab",
+      "url": "http://gitlab.com/krishnapaul242",
+      "icon": "fab fa-gitlab",
+      "order": 7
+    },
+    {
+      "id": "cv",
+      "name": "CV/Resume",
+      "url": "KrishnaPaulCV.pdf",
+      "icon": "fas fa-file-pdf",
+      "order": 8
+    }
+  ]
+}

@@ -1,0 +1,392 @@
+{
+  "projects": [
+    {
+      "name": "Amalgamate",
+      "description": "React Native-based social media application with Votes, Shorts, Chat and Social.",
+      "technologies": ["React Native", "TypeScript", "JavaScript", "Android", "iOS", "Camera"],
+      "tools": ["VS Code", "Android Studio", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React Native", "Stylesheet", "React Native Vision Camera"],
+      "duration": "February 2025 - Ongoing",
+      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=com.amalgamate"
+        }
+      ]
+    },
+    {
+      "name": "My Cash Book",
+      "description": "React Native-based Accounting and GST mobile application for small and medium businesses.",
+      "technologies": ["React Native", "TypeScript", "JavaScript", "Android", "Expo"],
+      "tools": ["VS Code", "Android Studio", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["ReactJS", "React Native", "Tailwind + Nativewind", "Expo"],
+      "duration": "May 2024 - September 2024",
+      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
+      "links": [
+        {
+          "type": "website",
+          "url": "https://mycashbook.in"
+        }
+      ]
+    },
+    {
+      "name": "Phaeton Bond Marketplace",
+      "description": "This web app is a public blockchain-based marketplace that helps users buy and sell bonds.",
+      "technologies": ["NextJS", "TypeScript", "Web", "Web3", "Metamask"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["NextJS", "Redux Toolkit", "Bootstrap", "Axios"],
+      "duration": "March 2022 - August 2022",
+      "responsibilities": "UI implementation from Figma Design, API integration, Web3 & Metamask integration, and Bug Management.",
+      "links": [
+        {
+          "type": "website",
+          "url": "https://phaeton-technology.medium.com/phaetons-bond-marketplace-f4f7e801bfe3"
+        }
+      ]
+    },
+    {
+      "name": "Phaeton Identity Dashboard",
+      "description": "This web app is a dashboard that helps users manage registration and onboarding in Phaeton Blockchain.",
+      "technologies": ["React", "TypeScript", "Web", "Web3", "Metamask"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["ReactJS", "Redux Toolkit", "Styled-Components", "Axios"],
+      "duration": "August 2022 - October 2022",
+      "responsibilities": "Project Structure, UI implementation from Figma Design, API integration, Web3 & Metamask integration, and Bug Management.",
+      "links": []
+    },
+    {
+      "name": "Smart Health Card",
+      "description": "This Application is an extended and temporary rewrite of the NKDA Citizen Covid App, it includes measuring and recording health statistics, reports, and prescriptions, as well as setting medication reminders, and checking the news.",
+      "technologies": ["React Native", "TypeScript", "Android", "iOS", "Location", "Image Processing"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio", "XCode"],
+      "languages": ["TypeScript", "JavaScript", "Java", "Swift"],
+      "libraries": ["React Native", "React", "Redux Toolkit", "React-Native-Location", "Axios", "Image Processing"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "NKDA SWM Scanner",
+      "description": "This application is used to scan a card and update data regarding location and time by identifying the card with NFC.",
+      "technologies": ["React Native", "JavaScript", "Android", "NFC", "Location"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["JavaScript", "Java"],
+      "libraries": ["React Native", "React", "React-Native-Location", "Axios", "React-Native-NFC-Manager"],
+      "duration": "2021",
+      "responsibilities": "Updated APIs, business logic.",
+      "links": []
+    },
+    {
+      "name": "Smart Card Verifier",
+      "description": "SmartCard Verifier application is used to verify the Smart tags installed in designated houses/places with their geolocation and image.",
+      "technologies": ["React Native", "JavaScript", "Android", "NFC", "Location"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["JavaScript", "Java"],
+      "libraries": ["React Native", "React", "React-Native-Location", "Axios", "React-Native-NFC-Manager"],
+      "duration": "2021",
+      "responsibilities": "Forked NKDA_SWM_Scanner, Updated UI, APIs and implemented business logic.",
+      "links": []
+    },
+    {
+      "name": "NKDA Smart Home Tags Dashboard",
+      "description": "The motive of this project is to prepare a dashboard to show the information, statistics and visualize the same in eye pleasing manner. The dashboard here will consume data from multiple different kind of services and display them in one place.",
+      "technologies": ["React", "TypeScript", "Web", "Maps", "Dashboard"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
+      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps"],
+      "duration": "Jan 2022 - Mar 2022",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "WBPCB ANMS Dashboard",
+      "description": "This Dashboard displays the Noise Pollution data from REST APIs in Maps, Charts, and Datagrid. Multiple instances are deployed with mock logins.",
+      "technologies": ["React", "TypeScript", "Web", "Charts", "Datagrid", "Maps"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
+      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps", "Charts", "Datagrid"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "NKDA Air Quality Dashboard",
+      "description": "This is a web-based dashboard to display Air Quality Information in an eye-pleasing manner by consuming REST APIs.",
+      "technologies": ["React", "TypeScript", "Web", "Air Quality", "Maps"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
+      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "WBPCB Paribesh App Admin Panel",
+      "description": "This Web-based dashboard is for administrative works of the Paribesh Mobile App.",
+      "technologies": ["React", "JavaScript", "Web", "Admin Panel", "Maps"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["JavaScript", "HTML", "CSS"],
+      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps", "Argon React Dashboard"],
+      "duration": "2021",
+      "responsibilities": "Added new features and UI. Fixed some prevalent bugs.",
+      "links": []
+    },
+    {
+      "name": "WBPCB Paribesh App",
+      "description": "This Application is a rewrite of the existing Paribesh app (but not a fork) is used to provide pollution-related data, forms for lodging complaints, and some events regarding WBPCB.",
+      "technologies": ["React Native", "TypeScript", "Android", "iOS", "Location", "Environment"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio", "XCode"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java", "Swift"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=in.gov.wbpcb.paribeshapp"
+        }
+      ]
+    },
+    {
+      "name": "NKDA Parking Assistant",
+      "description": "This Application is used to provide information and actions to help the attendees in Parking Lots to check and manage the space in parking as well as calculate and collect an appropriate fee.",
+      "technologies": ["React Native", "TypeScript", "Android", "Location", "Parking"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, and Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "Paribesh Tree Image Uploader",
+      "description": "This Application is used to capture images of a planted tree and upload its picture with its location and other details fed by the operator.",
+      "technologies": ["React Native", "TypeScript", "Android", "Location", "Tree Management", "Image Upload"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, and Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "NKDA Citizen Covid App",
+      "description": "This Application is to help citizens update their information on health conditions, request sanitization or desolation, and get information and guidelines.",
+      "technologies": ["React Native", "TypeScript", "Android", "Location", "Chatbot", "Health"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location", "Chatbot"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=com.nkda_health_card"
+        }
+      ]
+    },
+    {
+      "name": "NKDA Sanitization Worker App",
+      "description": "This Application is to help the sanitization workers to get their assignments, and capture and submit images with locations to confirm their work.",
+      "technologies": ["React Native", "TypeScript", "Android", "Location", "Sanitization"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
+      "links": []
+    },
+    {
+      "name": "NKDA Trams",
+      "description": "This Application displays the trams, tram stations, and tram routes as well as historical information on trams.",
+      "technologies": ["React Native", "TypeScript", "Android", "Location", "Transit"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI as well as OTA Updates.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=com.nkda_trams"
+        }
+      ]
+    },
+    {
+      "name": "WBTC Trams",
+      "description": "This Application is rewrite of NKDA Trams, it displays the trams, tram stations and tram routes as well as historical information on trams. Development is on hold due to dependency on APIs which are yet to be done.",
+      "technologies": ["React Native", "TypeScript", "Android", "iOS", "Location", "Transit"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios", "React-Native-Maps", "React-Native-Location"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "WBPCB Command & Control Center",
+      "description": "This Dashboard displays the information collected from multiple sources and administrative works, reports, manage master data.",
+      "technologies": ["NextJS", "TypeScript", "Web", "Docker", "Maps", "Datagrid"],
+      "tools": ["VS Code", "Postman", "Figma", "Docker"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React", "Redux", "NextJS", "Maps", "Datagrid"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed some Components and UI.",
+      "links": []
+    },
+    {
+      "name": "PIS MQTT Tabular Dashboard",
+      "description": "This Dashboard displays live information from MQTT services on PIS systems.",
+      "technologies": ["React", "TypeScript", "Web", "MQTT", "Datagrid", "Real-time"],
+      "tools": ["VS Code", "Postman"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React", "Datagrid", "MQTT"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "Display Configuration Dashboard",
+      "description": "This is a Drag'n'Drop web-based dashboard to feed data to display in their appropriate display boards as well as customize the content to be displayed at display boards.",
+      "technologies": ["React", "TypeScript", "Web", "Drag & Drop", "Display Config"],
+      "tools": ["VS Code", "Postman", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React", "Redux", "Hook Forms", "Drag'n'Drop"],
+      "duration": "2020-2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "Quest Mall Display",
+      "description": "This is a rewrite in React of Quest Mall Display with additional features such as present Google Slides or videos stored in Google Drive with a schedule and interval.",
+      "technologies": ["React", "TypeScript", "Web", "Google Drive", "Digital Display"],
+      "tools": ["VS Code", "Postman"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React", "Redux"],
+      "duration": "2020-2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": []
+    },
+    {
+      "name": "WBPCB ANMS Display",
+      "description": "This is a single page application which could display a customized content while updating some data with an interval.",
+      "technologies": ["React", "TypeScript", "Web", "Display", "Auto-refresh"],
+      "tools": ["VS Code", "Postman"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["React"],
+      "duration": "2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": [
+        {
+          "type": "website",
+          "url": "http://anms.wbpcb.wtlprojects.com/"
+        }
+      ]
+    },
+    {
+      "name": "Radio New Town",
+      "description": "This is an internet radio app that lets the user listen to the channel by Newtown.",
+      "technologies": ["iOS", "Swift", "Radio", "Audio Streaming"],
+      "tools": ["XCode"],
+      "languages": ["Swift"],
+      "libraries": ["Storyboard"],
+      "duration": "2021",
+      "responsibilities": "Added Stop and Play features to the app with button controls as well as background play and a widget in the notification bar.",
+      "links": []
+    },
+    {
+      "name": "React Clock Counter",
+      "description": "This library provides a hook to create a counter with custom DateTime and update the clock on the provided interval.",
+      "technologies": ["React", "TypeScript", "NPM", "Hook"],
+      "tools": ["VS Code", "NPM"],
+      "languages": ["TypeScript", "JSX"],
+      "libraries": [],
+      "duration": "2021",
+      "responsibilities": "Developed this library from scratch using the Create React library module.",
+      "links": [
+        {
+          "type": "npm",
+          "url": "https://www.npmjs.com/package/react-clock-counter"
+        }
+      ]
+    },
+    {
+      "name": "React Native Dropdown Step",
+      "description": "An easy-to-use dropdown step component for React Native.",
+      "technologies": ["React Native", "TypeScript", "NPM", "Component"],
+      "tools": ["VS Code", "NPM"],
+      "languages": ["TypeScript", "JSX"],
+      "libraries": ["React", "React-Native"],
+      "duration": "2021",
+      "responsibilities": "Developed this library from scratch using the Create React library module.",
+      "links": [
+        {
+          "type": "npm",
+          "url": "https://www.npmjs.com/package/react-native-dropdown-step"
+        }
+      ]
+    },
+    {
+      "name": "16 Ana Bangalee Client",
+      "description": "A food delivery application for a restaurant.",
+      "technologies": ["React Native", "TypeScript", "Android", "Food Delivery"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios"],
+      "duration": "Aug 2020 - Dec 2020",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
+      "links": [
+        {
+          "type": "playstore",
+          "url": "https://play.google.com/store/apps/details?id=com.ba16_client"
+        }
+      ]
+    },
+    {
+      "name": "Bioflow: Biobanking Monitoring System",
+      "description": "BioFlow is a platform software for RoboCell (real robot).",
+      "technologies": ["React", "TypeScript", "Web", "Material UI"],
+      "tools": ["VS Code", "Visual Studio", "Figma"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["ReactJS", "React Context", "Material UI", "React Big Calendar"],
+      "duration": "Nov 2022 - Jan 2024",
+      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
+      "links": []
+    },
+    {
+      "name": "16 Ana Bangalee Vendor",
+      "description": "This application lets the admin track and manage orders, and edit, add, and delete food products.",
+      "technologies": ["React Native", "TypeScript", "Android", "Vendor App", "Food Management"],
+      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
+      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
+      "libraries": ["React", "React-Native", "Redux", "Axios"],
+      "duration": "Dec 2020 - Mar 2021",
+      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
+      "links": []
+    }
+  ],
+  "summary": {
+    "totalProjects": 32,
+    "technologies": {
+      "frameworks": ["React", "React Native", "NextJS"],
+      "languages": ["TypeScript", "JavaScript", "Java", "Swift", "HTML", "CSS"],
+      "platforms": ["Web", "Android", "iOS", "NPM"],
+      "specializations": ["Web3", "Blockchain", "NFC", "Location Services", "MQTT", "Docker"]
+    },
+    "projectTypes": [
+      "Mobile Applications",
+      "Web Dashboards",
+      "NPM Libraries", 
+      "Blockchain Applications",
+      "IoT Applications",
+      "Food Delivery Systems",
+      "Environmental Monitoring",
+      "Healthcare Applications"
+    ]
+  }
+}
