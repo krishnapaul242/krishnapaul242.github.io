@@ -11,16 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show/hide sticky header based on scroll
   function updateStickyHeader() {
-    const isAtTop = window.scrollY <= 50;
+    const scrollThreshold = 100; // Show header after scrolling 100px
+    const isScrolledDown = window.scrollY > scrollThreshold;
     
-    if (isAtTop !== !isScrolled) {
-      isScrolled = !isAtTop;
-      if (isAtTop) {
-        stickyHeader.classList.remove('scrolled');
-        stickyHeader.style.background = 'rgba(0, 0, 0, 0.7)';
-      } else {
+    if (isScrolledDown !== isScrolled) {
+      isScrolled = isScrolledDown;
+      if (isScrolledDown) {
         stickyHeader.classList.add('scrolled');
         stickyHeader.style.background = 'rgba(0, 0, 0, 0.95)';
+      } else {
+        stickyHeader.classList.remove('scrolled');
+        stickyHeader.style.background = 'rgba(0, 0, 0, 0.7)';
       }
     }
   }
