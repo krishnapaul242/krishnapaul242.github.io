@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "name": "Simplify Captcha",
+      "description": "Modern React CAPTCHA component with intelligent behavior analysis, gesture tracking, and advanced fallback verification. Provides real-time mouse, touch, keyboard, and scroll analysis to distinguish humans from bots. No CSS imports required.",
+      "technologies": ["React", "TypeScript", "JavaScript", "Web", "SVG", "Behavior Analysis"],
+      "tools": ["VS Code", "NPM"],
+      "languages": ["TypeScript", "JavaScript", "JSX"],
+      "libraries": ["React", "simplify-captcha"],
+      "duration": "2024 - Ongoing",
+      "responsibilities": "Developed a reusable CAPTCHA component with intelligent human verification, advanced gesture and behavior analysis, SVG-based rendering, and seamless integration for React apps.",
+      "links": [
+        { "type": "website", "url": "http://simplify-captcha.krishnapaul.in/" },
+        { "type": "github", "url": "https://github.com/krishnapaul242/simplify-captcha" },
+        { "type": "npm", "url": "https://www.npmjs.com/package/simplify-captcha" }
+      ]
+    },
+    {
       "name": "Amalgamate",
       "description": "React Native-based social media application with Votes, Shorts, Chat and Social.",
       "technologies": ["React Native", "TypeScript", "JavaScript", "Android", "iOS", "Camera"],
