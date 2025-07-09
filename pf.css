@@ -1212,7 +1212,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
 }
@@ -1224,7 +1224,7 @@ section {
 }
 
 .pf-project-link i {
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 /* Show More Projects Button */
