@@ -94,6 +94,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: master
           cname: krishnapaul.in
           enable_jekyll: false
 
@@ -128,10 +129,11 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: master
           destination_dir: pr-${{ github.event.number }}
           keep_files: true
           enable_jekyll: false
-          exclude_assets: '.github,CNAME'
+          exclude_assets: '.github'
           
       - name: Verify deployment
         run: |
@@ -199,5 +201,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./empty
+          publish_branch: master
           destination_dir: pr-${{ github.event.number }}
           keep_files: false
