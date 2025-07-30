@@ -94,7 +94,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: master
+          publish_branch: gh-pages
           cname: krishnapaul.in
           enable_jekyll: false
 
@@ -129,7 +129,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: master
+          publish_branch: gh-pages
           destination_dir: pr-${{ github.event.number }}
           keep_files: true
           enable_jekyll: false
@@ -201,6 +201,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./empty
-          publish_branch: master
+          publish_branch: gh-pages
           destination_dir: pr-${{ github.event.number }}
           keep_files: false
