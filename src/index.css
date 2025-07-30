@@ -152,7 +152,7 @@ i:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2em 1em;
+  margin: 2em 0;
   position: relative;
   width: 100%;
 }
@@ -600,7 +600,7 @@ section {
   }
 
   .pf-experience {
-    margin: 1em 0.5em;
+    margin: 1em 0;
   }
 
   .pf-projects {
@@ -910,7 +910,7 @@ section {
   }
 
   .pf-experience {
-    margin: 2em 1.5em;
+    margin: 2em 0;
   }
 
   .pf-projects {
@@ -942,7 +942,7 @@ section {
   }
 
   .pf-experience {
-    margin: 3em 2em;
+    margin: 3em 0;
   }
 
   .pf-projects {
@@ -1068,7 +1068,7 @@ section {
   }
 
   .pf-experience {
-    margin: 1.5em 0.5em;
+    margin: 1.5em 0;
   }
 
   .pf-timeline-details {
