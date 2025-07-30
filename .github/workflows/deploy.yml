@@ -49,7 +49,7 @@ jobs:
         run: npm run build
         env:
           NODE_ENV: production
-          # Set base path for PR previews
+          # Set base path for PR previews  
           VITE_BASE_PATH: ${{ github.event_name == 'pull_request' && format('/pr-{0}', github.event.number) || '/' }}
         
       - name: Copy 404.html for GitHub Pages SPA support
@@ -57,6 +57,10 @@ jobs:
         
       - name: Add .nojekyll file
         run: touch dist/.nojekyll
+        
+      - name: Remove CNAME for PR previews (to avoid custom domain conflicts)
+        if: github.event_name == 'pull_request'
+        run: rm -f dist/CNAME
         
       - name: List build output
         run: ls -la dist/
@@ -127,6 +131,7 @@ jobs:
           destination_dir: pr-${{ github.event.number }}
           keep_files: true
           enable_jekyll: false
+          exclude_assets: '.github,CNAME'
           
       - name: Verify deployment
         run: |
