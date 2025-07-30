@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import socialLinksData from '../data/social-links.json'
+import profilePic from '../assets/profilepic.webp'
 
 const Hero = () => {
   const [socialLinks, setSocialLinks] = useState([])
@@ -22,7 +23,7 @@ const Hero = () => {
         </span>
       </div>
       <div className="pf-social-pic">
-        <img src="/profilepic.webp" alt="Krishna Paul" />
+        <img src={profilePic} alt="Krishna Paul" />
       </div>
       <div className="pf-description">
         Experienced full stack developer specializing in React Native, Next.js, and modern

@@ -52,7 +52,7 @@
     {
       "id": "cv",
       "name": "CV/Resume",
-      "url": "KrishnaPaulCV.pdf",
+      "url": "/KrishnaPaulCV.pdf",
       "icon": "fas fa-file-pdf",
       "order": 8
     }
