@@ -5,37 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Krishna Paul - Full Stack Developer</title>
     
-    <!-- Redirect to handle SPA routing -->
+    <!-- Redirect to handle SPA routing for GitHub Pages -->
     <script>
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+      
+      // Get the current path and search params
+      var l = window.location;
+      var pathName = l.pathname;
+      var search = l.search;
+      var hash = l.hash;
+      
+      // Check if we're in a PR preview path
+      var prMatch = pathName.match(/^\/pr-(\d+)(\/.*)?$/);
+      
+      if (prMatch) {
+        // For PR previews, redirect to the PR's index.html with path as query
+        var prNumber = prMatch[1];
+        var subPath = prMatch[2] || '/';
+        
+        // Encode the path as a query parameter for the SPA to handle
+        var redirectUrl = '/pr-' + prNumber + '/?/' + subPath.slice(1);
+        if (search) {
+          redirectUrl += '&' + search.slice(1);
         }
-      }(window.location))
+        if (hash) {
+          redirectUrl += hash;
+        }
+        
+        window.location.replace(redirectUrl);
+      } else if (pathName !== '/') {
+        // For main site, redirect to root with path as query
+        var redirectUrl = '/?/' + pathName.slice(1);
+        if (search) {
+          redirectUrl += '&' + search.slice(1);
+        }
+        if (hash) {
+          redirectUrl += hash;
+        }
+        
+        window.location.replace(redirectUrl);
+      }
     </script>
   </head>
   <body>
-    <!-- GitHub Pages SPA redirect loading -->
-    <div id="loading">Redirecting...</div>
-    <script>
-      // Redirect to index.html with the path as a query parameter
-      var pathName = window.location.pathname;
-      var basePath = pathName.match(/^(\/pr-\d+)/);
-      if (basePath) {
-        // For PR previews, redirect to the PR's index.html
-        window.location.replace(basePath[1] + '/');
-      } else {
-        // For main site, redirect to root
-        window.location.replace('/');
-      }
-    </script>
+    <div style="color: white; background: black; padding: 20px; font-family: monospace; text-align: center;">
+      <h2>Redirecting...</h2>
+      <p>Loading Krishna Paul's Portfolio</p>
+    </div>
   </body>
 </html>
