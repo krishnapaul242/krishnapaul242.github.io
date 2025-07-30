@@ -1,13 +1,43 @@
 import React, { useState, useEffect } from 'react'
+import ContactModal from './ContactModal'
 
 const Header = ({ activeSection, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+  const [isHeaderVisible, setIsHeaderVisible] = useState(false)
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      const scrollThreshold = 100
-      setIsScrolled(window.scrollY > scrollThreshold)
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY
+          
+          // Header is hidden at top (0), visible when scrolled
+          if (scrollPosition === 0) {
+            setIsScrolled(false)
+            setIsHeaderVisible(false)
+          } else {
+            setIsScrolled(scrollPosition > 50)
+            setIsHeaderVisible(true)
+          }
+          
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    // Initial setup - header is hidden at page load if at top
+    const initialScrollPosition = window.scrollY
+    if (initialScrollPosition === 0) {
+      setIsScrolled(false)
+      setIsHeaderVisible(false)
+    } else {
+      setIsScrolled(initialScrollPosition > 50)
+      setIsHeaderVisible(true)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -25,6 +55,17 @@ const Header = ({ activeSection, onNavigate }) => {
     document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : ''
   }
 
+  const openContactModal = () => {
+    setIsContactModalOpen(true)
+    setIsMobileMenuOpen(false)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false)
+    document.body.style.overflow = ''
+  }
+
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },
@@ -34,9 +75,11 @@ const Header = ({ activeSection, onNavigate }) => {
 
   return (
     <header 
-      className={`pf-sticky-header ${isScrolled ? 'scrolled' : ''}`}
+      className={`pf-sticky-header ${isScrolled ? 'scrolled' : ''} ${!isHeaderVisible ? 'hidden' : ''}`}
       style={{
-        background: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'rgba(0, 0, 0, 0.7)'
+        background: isScrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.7)',
+        backdropFilter: 'blur(4px)',
+        WebkitBackdropFilter: 'blur(4px)'
       }}
     >
       <nav className="pf-nav">
@@ -56,6 +99,12 @@ const Header = ({ activeSection, onNavigate }) => {
               {item.label}
             </a>
           ))}
+          <button 
+            className="contact-trigger-btn"
+            onClick={openContactModal}
+          >
+            Contact Me
+          </button>
         </div>
         <div 
           className={`pf-nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
@@ -66,6 +115,11 @@ const Header = ({ activeSection, onNavigate }) => {
           <span></span>
         </div>
       </nav>
+      
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
     </header>
   )
 }
