@@ -1,4 +1,38 @@
 /* App-specific styles */
 .App {
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background video container */
+.background-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/* Background video styles */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.3; /* Adjust opacity to make content readable */
+  will-change: transform; /* Optimize for transform animations */
+  transform-origin: center center;
+  transform: translate(-50%, -50%); /* Center the video */
+}
+
+/* Content overlay to ensure content stays above video */
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
 }
