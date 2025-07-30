@@ -12,5 +12,8 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true
+  },
+  define: {
+    'process.env.VITE_BASE_PATH': JSON.stringify(process.env.VITE_BASE_PATH || '/')
   }
 })
