@@ -23,17 +23,11 @@ Note: PR previews are only available via the GitHub Pages URL, not the custom do
 
 To test how your app will work with a base path (like in PR previews):
 
-**Windows (Command Prompt):**
 ```bash
 npm run preview:pr
 ```
 
-**Unix/Linux/Mac:**
-```bash
-npm run preview:pr:unix
-```
-
-This will build and preview your app with a `/pr-test` base path.
+This will build and preview your app with a `/pr-test` base path using `cross-env` for cross-platform compatibility.
 
 ## Technical Details
 
