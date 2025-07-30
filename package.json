@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:build": "npm run build && npm run preview",
-    "preview:pr": "VITE_BASE_PATH=/pr-test npm run build && npm run preview"
+    "preview:pr": "cross-env VITE_BASE_PATH=/pr-test npm run build && npm run preview"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -19,6 +19,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "cross-env": "^10.0.0",
     "vite": "^4.1.0"
   }
 }
