@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:build": "npm run build && npm run preview"
+    "test:build": "npm run build && npm run preview",
+    "preview:pr": "VITE_BASE_PATH=/pr-test npm run build && npm run preview"
   },
   "dependencies": {
     "react": "^18.2.0",
