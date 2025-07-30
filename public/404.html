@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Paul - Full Stack Developer</title>
+    
+    <!-- Redirect to handle SPA routing -->
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+  </head>
+  <body>
+    <!-- GitHub Pages SPA redirect loading -->
+    <div id="loading">Redirecting...</div>
+    <script>
+      // Redirect to index.html with the path as a query parameter
+      var pathName = window.location.pathname;
+      var basePath = pathName.match(/^(\/pr-\d+)/);
+      if (basePath) {
+        // For PR previews, redirect to the PR's index.html
+        window.location.replace(basePath[1] + '/');
+      } else {
+        // For main site, redirect to root
+        window.location.replace('/');
+      }
+    </script>
+  </body>
+</html>

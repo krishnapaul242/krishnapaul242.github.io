@@ -85,6 +85,13 @@ jobs:
           name: dist-files
           path: ./dist
           
+      - name: Debug - List downloaded files
+        run: |
+          echo "Contents of ./dist:"
+          ls -la ./dist/
+          echo "Checking for index.html:"
+          test -f ./dist/index.html && echo "index.html exists" || echo "index.html missing"
+          
       - name: Deploy PR Preview
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -114,6 +121,8 @@ jobs:
             const commentBody = `🚀 Preview deployed! 
             
             **View your changes:** ${previewUrl}
+            
+            📝 **Note:** It may take 1-2 minutes for the preview to be available after deployment.
             
             This preview will be updated automatically when you push new commits to this PR.`;
             
