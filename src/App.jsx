@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { ThemeProvider } from './contexts/ThemeContext'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Services from './components/Services'
@@ -43,17 +44,19 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header 
-        activeSection={activeSection}
-        onNavigate={scrollToSection}
-      />
-      <Hero />
-      <Services />
-      <Experience />
-      <Projects />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Header 
+          activeSection={activeSection}
+          onNavigate={scrollToSection}
+        />
+        <Hero />
+        <Services />
+        <Experience />
+        <Projects />
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const Header = ({ activeSection, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,9 +36,6 @@ const Header = ({ activeSection, onNavigate }) => {
   return (
     <header 
       className={`pf-sticky-header ${isScrolled ? 'scrolled' : ''}`}
-      style={{
-        background: isScrolled ? 'rgba(0, 0, 0, 0.95)' : 'rgba(0, 0, 0, 0.7)'
-      }}
     >
       <nav className="pf-nav">
         <div className="pf-nav-brand">
@@ -56,6 +54,7 @@ const Header = ({ activeSection, onNavigate }) => {
               {item.label}
             </a>
           ))}
+          <ThemeToggle />
         </div>
         <div 
           className={`pf-nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
