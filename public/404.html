@@ -5,46 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Krishna Paul - Full Stack Developer</title>
     
-    <!-- Redirect to handle SPA routing for GitHub Pages -->
+    <!-- Simple redirect for SPA -->
     <script>
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      
-      // Get the current path and search params
+      // Simple redirect for single-page portfolio
+      // This portfolio uses hash-based navigation for sections
       var l = window.location;
       var pathName = l.pathname;
-      var search = l.search;
       var hash = l.hash;
       
       // Check if we're in a PR preview path
-      var prMatch = pathName.match(/^\/pr-(\d+)(\/.*)?$/);
+      var prMatch = pathName.match(/^\/pr-(\d+)/);
       
       if (prMatch) {
-        // For PR previews, redirect to the PR's index.html with path as query
+        // For PR previews, redirect to the PR's index.html and preserve any hash
         var prNumber = prMatch[1];
-        var subPath = prMatch[2] || '/';
-        
-        // Encode the path as a query parameter for the SPA to handle
-        var redirectUrl = '/pr-' + prNumber + '/?/' + subPath.slice(1);
-        if (search) {
-          redirectUrl += '&' + search.slice(1);
-        }
+        var redirectUrl = '/pr-' + prNumber + '/';
         if (hash) {
           redirectUrl += hash;
         }
-        
         window.location.replace(redirectUrl);
       } else if (pathName !== '/') {
-        // For main site, redirect to root with path as query
-        var redirectUrl = '/?/' + pathName.slice(1);
-        if (search) {
-          redirectUrl += '&' + search.slice(1);
-        }
+        // For main site, redirect to root and preserve any hash
+        var redirectUrl = '/';
         if (hash) {
           redirectUrl += hash;
         }
-        
         window.location.replace(redirectUrl);
       }
     </script>
