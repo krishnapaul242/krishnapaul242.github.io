@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "name": "Flowmina",
+      "description": "Flowmina is a lightweight workflow visualization and automation playground that showcases building, organizing, and executing interconnected tasks (flows) via an intuitive UI.",
+      "technologies": ["React", "TypeScript", "Web", "Workflow", "Visualization"],
+      "tools": ["VS Code", "NPM"],
+      "languages": ["TypeScript", "JavaScript", "JSX"],
+      "libraries": ["React", "React Context"],
+      "duration": "2025 - Ongoing",
+      "responsibilities": "Designed UI/UX, implemented modular flow nodes, state management, and interactive canvas for creating and inspecting workflows.",
+      "links": [
+        { "type": "website", "url": "https://flowmina.krishnapaul.in" }
+      ]
+    },
+    {
       "name": "Simplify Captcha",
       "description": "Modern React CAPTCHA component with intelligent behavior analysis, gesture tracking, and advanced fallback verification. Provides real-time mouse, touch, keyboard, and scroll analysis to distinguish humans from bots. No CSS imports required.",
       "technologies": ["React", "TypeScript", "JavaScript", "Web", "SVG", "Behavior Analysis"],
@@ -386,7 +399,7 @@
     }
   ],
   "summary": {
-    "totalProjects": 32,
+    "totalProjects": 33,
     "technologies": {
       "frameworks": ["React", "React Native", "NextJS"],
       "languages": ["TypeScript", "JavaScript", "Java", "Swift", "HTML", "CSS"],

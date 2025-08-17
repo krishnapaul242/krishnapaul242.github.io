@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Services from './components/Services'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import FlowminaSection from './components/FlowminaSection'
 import Footer from './components/Footer'
 import backgroundVideo from './assets/background.webm'
 import './App.css'
@@ -77,6 +78,7 @@ function App() {
         <Services />
         <Experience />
         <Projects />
+  <FlowminaSection />
         <Footer />
       </div>
     </div>

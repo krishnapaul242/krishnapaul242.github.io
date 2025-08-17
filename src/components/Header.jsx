@@ -29,7 +29,8 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Services' },
     { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' }
+    { id: 'projects', label: 'Projects' },
+    { id: 'flowmina', label: 'Flowmina' }
   ]
 
   return (
@@ -56,6 +57,7 @@ const Header = ({ activeSection, onNavigate }) => {
               {item.label}
             </a>
           ))}
+          {/* External links removed: Flowmina now an in-page section */}
         </div>
         <div 
           className={`pf-nav-toggle ${isMobileMenuOpen ? 'active' : ''}`}
