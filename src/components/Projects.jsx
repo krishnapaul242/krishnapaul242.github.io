@@ -26,6 +26,8 @@ const Projects = () => {
     'CSS': 'fab fa-css3-alt',
     'SVG': 'fas fa-code',
     'Behavior Analysis': 'fas fa-brain',
+  'AI': 'fas fa-brain',
+  'Chat': 'fas fa-comments',
     'Camera': 'fas fa-camera',
     'Expo': 'fas fa-mobile-alt',
     'Next.js': 'fab fa-react'

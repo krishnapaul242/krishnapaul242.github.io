@@ -14,6 +14,34 @@
       ]
     },
     {
+      "name": "Kahiye",
+      "description": "Kahiye is an experimental conversational AI playground focused on rapid iteration of chat UX, streaming responses, and pluggable tool/actions. It enables exploring memory strategies and structured function-style replies in a lightweight interface.",
+      "technologies": ["React", "TypeScript", "Web", "AI", "Chat"],
+      "tools": ["VS Code", "NPM"],
+      "languages": ["TypeScript", "JavaScript", "JSX"],
+      "libraries": ["React", "Streaming Fetch"],
+      "duration": "2025 - Ongoing",
+      "responsibilities": "Implemented streaming chat UI, prompt + memory management abstractions, and experimental tool invocation pipeline (design + initial hooks).",
+      "links": [
+        { "type": "website", "url": "https://kahiye.krishnapaul.in" }
+      ]
+    },
+    {
+      "name": "Utho CDK",
+      "description": "Unified TypeScript client + CLI + browser bundle for Utho Cloud's OpenAPI spec. Provides a programmatic API (Node.js & browser), an `utho` CLI for ad‑hoc calls & scripting, and a type-safe model layer generated from the bundled OpenAPI spec.",
+      "technologies": ["TypeScript", "Node.js", "Web", "OpenAPI", "CLI"],
+      "tools": ["VS Code", "NPM", "tsup", "MkDocs"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["openapi-typescript"],
+      "duration": "2025 - Ongoing",
+      "responsibilities": "Designed and implemented unified SDK architecture, OpenAPI spec ingestion & type generation pipeline, CLI command framework, multi-target bundling (ESM/CJS/IIFE), and documentation site (Material for MkDocs).",
+      "links": [
+        { "type": "website", "url": "https://krishnapaul.in/utho-cdk/" },
+        { "type": "github", "url": "https://github.com/krishnapaul242/utho-cdk" },
+        { "type": "npm", "url": "https://www.npmjs.com/package/utho-cdk" }
+      ]
+    },
+    {
       "name": "Simplify Captcha",
       "description": "Modern React CAPTCHA component with intelligent behavior analysis, gesture tracking, and advanced fallback verification. Provides real-time mouse, touch, keyboard, and scroll analysis to distinguish humans from bots. No CSS imports required.",
       "technologies": ["React", "TypeScript", "JavaScript", "Web", "SVG", "Behavior Analysis"],
@@ -399,7 +427,7 @@
     }
   ],
   "summary": {
-    "totalProjects": 33,
+  "totalProjects": 35,
     "technologies": {
       "frameworks": ["React", "React Native", "NextJS"],
       "languages": ["TypeScript", "JavaScript", "Java", "Swift", "HTML", "CSS"],

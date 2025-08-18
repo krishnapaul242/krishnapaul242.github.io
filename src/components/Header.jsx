@@ -30,7 +30,8 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: 'services', label: 'Services' },
     { id: 'experience', label: 'Experience' },
     { id: 'projects', label: 'Projects' },
-    { id: 'flowmina', label: 'Flowmina' }
+  { id: 'flowmina', label: 'Flowmina' },
+  { id: 'kahiye', label: 'Kahiye' }
   ]
 
   return (
