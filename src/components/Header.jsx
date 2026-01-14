@@ -31,7 +31,7 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: "services", label: "Services" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
-    { id: "blog", label: "Blog", link: "https://dev.to/krishnapaul" },
+    { id: "blogs", label: "Blogs", link: "https://dev.to/krishnapaul" },
     { id: "gati", label: "Gati" },
     { id: "flowmina", label: "Flowmina" },
     { id: "kahiye", label: "Kahiye" },
@@ -66,6 +66,7 @@ const Header = ({ activeSection, onNavigate }) => {
                 activeSection === item.id ? "active" : ""
               }`}
               onClick={(e) => {
+                if (item.link) return;
                 e.preventDefault();
                 handleNavClick(item.id);
               }}
