@@ -36,3 +36,66 @@
   z-index: 1;
   min-height: 100vh;
 }
+
+/* Contact form styles */
+.contact-section {
+  padding: 60px 20px;
+}
+.contact-card {
+  max-width: 760px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 28px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+.contact-card h2 {
+  margin: 0 0 12px 0;
+}
+.contact-form label {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+.contact-form label span {
+  width: 140px;
+  align-self: flex-start;
+  text-align: left;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  flex: 1;
+  padding: 8px 10px;
+  margin-top: 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.contact-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btn-primary {
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.contact-status {
+  font-size: 14px;
+}
+.contact-status.success {
+  color: #86efac;
+}
+.contact-status.error {
+  color: #fca5a5;
+}

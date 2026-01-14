@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import FlowminaSection from "./components/FlowminaSection";
 import KahiyeSection from "./components/KahiyeSection";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 import backgroundVideo from "./assets/background.webm";
 import GatiSection from "./components/GatiSection";
 import NpmCarousel from "./components/NpmCarousel";
@@ -83,6 +84,7 @@ function App() {
         <GatiSection />
         <FlowminaSection />
         <KahiyeSection />
+        <Contact />
         <Footer />
       </div>
     </div>

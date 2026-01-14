@@ -32,7 +32,8 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "blogs", label: "Blogs", link: "https://dev.to/krishnapaul" },
-    { id: "gati", label: "Gati" },
+    { id: "contact", label: "Contact" },
+    { id: "gati", label: "Gati", highlight: true },
     { id: "flowmina", label: "Flowmina" },
     { id: "kahiye", label: "Kahiye" },
   ];
@@ -64,7 +65,7 @@ const Header = ({ activeSection, onNavigate }) => {
               target={item.link ? "_blank" : "_self"}
               className={`pf-nav-link ${
                 activeSection === item.id ? "active" : ""
-              }`}
+              } ${item.highlight ? "highlight" : ""}`}
               onClick={(e) => {
                 if (item.link) return;
                 e.preventDefault();
