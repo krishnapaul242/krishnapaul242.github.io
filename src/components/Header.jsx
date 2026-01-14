@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Scorecard from "./Scorecard";
 
 const Header = ({ activeSection, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,7 @@ const Header = ({ activeSection, onNavigate }) => {
     { id: "services", label: "Services" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "blog", label: "Blog", link: "https://dev.to/krishnapaul" },
     { id: "gati", label: "Gati" },
     { id: "flowmina", label: "Flowmina" },
     { id: "kahiye", label: "Kahiye" },
@@ -58,7 +60,8 @@ const Header = ({ activeSection, onNavigate }) => {
           {navItems.map((item) => (
             <a
               key={item.id}
-              href={`#${item.id}`}
+              href={item.link ? item.link : `#${item.id}`}
+              target={item.link ? "_blank" : "_self"}
               className={`pf-nav-link ${
                 activeSection === item.id ? "active" : ""
               }`}
@@ -73,12 +76,28 @@ const Header = ({ activeSection, onNavigate }) => {
           {/* External links removed: Flowmina now an in-page section */}
         </div>
         <div
-          className={`pf-nav-toggle ${isMobileMenuOpen ? "active" : ""}`}
-          onClick={toggleMobileMenu}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            marginLeft: 12,
+          }}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <div style={{ color: "var(--pf-text, #fff)", fontSize: 12 }}>
+            <Scorecard
+              compact
+              githubUser="krishnapaul242"
+              npmMaintainer="krishna.paul"
+            />
+          </div>
+          <div
+            className={`pf-nav-toggle ${isMobileMenuOpen ? "active" : ""}`}
+            onClick={toggleMobileMenu}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </nav>
     </header>

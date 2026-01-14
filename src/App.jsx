@@ -8,8 +8,9 @@ import FlowminaSection from "./components/FlowminaSection";
 import KahiyeSection from "./components/KahiyeSection";
 import Footer from "./components/Footer";
 import backgroundVideo from "./assets/background.webm";
-import "./App.css";
 import GatiSection from "./components/GatiSection";
+import NpmCarousel from "./components/NpmCarousel";
+import "./App.css";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -75,6 +76,7 @@ function App() {
       <div className="content-overlay">
         <Header activeSection={activeSection} onNavigate={scrollToSection} />
         <Hero />
+        <NpmCarousel maintainer="krishna.paul" maxPackages={500} />
         <Services />
         <Experience />
         <Projects />
