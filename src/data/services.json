@@ -1,6 +1,26 @@
 {
   "services": [
     {
+      "id": "typescript-javascript",
+      "title": "TypeScript & JavaScript Development",
+      "description": "Robust and scalable applications using modern TypeScript and JavaScript frameworks and libraries.",
+      "examples": [
+        "🛠️ Web applications",
+        "⚙️ Automation scripts"
+      ],
+      "order": 1
+    },
+    {
+      "id": "solutions-architect",
+      "title": "Solutions Architect",
+      "description": "Designing and implementing scalable, secure, and maintainable software solutions tailored to business needs.",
+      "examples": [
+        "🧩 System architecture",
+        "🔐 Security design"
+      ],
+      "order": 2
+    },
+    {
       "id": "react-native-mobile",
       "title": "React Native & Mobile Development",
       "description": "Cross-platform mobile applications for Android and iOS with native performance and user experience.",
@@ -8,7 +28,7 @@
         "📱 Native mobile apps",
         "🔄 Cross-platform development"
       ],
-      "order": 1
+      "order": 3
     },
     {
       "id": "react-nextjs",
@@ -18,7 +38,7 @@
         "⚡ SSR & SSG",
         "🎯 Performance optimization"
       ],
-      "order": 2
+      "order": 4
     },
     {
       "id": "backend-development",
@@ -28,7 +48,7 @@
         "🔌 RESTful APIs",
         "🏗️ Microservices architecture"
       ],
-      "order": 3
+      "order": 5
     },
     {
       "id": "cloud-devops",
@@ -38,7 +58,7 @@
         "☁️ Cloud deployment",
         "🔄 CI/CD automation"
       ],
-      "order": 4
+      "order": 6
     },
     {
       "id": "open-source",
@@ -48,7 +68,7 @@
         "📦 NPM packages",
         "🤝 Community contributions"
       ],
-      "order": 5
+      "order": 7
     },
     {
       "id": "full-stack",
@@ -58,7 +78,7 @@
         "🎨 Frontend & Backend",
         "💾 Database design"
       ],
-      "order": 6
+      "order": 8
     }
   ]
 }

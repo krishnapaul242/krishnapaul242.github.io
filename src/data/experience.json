@@ -9,10 +9,10 @@
       "year": "2025-2026",
       "active": true,
       "responsibilities": [
-        "Built and maintained multiple dynamic pages for a social media platform, enhancing functionality and resolving three major production issues.",
-        "Led a cross-functional team of frontend and web developers to deliver a full-stack MERN application, successfully deployed on AWS.",
-        "Developed robust backend APIs and services using Node.js, TypeScript, and Express, ensuring scalability and performance.",
-        "Engineered a React Native mobile app with integrated NFC functionality and QR code scanning for seamless user interactions."
+        "Led end-to-end system design and architecture across 10+ web, mobile, and backend platforms, translating complex business requirements into scalable technical solutions.",
+        "Acted as a technical and client-facing lead for 15+ stakeholders, driving requirement discovery, specification creation, cross-team coordination, and delivery alignment.",
+        "Delivered hands-on engineering contributions across 6+ production applications, including backend development, mobile app migrations (iOS → Android), feature implementation, and resolution of 50+ bugs and stability issues.",
+        "Owned DevOps and deployment workflows for 20+ services, implementing containerization, CI/CD pipelines, ephemeral environments, and production-grade runbooks to support reliable and repeatable releases."
       ]
     },
     {

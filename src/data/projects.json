@@ -1,6 +1,37 @@
 {
   "projects": [
     {
+      "name": "Gati",
+      "description": "Gati is a TypeScript-first, contract-driven, cloud-native backend application framework designed to build enterprise-grade, modular, and zero-ops backend systems with strong abstractions, extensibility, and deployment flexibility.",
+      "technologies": [
+        "TypeScript",
+        "Node.js",
+        "Backend",
+        "Cloud Native",
+        "Microservices",
+        "Framework"
+      ],
+      "tools": ["VS Code", "NPM", "Docker", "Kubernetes"],
+      "languages": ["TypeScript", "JavaScript"],
+      "libraries": ["gatic", "@gati-framework/core", "@gati-framework/runtime", "@gati-framework/types", "Protobuf"],
+      "duration": "2024 - Ongoing",
+      "responsibilities": "Architected the core framework, designed the contract-based module system, implemented the runtime and operator abstractions, defined extensibility APIs for modules/plugins, and documented deployment strategies for cloud and self-hosted environments.",
+      "links": [
+        {
+          "type": "website",
+          "url": "https://krishnapaul.in/gati"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/krishnapaul242/gati"
+        },
+        {
+          "type": "npm",
+          "url": "https://www.npmjs.com/package/gatic"
+        }
+      ]
+    },
+    {
       "name": "Trunking Recorder",
       "description": "Trunking Recorder is a radio communication access and monitoring platform that allows authorized law enforcement officials to access live and recorded radio calls for response, auditing, tracking, and monitoring. The system is inspired by SDRTrunk concepts.",
       "technologies": ["Web", "Backend", "Radio Systems", "Monitoring"],
