@@ -1,5 +1,5 @@
 
-@page { size: A4; margin: 10mm 13mm 8mm; }
+@page { size: A4; margin: 9mm 13mm 7mm; }
 * { box-sizing: border-box; }
 body { font-family: Carlito, Calibri, Arial, sans-serif; font-size: 9.5pt; line-height: 1.3; color: #16191E; margin: 0; }
 h1 { font-size: 21pt; margin: 0; letter-spacing: -.01em; line-height: 1.1; }
@@ -18,3 +18,4 @@ li { margin: 1px 0; }
 .skills p { margin: 2px 0; }
 .proj li { margin: 2.5px 0; }
 .muted { color: #3F4752; }
+a.muted { text-decoration: none; }
