@@ -870,6 +870,10 @@ function resize(){
   K = Math.min(W/VW, H/VH); OY = H - VH*K;
 }
 addEventListener("resize", ()=>{ if (!story.hidden) resize(); });
+// The stage's height depends on the text panel beside or below it, which changes from chapter to
+// chapter and settles only after the story opens. Re-measure whenever the canvas's box changes, so
+// the drawing is never stretched or squashed to fit a stale size.
+if ("ResizeObserver" in window) new ResizeObserver(()=>{ if (!story.hidden) resize(); }).observe(canvas);
 function drawScene(i, offX, hide, now){
   ctx.save(); ctx.setTransform(dpr,0,0,dpr,0,0); ctx.beginPath(); ctx.rect(offX, 0, W, H); ctx.clip();
   OX = W/2 - (VW/2)*K + offX;
