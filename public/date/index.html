@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Will you go on a date with me?</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="I have a question for you 💕">
+<meta property="og:title" content="Will you go on a date with me? 🥺">
+<meta property="og:description" content="I have a question for you 💕 Tap to answer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://krishnapaul.in/date/">
+<meta name="theme-color" content="#ffc2d6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%96%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(160deg, #ffe1ec 0%, #ffc2d6 50%, #ffb0c8 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: #6b1d3a; user-select: none;
+  }
+  .card {
+    position: relative; z-index: 2;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    padding: 32px 24px 34px; border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(214, 51, 108, 0.25);
+    text-align: center; width: min(92vw, 420px);
+    animation: pop .45s cubic-bezier(.22,1.6,.4,1);
+  }
+  @keyframes pop { from { transform: scale(.85); opacity: 0; } }
+  .dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 14px; min-height: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #f3a5bf; opacity: .5; transition: all .3s; }
+  .dot.on { opacity: 1; background: #d6336c; width: 20px; border-radius: 4px; }
+  .emoji { font-size: 60px; display: block; animation: bob 2s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(-8px) rotate(-4deg); } }
+  h1 { font-family: 'Pacifico', cursive; font-weight: 400; font-size: clamp(24px, 7vw, 32px); line-height: 1.3; margin: 12px 0 8px; color: #d6336c; }
+  p.sub { font-size: 15px; opacity: .8; margin-bottom: 24px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; min-height: 56px; }
+  button {
+    font-family: inherit; font-weight: 700; font-size: 17px;
+    border: none; border-radius: 999px; padding: 13px 28px; cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease, background .2s;
+  }
+  .primary { background: #d6336c; color: #fff; box-shadow: 0 8px 20px rgba(214,51,108,.4); }
+  .primary:hover { transform: scale(1.06); }
+  .primary:active { transform: scale(.96); }
+  .ghost { background: #fff; color: #d6336c; border: 2px solid #f3a5bf; }
+  .ghost:active { transform: scale(.96); }
+  .dodgy { background: #fff; color: #d6336c; border: 2px solid #f3a5bf; touch-action: none; }
+  .dodgy.floating {
+    position: fixed; z-index: 10; margin: 0;
+    transition: left .38s cubic-bezier(.22,1.6,.4,1), top .38s cubic-bezier(.22,1.6,.4,1);
+  }
+  .dodgy.slip { animation: slip .45s ease-out; }
+  @keyframes slip {
+    0%   { transform: scale(1, 1) rotate(0); }
+    20%  { transform: scale(1.35, .7) rotate(var(--tilt)); }
+    45%  { transform: scale(.8, 1.2) rotate(calc(var(--tilt) * -0.6)); }
+    70%  { transform: scale(1.1, .9) rotate(calc(var(--tilt) * 0.3)); }
+    100% { transform: scale(1, 1) rotate(0); }
+  }
+  .taunt { margin-top: 16px; font-size: 14px; min-height: 20px; opacity: .75; }
+
+  /* Excitement slider */
+  .meter { font-size: 20px; font-weight: 700; color: #d6336c; margin-bottom: 14px; min-height: 64px; line-height: 1.25;
+    display: flex; align-items: center; justify-content: center; overflow-wrap: anywhere; transition: font-size .15s; }
+  input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 14px; border-radius: 99px;
+    background: linear-gradient(90deg, #ffc2d6, #d6336c); outline: none; margin-bottom: 8px; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 34px; height: 34px; border-radius: 50%;
+    background: #fff; border: 3px solid #d6336c; box-shadow: 0 4px 10px rgba(214,51,108,.4); cursor: pointer; }
+  input[type=range]::-moz-range-thumb { width: 30px; height: 30px; border-radius: 50%; background: #fff; border: 3px solid #d6336c; cursor: pointer; }
+  .scale { display: flex; justify-content: space-between; font-size: 12px; opacity: .7; margin-bottom: 22px; }
+
+
+
+  /* Form + food grid */
+  .field { text-align: left; margin-bottom: 16px; }
+  .field label { display: block; font-size: 14px; font-weight: 700; margin: 0 0 6px 4px; }
+  .field input, .field select {
+    width: 100%; font-family: inherit; font-size: 16px; font-weight: 600; color: #6b1d3a;
+    padding: 12px 14px; border: 2px solid #f3a5bf; border-radius: 14px; background: #fff; outline: none;
+    -webkit-appearance: none; appearance: none; min-height: 48px;
+  }
+  .field input:focus, .field select:focus { border-color: #d6336c; }
+  .wide { width: 100%; margin-top: 6px; }
+  .todayIcon { display: block; margin: 0 auto; animation: bob 2s ease-in-out infinite; }
+  .todayIcon text { font-family: 'Quicksand', sans-serif; }
+  .dateWrap { position: relative; }
+  .dateWrap .ph { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); pointer-events: none;
+    font-size: 16px; font-weight: 600; color: #c48aa0; }
+  .dateWrap input.empty { color: transparent; }
+  .dateWrap input.empty::-webkit-datetime-edit { color: transparent; }
+  .primary:disabled { opacity: .45; box-shadow: none; transform: none; cursor: default; }
+  .foods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 6px; }
+  .food { background: #fff; border: 2px solid #fde0ea; border-radius: 16px; padding: 14px 4px 10px;
+    font-size: 14px; font-weight: 700; color: #6b1d3a; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .food span { font-size: 32px; line-height: 1; }
+  .food.picked { border-color: #d6336c; background: #ffe8f0; transform: scale(1.05); }
+  #scene { position: fixed; inset: 0; z-index: 3; overflow: hidden; }
+  #scene svg { width: 100%; height: 100%; display: block; overflow: visible; }
+  #scene text { font-family: 'Quicksand', sans-serif; }
+  #scene .mh { fill: #fff; font-size: 13px; font-weight: 700; text-anchor: middle; }
+  #scene .wk { fill: #c48aa0; font-size: 10px; font-weight: 700; text-anchor: middle; }
+  #scene .dn { fill: #6b1d3a; font-size: 11px; font-weight: 600; text-anchor: middle; }
+  #scene .dn.sel { fill: #e0245e; font-weight: 700; font-size: 12px; }
+  #scene .ampm { fill: #c48aa0; font-size: 11px; font-weight: 700; text-anchor: middle; letter-spacing: 1px; }
+  #scene .tm { fill: #fff; font-size: 16px; font-weight: 700; text-anchor: middle; letter-spacing: 1px; }
+  #scene .chead { fill: #fff; font-size: 12px; font-weight: 700; text-anchor: middle; letter-spacing: 3px; }
+  #scene .cmon { fill: #c48aa0; font-size: 11px; font-weight: 700; text-anchor: middle; letter-spacing: 2px; }
+  #scene .cnum { fill: #6b1d3a; font-size: 78px; font-weight: 700; text-anchor: middle; }
+  #scene .cwd { fill: #d6336c; font-size: 13px; font-weight: 700; text-anchor: middle; letter-spacing: 3px; }
+  #cap { font-family: 'Pacifico', cursive !important; font-size: 30px; fill: #fff; stroke: #d6336c; stroke-width: 5px;
+    paint-order: stroke; stroke-linejoin: round; transition: opacity 1s; }
+  #cap.show { opacity: 1; }
+  #replay { position: absolute; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%);
+    background: rgba(255,255,255,.9); color: #d6336c; font-size: 15px; padding: 10px 22px; opacity: 0; pointer-events: none;
+    transition: opacity .8s; box-shadow: 0 6px 16px rgba(0,0,0,.15); }
+  #replay.show { opacity: 1; pointer-events: auto; }
+  #sound { position: fixed; top: max(12px, env(safe-area-inset-top)); right: 12px; z-index: 30; width: 44px; height: 44px;
+    padding: 0; border-radius: 50%; background: rgba(255,255,255,.85); color: #d6336c; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(214,51,108,.25); }
+  #sound svg { display: block; }
+  .heart { position: fixed; bottom: -40px; z-index: 1; pointer-events: none; animation: rise linear forwards; }
+  @keyframes rise { to { transform: translateY(-115vh) rotate(var(--r)); opacity: 0; } }
+  .link { margin-top: 20px; background: transparent; color: #d6336c; font-size: 14px; padding: 8px 16px; text-decoration: underline; }
+  .shake { animation: shake .4s; }
+  @keyframes shake { 25% { transform: translateX(-6px) rotate(-3deg); } 75% { transform: translateX(6px) rotate(3deg); } }
+</style>
+</head>
+<body>
+
+<div class="card" id="card"></div>
+<button id="sound" aria-label="Mute music"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button>
+<script>
+  // ---------- Music: original music-box tune synthesized with Web Audio ----------
+  const Music = (() => {
+    let ctx, master, fxBus, muted = false, playing = false, timer, nextTime = 0, step = 0;
+    const N = n => 440 * Math.pow(2, (n - 69) / 12);
+    const M = { C4:60, D4:62, E4:64, F4:65, G4:67, A4:69, B4:71, C5:72, D5:74, E5:76, F5:77, G5:79, A5:81, B5:83, C6:84, D6:86, E6:88, C3:48, F3:53, G3:55, A3:57, E3:52, D3:50, B3:59 };
+    const BPM = 96, BEAT = 60 / BPM;
+    // melody: [note, beats]
+    const melody = [
+      ['E5',1],['G5',1],['C6',1.5],['B5',.5],  ['A5',2],['E5',1],['C5',1],
+      ['F5',1],['A5',1],['C6',1],['A5',1],     ['G5',3],[null,1],
+      ['E5',1],['G5',1],['C6',1],['E6',1],     ['D6',1.5],['C6',.5],['A5',2],
+      ['A5',1],['G5',1],['F5',1],['D5',1],     ['D5',1],['E5',1],['C5',2]
+    ];
+    const chords = [['C3','G3','C4','E4'],['A3','E4','A4','C5'],['F3','C4','F4','A4'],['G3','D4','G4','B4'],
+                    ['C3','G3','C4','E4'],['A3','E4','A4','C5'],['F3','C4','F4','A4'],['G3','D4','G4','B4']];
+    // flatten into an event list over 8 bars (32 beats)
+    const events = [];
+    let b = 0;
+    melody.forEach(([n, d]) => { if (n) events.push({ t: b, n: M[n], d, v: .32, kind: 'bell' }); b += d; });
+    chords.forEach((ch, bar) => {
+      const pat = [0, 1, 2, 3, 2, 1, 2, 3];
+      pat.forEach((ix, i) => events.push({ t: bar * 4 + i * .5, n: M[ch[ix]], d: .5, v: i === 0 ? .16 : .1, kind: 'soft' }));
+    });
+    events.sort((a, c) => a.t - c.t);
+    const LOOP = 32;
+
+    function init() {
+      if (ctx) return;
+      ctx = new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain(); master.gain.value = muted ? 0 : .55;
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 5200;
+      const delay = ctx.createDelay(); delay.delayTime.value = BEAT * .75;
+      const fb = ctx.createGain(); fb.gain.value = .22;
+      const wet = ctx.createGain(); wet.gain.value = .28;
+      lp.connect(master); lp.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(wet); wet.connect(master);
+      master.connect(ctx.destination);
+      Music.out = lp;
+      fxBus = ctx.createGain(); fxBus.gain.value = .9; fxBus.connect(master);
+    }
+
+    function tone(freq, t, dur, vol, kind) {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = kind === 'bell' ? 'sine' : 'triangle'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(vol, t + .008);
+      g.gain.exponentialRampToValueAtTime(.0008, t + (kind === 'bell' ? 1.6 : .7) * Math.max(.6, dur));
+      o.connect(g); g.connect(Music.out);
+      o.start(t); o.stop(t + 2);
+      if (kind === 'bell') { // shimmer partial for the music-box sound
+        const o2 = ctx.createOscillator(), g2 = ctx.createGain();
+        o2.type = 'sine'; o2.frequency.value = freq * 4.01;
+        g2.gain.setValueAtTime(vol * .18, t); g2.gain.exponentialRampToValueAtTime(.0005, t + .35);
+        o2.connect(g2); g2.connect(Music.out); o2.start(t); o2.stop(t + .5);
+      }
+    }
+
+    let loopStart = 0, idx = 0;
+    function schedule() {
+      const ahead = ctx.currentTime + .15;
+      while (true) {
+        const e = events[idx];
+        const when = loopStart + e.t * BEAT;
+        if (when > ahead) break;
+        tone(N(e.n), when, e.d * BEAT, e.v, e.kind);
+        idx++;
+        if (idx >= events.length) { idx = 0; loopStart += LOOP * BEAT; }
+      }
+    }
+
+    function start() {
+      init();
+      if (ctx.state === 'suspended') ctx.resume();
+      if (playing) return;
+      playing = true; idx = 0; loopStart = ctx.currentTime + .1;
+      timer = setInterval(schedule, 30);
+    }
+
+    function setMuted(m) {
+      muted = m;
+      if (master) master.gain.setTargetAtTime(m ? 0 : .55, ctx.currentTime, .05);
+    }
+
+    // ---- sound effects ----
+    function pop() {
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(600, t); o.frequency.exponentialRampToValueAtTime(1400, t + .12);
+      g.gain.setValueAtTime(.25, t); g.gain.exponentialRampToValueAtTime(.001, t + .18);
+      o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .2);
+    }
+    function horn() {
+      if (!ctx || muted) return;
+      [0, .28].forEach(off => {
+        const t = ctx.currentTime + off;
+        [392, 494].forEach(f => {
+          const o = ctx.createOscillator(), g = ctx.createGain(), lp = ctx.createBiquadFilter();
+          o.type = 'square'; o.frequency.value = f; lp.type = 'lowpass'; lp.frequency.value = 1400;
+          g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.07, t + .02);
+          g.gain.setValueAtTime(.07, t + .17); g.gain.linearRampToValueAtTime(0, t + .22);
+          o.connect(lp); lp.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .25);
+        });
+      });
+    }
+    function tap() {
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'triangle'; o.frequency.setValueAtTime(1300, t); o.frequency.exponentialRampToValueAtTime(650, t + .05);
+      g.gain.setValueAtTime(.22, t); g.gain.exponentialRampToValueAtTime(.001, t + .08);
+      o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .1);
+    }
+    function slip() { // cartoon "whoop" when the No button slides away
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(380, t); o.frequency.exponentialRampToValueAtTime(1500, t + .22);
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.16, t + .03); g.gain.exponentialRampToValueAtTime(.001, t + .28);
+      o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .3);
+    }
+    let lastTick = 0;
+    function tick() { // slider notches
+      if (!ctx || muted || ctx.currentTime - lastTick < .04) return;
+      lastTick = ctx.currentTime;
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = 2200;
+      g.gain.setValueAtTime(.1, t); g.gain.exponentialRampToValueAtTime(.001, t + .03);
+      o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .05);
+    }
+    let noiseBuf;
+    function noise() {
+      if (!noiseBuf) {
+        noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+        const d = noiseBuf.getChannelData(0);
+        for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+      }
+      const s = ctx.createBufferSource(); s.buffer = noiseBuf; return s;
+    }
+    function panTo(p) {
+      if (!ctx.createStereoPanner) return fxBus;
+      const sp = ctx.createStereoPanner(); sp.pan.value = Math.max(-1, Math.min(1, p || 0)); sp.connect(fxBus); return sp;
+    }
+    function env(g, t, peak, a, dcy) {
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(0.0001, t + a + dcy);
+    }
+
+    function flip() { // paper flick
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, s = noise(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+      f.type = 'bandpass'; f.frequency.setValueAtTime(2200, t); f.frequency.exponentialRampToValueAtTime(5200, t + .07); f.Q.value = .9;
+      env(g, t, .32, .005, .08);
+      s.connect(f); f.connect(g); g.connect(fxBus); s.start(t, Math.random()); s.stop(t + .12);
+    }
+    function thud() { // calendar lands
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(160, t); o.frequency.exponentialRampToValueAtTime(55, t + .2);
+      env(g, t, .55, .005, .25); o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .35);
+      const o2 = ctx.createOscillator(), g2 = ctx.createGain();
+      o2.type = 'sine'; o2.frequency.value = 1568; env(g2, t + .05, .12, .005, .5);
+      o2.connect(g2); g2.connect(fxBus); o2.start(t + .05); o2.stop(t + .7);
+    }
+    function scribble() { // marker squeak around the date
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, s = noise(), f = ctx.createBiquadFilter(), g = ctx.createGain(), lfo = ctx.createOscillator(), lg = ctx.createGain();
+      f.type = 'bandpass'; f.frequency.value = 2600; f.Q.value = 5;
+      lfo.frequency.value = 9; lg.gain.value = 900; lfo.connect(lg); lg.connect(f.frequency);
+      g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.18, t + .05); g.gain.setValueAtTime(.18, t + .6); g.gain.linearRampToValueAtTime(0, t + .8);
+      s.connect(f); f.connect(g); g.connect(fxBus); s.start(t); s.stop(t + .85); lfo.start(t); lfo.stop(t + .85);
+    }
+    function ring() { // alarm-clock bell trill
+      if (!ctx || muted) return;
+      const t0 = ctx.currentTime;
+      for (let i = 0; i < 30; i++) {
+        const t = t0 + i * .045, fade = i > 22 ? (30 - i) / 8 : 1;
+        [2380, 3330, 4710].forEach((f, k) => {
+          const o = ctx.createOscillator(), g = ctx.createGain();
+          o.type = 'sine'; o.frequency.value = f * (i % 2 ? 1 : 1.012);
+          env(g, t, (.07 / (k + 1)) * fade + .0002, .002, .09);
+          o.connect(g); g.connect(fxBus); o.start(t); o.stop(t + .12);
+        });
+      }
+    }
+    function launch(p) { // rising whistle + hiss
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, out = panTo(p);
+      const o = ctx.createOscillator(), g = ctx.createGain(), vib = ctx.createOscillator(), vg = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(700 + Math.random() * 200, t); o.frequency.exponentialRampToValueAtTime(2300 + Math.random() * 500, t + .72);
+      vib.frequency.value = 28; vg.gain.value = 25; vib.connect(vg); vg.connect(o.frequency);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(.045, t + .1); g.gain.setValueAtTime(.045, t + .55); g.gain.exponentialRampToValueAtTime(.0001, t + .74);
+      o.connect(g); g.connect(out); o.start(t); o.stop(t + .76); vib.start(t); vib.stop(t + .76);
+      const s = noise(), hp = ctx.createBiquadFilter(), hg = ctx.createGain();
+      hp.type = 'highpass'; hp.frequency.value = 3000; env(hg, t, .05, .02, .6);
+      s.connect(hp); hp.connect(hg); hg.connect(out); s.start(t, Math.random()); s.stop(t + .7);
+    }
+    function burst(p) { // deep thump + rolling boom + sparkling crackle
+      if (!ctx || muted) return;
+      const t = ctx.currentTime, out = panTo(p), size = .7 + Math.random() * .5;
+      const o = ctx.createOscillator(), og = ctx.createGain();
+      o.type = 'sine'; o.frequency.setValueAtTime(130, t); o.frequency.exponentialRampToValueAtTime(32, t + .4);
+      env(og, t, .7 * size, .004, .5); o.connect(og); og.connect(out); o.start(t); o.stop(t + .6);
+      const s = noise(), lp = ctx.createBiquadFilter(), g = ctx.createGain();
+      lp.type = 'lowpass'; lp.frequency.setValueAtTime(2200, t); lp.frequency.exponentialRampToValueAtTime(110, t + 1.8);
+      env(g, t, .6 * size, .006, 2.2); s.connect(lp); lp.connect(g); g.connect(out); s.start(t, Math.random() * .5); s.stop(t + 2.4);
+      const n = 26 + Math.floor(Math.random() * 18);
+      for (let i = 0; i < n; i++) {
+        const ct = t + .25 + Math.pow(Math.random(), 1.4) * 1.5;
+        const c = noise(), hp = ctx.createBiquadFilter(), cg = ctx.createGain();
+        hp.type = 'highpass'; hp.frequency.value = 3500 + Math.random() * 4000;
+        env(cg, ct, .04 + Math.random() * .1, .001, .02 + Math.random() * .03);
+        c.connect(hp); hp.connect(cg); cg.connect(out); c.start(ct, Math.random() * 1.5); c.stop(ct + .06);
+      }
+    }
+
+    return { start, setMuted, isMuted: () => muted, pop, tap, slip, tick, horn, flip, thud, scribble, ring, launch, burst, out: null };
+  })();
+</script>
+
+<script>
+  const card = document.getElementById('card');
+  const TOTAL = 6; // ask, excited, kiss, pinky, when, food
+  const taunts = [
+    "Nope, not an option 😌", "Too slow! 😜", "Slippery, isn't it? 🧼",
+    "That button is shy 🙈", "Nice try 😏", "You'll never catch it 🏃‍♂️",
+    "Just press the other one 💘", "It's greased up 😂"
+  ];
+  let count = 0;
+  const picks = {};
+
+  // ---------- Slippery button ----------
+  let moving = false, activeDodgy = null;
+
+  function pointerOf(e) {
+    if (e && e.touches && e.touches[0]) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    if (e && typeof e.clientX === 'number' && (e.clientX || e.clientY)) return { x: e.clientX, y: e.clientY };
+    return null;
+  }
+
+  function makeFloating(el) {
+    if (el.classList.contains('floating')) return;
+    const r = el.getBoundingClientRect();
+    el.style.transition = 'none';
+    document.body.appendChild(el); // escape the card so position:fixed uses the screen
+    el.classList.add('floating');
+    el.style.left = r.left + 'px';
+    el.style.top = r.top + 'px';
+    void el.offsetWidth;
+    el.style.transition = '';
+  }
+
+  function overlaps(x, y, w, h, avoid) {
+    if (!avoid) return false;
+    const r = avoid.getBoundingClientRect(), m = 16;
+    return x < r.right + m && x + w > r.left - m && y < r.bottom + m && y + h > r.top - m;
+  }
+
+  function dodge(el, avoid, tauntEl, e) {
+    if (e && e.cancelable) e.preventDefault();
+    if (moving) return;
+    moving = true;
+    makeFloating(el);
+    Music.slip();
+
+    const pad = 10, w = el.offsetWidth, h = el.offsetHeight;
+    const vw = document.documentElement.clientWidth, vh = document.documentElement.clientHeight;
+    const maxX = vw - w - pad, maxY = vh - h - pad;
+    const cx = parseFloat(el.style.left) + w / 2, cy = parseFloat(el.style.top) + h / 2;
+    const p = pointerOf(e);
+    const offCenter = p && Math.hypot(cx - p.x, cy - p.y) > 18;
+    const base = offCenter ? Math.atan2(cy - p.y, cx - p.x) : Math.random() * Math.PI * 2;
+
+    let best = null;
+    for (let i = 0; i < 60; i++) {
+      const spread = i < 25 ? 0.9 : Math.PI;
+      const ang = base + (Math.random() - 0.5) * spread * 2;
+      const dist = 130 + Math.random() * 140;
+      let x = cx + Math.cos(ang) * dist - w / 2;
+      let y = cy + Math.sin(ang) * dist - h / 2;
+      if (i < 50 && (x < pad || x > maxX || y < pad || y > maxY)) continue;
+      x = Math.min(Math.max(pad, x), maxX);
+      y = Math.min(Math.max(pad, y), maxY);
+      const moved = Math.hypot(x + w / 2 - cx, y + h / 2 - cy);
+      const fromPtr = p ? Math.hypot(x + w / 2 - p.x, y + h / 2 - p.y) : moved;
+      if (overlaps(x, y, w, h, avoid) || moved < 90 || fromPtr < 90) continue;
+      best = { x, y }; break;
+    }
+    if (!best) best = { x: cx < vw / 2 ? maxX : pad, y: pad + Math.random() * (maxY - pad) };
+
+    el.style.setProperty('--tilt', (best.x + w / 2 - cx >= 0 ? 14 : -14) + 'deg');
+    el.classList.remove('slip'); void el.offsetWidth; el.classList.add('slip');
+    el.style.left = best.x + 'px';
+    el.style.top = best.y + 'px';
+    if (tauntEl) tauntEl.textContent = taunts[count++ % taunts.length];
+    setTimeout(() => moving = false, 140);
+  }
+
+  function makeDodgy(el, avoid, tauntEl) {
+    const h = e => dodge(el, avoid, tauntEl, e);
+    ['pointerdown', 'touchstart', 'click', 'focus'].forEach(ev => el.addEventListener(ev, h, { passive: false }));
+    activeDodgy = { el, h, avoid, tauntEl };
+  }
+
+  // Desktop: it slides away as soon as the cursor gets close
+  document.addEventListener('pointermove', e => {
+    if (e.pointerType !== 'mouse' || !activeDodgy) return;
+    const r = activeDodgy.el.getBoundingClientRect(), near = 45;
+    if (e.clientX > r.left - near && e.clientX < r.right + near &&
+        e.clientY > r.top - near && e.clientY < r.bottom + near) activeDodgy.h(e);
+  });
+
+  function clearDodgy() {
+    if (activeDodgy) { activeDodgy.el.remove(); activeDodgy = null; }
+  }
+
+  // ---------- Hearts ----------
+  function hearts(n = 40) {
+    const icons = ['💖','💕','💗','💘','❤️','🌸'];
+    for (let i = 0; i < n; i++) {
+      setTimeout(() => {
+        const h = document.createElement('span');
+        h.className = 'heart';
+        h.textContent = icons[Math.floor(Math.random() * icons.length)];
+        h.style.left = Math.random() * 100 + 'vw';
+        h.style.fontSize = (18 + Math.random() * 26) + 'px';
+        h.style.setProperty('--r', (Math.random() * 120 - 60) + 'deg');
+        h.style.animationDuration = (3 + Math.random() * 3) + 's';
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 6500);
+      }, i * 90);
+    }
+  }
+
+  // ---------- Screens ----------
+  function dots(i) {
+    if (i == null) return '<div class="dots"></div>';
+    let s = '<div class="dots">';
+    for (let k = 0; k < TOTAL; k++) s += `<span class="dot ${k === i ? 'on' : ''}"></span>`;
+    return s + '</div>';
+  }
+
+  function show(html) {
+    clearDodgy();
+    card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
+    card.innerHTML = html;
+  }
+
+  const $ = s => card.querySelector(s);
+
+  // Reusable "two buttons, one is slippery" step
+  function slipperyStep(i, emoji, title, sub, yesLabel, noLabel, next) {
+    show(`${dots(i)}
+      <span class="emoji">${emoji}</span>
+      <h1>${title}</h1>
+      <p class="sub">${sub}</p>
+      <div class="buttons">
+        <button class="primary" id="y">${yesLabel}</button>
+        <button class="dodgy" id="n">${noLabel}</button>
+      </div>
+      <div class="taunt" id="t"></div>`);
+    makeDodgy($('#n'), $('#y'), $('#t'));
+    $('#y').onclick = () => { Music.pop(); hearts(12); next(); };
+  }
+
+  // Step 0: the big question
+  function stepAsk() {
+    count = 0;
+    slipperyStep(0, '🥺', 'Will you go on a date with me?',
+      "Think carefully… there's only one right answer 💕", 'Yes', 'No', stepShocked);
+  }
+
+  // Step 1: excitement slider that only goes from Very to EXTREMELY
+  function stepExcited() {
+    const levels = [
+      'Very excited 😊', 'Super excited 😄', 'Really really excited 🤩',
+      'Mega excited 🥳', 'Can’t sleep excited 😵‍💫', 'EXTREMELY 🤯💥'
+    ];
+    show(`${dots(1)}
+      <span class="emoji">🤭</span>
+      <h1>How excited are you?</h1>
+      <p class="sub">Be honest 👀</p>
+      <div class="meter" id="m">${levels[0]}</div>
+      <input type="range" id="r" min="0" max="${levels.length - 1}" step="1" value="0">
+      <div class="scale"><span>Very</span><span>EXTREMELY</span></div>
+      <div class="buttons"><button class="primary" id="go">That’s my answer</button></div>`);
+    const r = $('#r'), m = $('#m');
+    r.oninput = () => {
+      m.textContent = levels[r.value]; Music.tick();
+      m.style.fontSize = `min(${20 + r.value * 2.4}px, ${6 + r.value * 0.5}vw)`;
+    };
+    $('#go').onclick = () => { picks.excited = levels[r.value]; Music.pop(); hearts(12); stepKiss(); };
+  }
+
+  // Step 2: kiss — the No is slippery
+  function stepKiss() {
+    count = 0;
+    slipperyStep(2, '😘', 'Will I get a kiss?',
+      'Just one… maybe 🙈', 'Yes', 'No', stepPinky);
+  }
+
+  // Step 3: pinky promise — the No is slippery again
+  function stepPinky() {
+    count = 0;
+    slipperyStep(3, '🤙', 'Pinky promise you won’t cancel?',
+      'This is legally binding 📜', 'Pinky promise', 'No', stepWhen);
+  }
+
+  // After the first yes: fake shock
+  function stepShocked() {
+    show(`${dots(null)}
+      <span class="emoji">😭</span>
+      <h1>WAIT YOU ACTUALLY SAID YES??</h1>
+      <p class="sub">I was so ready for you to say no 😅</p>
+      <div class="buttons"><button class="primary" id="go">okay okay! →</button></div>`);
+    hearts(25);
+    $('#go').onclick = () => { Music.pop(); stepExcited(); };
+  }
+
+  // Step 4: when are you free?
+  function stepWhen() {
+    const d = new Date();
+    const today = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    const times = ['11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM'];
+    const mon = d.toLocaleDateString('en-IN', { month: 'short' }).toUpperCase();
+    const todayIcon = `<svg class="todayIcon" viewBox="0 0 64 64" width="64" height="64">
+        <rect x="4" y="8" width="56" height="52" rx="10" fill="#fff" stroke="#f3a5bf" stroke-width="2"/>
+        <path d="M4,18 a10,10 0 0 1 10,-10 h36 a10,10 0 0 1 10,10 v6 h-56z" fill="#d6336c"/>
+        <rect x="17" y="3" width="5" height="12" rx="2.5" fill="#6b1d3a"/><rect x="42" y="3" width="5" height="12" rx="2.5" fill="#6b1d3a"/>
+        <text x="32" y="21" text-anchor="middle" font-size="9" font-weight="700" fill="#fff" letter-spacing="1.5">${mon}</text>
+        <text x="32" y="52" text-anchor="middle" font-size="24" font-weight="700" fill="#6b1d3a">${d.getDate()}</text>
+      </svg>`;
+    show(`${dots(4)}
+      ${todayIcon}
+      <h1>So… when are you free?</h1>
+      <p class="sub">Clear your schedule 😌</p>
+      <div class="field"><label for="d">Pick a day</label>
+        <div class="dateWrap"><input type="date" id="d" min="${today}"><span class="ph" id="ph">Tap to choose a day</span></div></div>
+      <div class="field"><label for="tm">What time?</label>
+        <select id="tm"><option value="">Tap to choose a time</option>${times.map(t => `<option>${t}</option>`).join('')}</select></div>
+      <button class="primary wide" id="go" disabled>Set the date ♥</button>`);
+    const di = $('#d'), ti = $('#tm'), go = $('#go');
+    const check = () => { go.disabled = !(di.value && ti.value); $('#ph').style.display = di.value ? 'none' : ''; di.classList.toggle('empty', !di.value); };
+    check();
+    di.oninput = di.onchange = ti.onchange = check;
+    go.onclick = () => {
+      if (go.disabled) return;
+      const [y, m, dd] = di.value.split('-').map(Number);
+      picks.day = new Date(y, m - 1, dd).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+      picks.time = ti.value;
+      picks.y = y; picks.m = m; picks.d = dd;
+      const [hh, ap] = ti.value.split(' ');
+      picks.hour24 = (+hh % 12) + (ap === 'PM' ? 12 : 0);
+      Music.pop(); hearts(12); stepFood();
+    };
+  }
+
+  // Step 5: what are we feeling?
+  function stepFood() {
+    const foods = [['🍕','Pizza'],['🍛','Biryani'],['🥟','Momos'],['🍣','Sushi'],['🍔','Burgers'],['🍰','Desserts']];
+    show(`${dots(5)}
+      <h1>What are we feeling? 🍽️✨</h1>
+      <p class="sub">pick your vibe</p>
+      <div class="foods">${foods.map(([e, n]) => `<button class="food" data-f="${n} ${e}"><span>${e}</span>${n}</button>`).join('')}</div>
+      <div class="taunt" id="t"></div>`);
+    card.querySelectorAll('.food').forEach(b => b.onclick = () => {
+      b.classList.add('picked');
+      card.querySelectorAll('.food').forEach(x => x.disabled = true);
+      picks.food = b.dataset.f; Music.pop();
+      $('#t').textContent = 'Excellent choice 😋';
+      hearts(12);
+      setTimeout(stepDone, 900);
+    });
+  }
+
+  // ---------- Final: animated date scene ----------
+  function stepDone() {
+    clearDodgy();
+    card.style.display = 'none';
+    let wrap = document.getElementById('scene');
+    if (wrap) wrap.remove();
+    wrap = document.createElement('div');
+    wrap.id = 'scene';
+    document.body.appendChild(wrap);
+    runScene(wrap);
+  }
+
+  function runScene(wrap) {
+    const { y, m, d, hour24 } = picks;
+    const theme = hour24 >= 20 ? 'night' : hour24 >= 18 ? 'sunset' : hour24 >= 15 ? 'golden' : 'day';
+    const T = {
+      day:    { sky: ['#5fb4ff', '#cdeeff'], hill: '#8fd47f', grass: '#79c46a', road: '#5b5f6b', win: '#cfeeff', star: 0 },
+      golden: { sky: ['#ff9f5a', '#ffe2a8'], hill: '#9ccf6a', grass: '#82b85a', road: '#5b5866', win: '#ffe6a6', star: 0 },
+      sunset: { sky: ['#3d2a73', '#ff7a6b', '#ffc27a'], hill: '#6e8f5a', grass: '#5f8a4e', road: '#45424f', win: '#ffd36b', star: .5 },
+      night:  { sky: ['#070b2a', '#1d2266', '#3a3f8f'], hill: '#24402f', grass: '#2c5236', road: '#2a2a36', win: '#ffd36b', star: 1 }
+    }[theme];
+
+    // ----- Tear-off calendar: pages fly off until it lands on her date -----
+    const targetDate = new Date(y, m - 1, d);
+    const today0 = new Date(); today0.setHours(0, 0, 0, 0);
+    const diffDays = Math.round((targetDate - today0) / 864e5);
+    const nFlips = Math.max(7, Math.min(diffDays, 16));
+    const pages = [];
+    for (let i = nFlips; i >= 0; i--) pages.push(new Date(y, m - 1, d - i));
+    const WD = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+    const MON = dt => dt.toLocaleDateString('en-IN', { month: 'long' }).toUpperCase() + ' ' + dt.getFullYear();
+    const flipAt = []; let ftime = 700;
+    for (let i = 0; i < nFlips; i++) { const r = i / (nFlips - 1); ftime += 60 + Math.pow(r, 3) * 420; flipAt.push(ftime); }
+    const FLIP = 360;
+    const calLand = flipAt[flipAt.length - 1] + FLIP;
+    const calX = 104, calY = 40;
+    const pageSVG = id => `
+      <g id="${id}">
+        <path d="M-80,38 H80 V184 a14,14 0 0 1 -14,14 H-66 a14,14 0 0 1 -14,-14 Z" fill="#fff"/>
+        <line x1="-76" y1="42" x2="76" y2="42" stroke="#f3a5bf" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text class="cmon" x="0" y="64"></text>
+        <text class="cnum" x="0" y="146"></text>
+        <text class="cwd" x="0" y="184"></text>
+      </g>`;
+    let circ = '';
+    for (let a = -0.6; a <= Math.PI * 2 + 0.7; a += 0.12) {
+      const r = 1 + 0.07 * Math.sin(a * 2.3);
+      circ += (circ ? 'L' : 'M') + (Math.cos(a) * 52 * r).toFixed(1) + ',' + (121 + Math.sin(a) * 38 * r).toFixed(1);
+    }
+
+    // ----- Alarm clock: hands whirl, overshoot, then it rings -----
+    const ccx = 300, ccy = 124, cr = 56;
+    const h12 = hour24 % 12;
+    const K = 12 + h12;                         // full minute-hand turns while whirling
+    const clockLand = 2900;
+    let marks = '';
+    for (let i = 0; i < 12; i++) {
+      const a = i * Math.PI / 6, px = ccx + Math.sin(a) * (cr - 11), py = ccy - Math.cos(a) * (cr - 11);
+      marks += i % 3 === 0
+        ? `<path transform="translate(${px} ${py}) scale(.75)" d="M0,4 C-9,-3 -5,-10 0,-5 C5,-10 9,-3 0,4Z" fill="#ff3b6b"/>`
+        : `<circle cx="${px}" cy="${py}" r="2" fill="#f3a5bf"/>`;
+    }
+    const D = Math.max(calLand + 1100, clockLand + 1500) - 1800;   // story starts after both land
+
+    // ----- Sky decorations -----
+    let stars = '';
+    if (T.star) for (let i = 0; i < 70; i++) {
+      stars += `<circle cx="${(Math.random() * 1400 - 500).toFixed(0)}" cy="${(Math.random() * 760 - 300).toFixed(0)}" r="${(Math.random() * 1.4 + .4).toFixed(1)}" fill="#fff" opacity="${(Math.random() * T.star).toFixed(2)}"><animate attributeName="opacity" values="${T.star};.15;${T.star}" dur="${(2 + Math.random() * 3).toFixed(1)}s" repeatCount="indefinite" begin="${(Math.random() * 3).toFixed(1)}s"/></circle>`;
+    }
+    const sunMoon = {
+      day: `<circle cx="64" cy="372" r="24" fill="#ffe066"/><circle cx="64" cy="372" r="38" fill="#ffe066" opacity=".25"/>`,
+      golden: `<circle cx="338" cy="410" r="28" fill="#ffd166"/><circle cx="338" cy="410" r="46" fill="#ffd166" opacity=".3"/>`,
+      sunset: `<circle cx="330" cy="470" r="40" fill="#ff8c5a"/><circle cx="330" cy="470" r="62" fill="#ffb37a" opacity=".35"/>`,
+      night: `<circle cx="60" cy="372" r="20" fill="#fff6d5"/><circle cx="69" cy="366" r="18" fill="#2a2f7c"/>`
+    }[theme];
+    const clouds = (theme === 'day' || theme === 'golden') ? `
+      <g fill="#fff" opacity=".85"><ellipse cx="250" cy="300" rx="34" ry="12"/><ellipse cx="268" cy="292" rx="22" ry="12"/>
+      <ellipse cx="-40" cy="350" rx="40" ry="13"/><ellipse cx="160" cy="380" rx="28" ry="9"/>
+      <animateTransform attributeName="transform" type="translate" values="0 0;30 0;0 0" dur="20s" repeatCount="indefinite"/></g>` : '';
+    const skyStops = T.sky.map((c, i) => `<stop offset="${i / (T.sky.length - 1)}" stop-color="${c}"/>`).join('');
+
+    wrap.innerHTML = `
+    <svg viewBox="0 0 400 700" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="-100" x2="0" y2="520" gradientUnits="userSpaceOnUse">${skyStops}</linearGradient>
+        <radialGradient id="glow"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect x="-3000" y="-3000" width="6400" height="3520" fill="url(#sky)"/>
+      ${stars}${sunMoon}${clouds}
+      <g id="fx"></g>
+      <text id="cap" x="200" y="300" text-anchor="middle" opacity="0">It’s a date! 💖</text>
+
+      <!-- hills & ground -->
+      <ellipse cx="40" cy="520" rx="220" ry="70" fill="${T.hill}"/>
+      <ellipse cx="380" cy="525" rx="240" ry="66" fill="${T.hill}"/>
+      <rect x="-3000" y="500" width="6400" height="70" fill="${T.grass}"/>
+
+      <!-- trees -->
+      <g><rect x="64" y="520" width="8" height="48" fill="#7a4e2d"/><circle cx="68" cy="512" r="22" fill="#3f9a4a"/><circle cx="56" cy="522" r="14" fill="#48a853"/><circle cx="80" cy="520" r="15" fill="#358a40"/></g>
+      <g><rect x="330" y="524" width="8" height="44" fill="#7a4e2d"/><circle cx="334" cy="514" r="20" fill="#3f9a4a"/><circle cx="346" cy="524" r="13" fill="#48a853"/></g>
+
+      <!-- house -->
+      <rect x="236" y="404" width="14" height="34" fill="#a0453a"/>
+      <polygon points="122,472 200,412 278,472" fill="#c0392b"/>
+      <polygon points="122,472 200,412 278,472" fill="none" stroke="#9c2b20" stroke-width="3" stroke-linejoin="round"/>
+      <rect x="135" y="470" width="130" height="98" fill="#ffe3d3"/>
+      <path d="M200,452 c-6,-8 -16,-1 0,9 c16,-10 6,-17 0,-9z" fill="#ff5c8a"/>
+      <rect x="148" y="488" width="28" height="26" rx="3" fill="${T.win}" stroke="#fff" stroke-width="3"/>
+      <rect x="224" y="488" width="28" height="26" rx="3" fill="${T.win}" stroke="#fff" stroke-width="3"/>
+      <line x1="162" y1="488" x2="162" y2="514" stroke="#fff" stroke-width="2"/><line x1="238" y1="488" x2="238" y2="514" stroke="#fff" stroke-width="2"/>
+      <rect x="186" y="526" width="28" height="42" fill="#3a1f14"/>
+      <rect id="door" x="186" y="526" width="28" height="42" fill="#8e4b2f"/>
+      <rect x="140" y="560" width="120" height="4" fill="#e6c4b2"/>
+      <!-- lamp -->
+      <rect x="22" y="520" width="4" height="56" fill="#444"/><circle cx="24" cy="518" r="6" fill="${theme === 'night' || theme === 'sunset' ? '#ffe9a8' : '#ddd'}"/>
+      ${theme === 'night' || theme === 'sunset' ? '<circle cx="24" cy="530" r="44" fill="url(#glow)"/>' : ''}
+
+      <!-- sidewalk & road -->
+      <rect x="-3000" y="568" width="6400" height="16" fill="#cfc8c4"/>
+      <rect x="-3000" y="584" width="6400" height="56" fill="${T.road}"/>
+      <line x1="-3000" y1="612" x2="3400" y2="612" stroke="#f5d76e" stroke-width="3" stroke-dasharray="18 14"/>
+      <rect x="-3000" y="640" width="6400" height="3000" fill="${T.grass}"/>
+
+      <!-- girl -->
+      <g id="girl" opacity="0">
+        <g class="lg"><line x1="-3" y1="-12" x2="-3" y2="0" stroke="#f2c29b" stroke-width="4" stroke-linecap="round"/></g>
+        <g class="rg"><line x1="3" y1="-12" x2="3" y2="0" stroke="#f2c29b" stroke-width="4" stroke-linecap="round"/></g>
+        <ellipse cx="0" cy="-37" rx="9" ry="12" fill="#5a3420"/>
+        <line x1="-5" y1="-28" x2="-10" y2="-19" stroke="#f2c29b" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="5" y1="-28" x2="11" y2="-19" stroke="#f2c29b" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M-11,-11 L11,-11 L5,-32 L-5,-32 Z" fill="#ff5c8a"/>
+        <circle cx="0" cy="-40" r="7" fill="#f6cfa8"/>
+        <path d="M-7,-41 Q0,-50 7,-41 Q4,-45 0,-44 Q-4,-45 -7,-41Z" fill="#5a3420"/>
+        <circle cx="5" cy="-47" r="2.5" fill="#ff5c8a"/>
+      </g>
+
+      <!-- man -->
+      <g id="man" opacity="0">
+        <g class="lg"><line x1="-4" y1="-16" x2="-4" y2="0" stroke="#2b3a67" stroke-width="5" stroke-linecap="round"/></g>
+        <g class="rg"><line x1="4" y1="-16" x2="4" y2="0" stroke="#2b3a67" stroke-width="5" stroke-linecap="round"/></g>
+        <line x1="-6" y1="-30" x2="-11" y2="-21" stroke="#e8b48a" stroke-width="4" stroke-linecap="round"/>
+        <rect x="-8" y="-34" width="16" height="20" rx="5" fill="#2f9aa5"/>
+        <circle cx="0" cy="-41" r="7" fill="#e8b48a"/>
+        <path d="M-7,-42 Q-6,-50 0,-49 Q7,-50 7,-42 Q3,-46 -7,-42Z" fill="#2a1a12"/>
+        <line x1="6" y1="-30" x2="12" y2="-22" stroke="#e8b48a" stroke-width="4" stroke-linecap="round"/>
+        <g id="flowers"><line x1="13" y1="-21" x2="16" y2="-33" stroke="#3a8a3f" stroke-width="2"/><line x1="13" y1="-21" x2="11" y2="-33" stroke="#3a8a3f" stroke-width="2"/>
+          <circle cx="16" cy="-35" r="4" fill="#ff3b6b"/><circle cx="10" cy="-35" r="4" fill="#ff8fb1"/><circle cx="13" cy="-39" r="4" fill="#ffd23f"/></g>
+      </g>
+
+      <line id="hands" x1="0" y1="0" x2="0" y2="0" stroke="#f2c29b" stroke-width="4" stroke-linecap="round" opacity="0"/>
+      <g id="hearts"></g>
+
+      <!-- car -->
+      <g id="car">
+        <ellipse cx="6" cy="0" rx="66" ry="4" fill="rgba(0,0,0,.25)"/>
+        ${theme === 'night' || theme === 'sunset' ? '<polygon points="70,-28 170,-48 170,-6" fill="#ffe9a8" opacity=".3"/>' : ''}
+        <path d="M-58,-12 L-58,-28 Q-58,-34 -51,-35 L-40,-36 L-27,-54 Q-24,-58 -18,-58 L9,-58 Q15,-58 19,-54 L31,-38 L62,-35 Q70,-34 70,-26 L70,-12 Z" fill="#e63950"/>
+        <polygon points="-34,-38 -23,-53 -5,-53 -5,-38" fill="#bfe6ff"/><polygon points="-1,-38 -1,-53 11,-53 24,-38" fill="#bfe6ff"/>
+        <line x1="-3" y1="-38" x2="-3" y2="-14" stroke="#b8243a" stroke-width="1.5"/>
+        <line x1="31" y1="-37" x2="31" y2="-14" stroke="#b8243a" stroke-width="1.2" opacity=".6"/>
+        <circle cx="66" cy="-28" r="3.5" fill="#ffe680"/><rect x="-59" y="-31" width="4" height="7" rx="1" fill="#8a0f22"/>
+        <path d="M-17,-27 c-3,-4 -8,0 0,5 c8,-5 3,-9 0,-5z" fill="#fff" opacity=".9"/>
+        <g id="w1" transform="translate(-36,-12)"><circle r="11" fill="#222"/><circle r="5" fill="#ccc"/><line class="sp" x1="-9" y1="0" x2="9" y2="0" stroke="#888" stroke-width="2"/></g>
+        <g id="w2" transform="translate(46,-12)"><circle r="11" fill="#222"/><circle r="5" fill="#ccc"/><line class="sp" x1="-9" y1="0" x2="9" y2="0" stroke="#888" stroke-width="2"/></g>
+        <g id="speed" opacity="0" stroke="#fff" stroke-width="3" stroke-linecap="round"><line x1="-72" y1="-40" x2="-112" y2="-40"/><line x1="-68" y1="-26" x2="-122" y2="-26"/><line x1="-72" y1="-12" x2="-102" y2="-12"/></g>
+      </g>
+
+      <defs>
+        <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#3a0a20" flood-opacity=".35"/></filter>
+        <filter id="shSoft" x="-20%" y="-40%" width="140%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity=".22"/></filter>
+        <linearGradient id="rimG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff6f9c"/><stop offset="1" stop-color="#b8174f"/></linearGradient>
+        <radialGradient id="faceG" cx=".4" cy=".35"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#ffe3ee"/></radialGradient>
+        <radialGradient id="pinkGlow"><stop offset="0" stop-color="#ff7aa8" stop-opacity=".55"/><stop offset="1" stop-color="#ff7aa8" stop-opacity="0"/></radialGradient>
+      </defs>
+
+      <!-- tear-off calendar -->
+      <g id="calWrap" opacity="0">
+        <circle id="calGlow" cx="${calX}" cy="${calY + 110}" r="120" fill="url(#pinkGlow)" opacity="0"/>
+        <g id="cal" transform="translate(${calX} ${calY})">
+          <g filter="url(#sh)">
+            <path d="M-80,38 H80 V184 a14,14 0 0 1 -14,14 H-66 a14,14 0 0 1 -14,-14 Z" fill="#fff"/>
+          </g>
+          ${pageSVG('pgUnder')}
+          <path d="M-80,14 a14,14 0 0 1 14,-14 H66 a14,14 0 0 1 14,14 V38 H-80 Z" fill="#d6336c"/>
+          <text class="chead" x="0" y="25">SAVE THE DATE</text>
+          <rect x="-52" y="-10" width="9" height="22" rx="4.5" fill="#4a4a5c"/><rect x="43" y="-10" width="9" height="22" rx="4.5" fill="#4a4a5c"/>
+          <path id="circ" d="${circ}" fill="none" stroke="#e0245e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+          <path id="calHeart" d="M0,4 C-9,-3 -5,-10 0,-5 C5,-10 9,-3 0,4Z" fill="#e0245e" opacity="0"/>
+          ${pageSVG('pgFly')}
+        </g>
+      </g>
+
+      <!-- alarm clock -->
+      <g id="clkWrap" opacity="0">
+        <circle id="clkGlow" cx="${ccx}" cy="${ccy}" r="110" fill="url(#pinkGlow)" opacity="0"/>
+        <g id="clk">
+          <g filter="url(#sh)">
+            <line x1="${ccx - 34}" y1="${ccy + 48}" x2="${ccx - 46}" y2="${ccy + 70}" stroke="#6b1d3a" stroke-width="7" stroke-linecap="round"/>
+            <line x1="${ccx + 34}" y1="${ccy + 48}" x2="${ccx + 46}" y2="${ccy + 70}" stroke="#6b1d3a" stroke-width="7" stroke-linecap="round"/>
+            <path d="M${ccx - 22},${ccy - 60} Q${ccx},${ccy - 82} ${ccx + 22},${ccy - 60}" fill="none" stroke="#6b1d3a" stroke-width="5" stroke-linecap="round"/>
+            <g id="bellL" transform="rotate(-38 ${ccx} ${ccy})"><path d="M${ccx - 22},${ccy - 58} A22,22 0 0 1 ${ccx + 22},${ccy - 58} Z" fill="#ffb3cb" stroke="#b8174f" stroke-width="3"/></g>
+            <g id="bellR" transform="rotate(38 ${ccx} ${ccy})"><path d="M${ccx - 22},${ccy - 58} A22,22 0 0 1 ${ccx + 22},${ccy - 58} Z" fill="#ffb3cb" stroke="#b8174f" stroke-width="3"/></g>
+            <g id="hammer"><line x1="${ccx}" y1="${ccy - 60}" x2="${ccx}" y2="${ccy - 74}" stroke="#6b1d3a" stroke-width="3"/><circle cx="${ccx}" cy="${ccy - 76}" r="4" fill="#6b1d3a"/></g>
+            <circle cx="${ccx}" cy="${ccy}" r="${cr + 8}" fill="url(#rimG)"/>
+          </g>
+          <circle cx="${ccx}" cy="${ccy}" r="${cr}" fill="url(#faceG)"/>
+          ${marks}
+          <path id="hh" d="M${ccx - 4},${ccy + 6} L${ccx - 3},${ccy - 22} L${ccx},${ccy - 28} L${ccx + 3},${ccy - 22} L${ccx + 4},${ccy + 6} Z" fill="#6b1d3a"/>
+          <path id="mh" d="M${ccx - 2.5},${ccy + 8} L${ccx - 1.5},${ccy - 40} L${ccx},${ccy - 44} L${ccx + 1.5},${ccy - 40} L${ccx + 2.5},${ccy + 8} Z" fill="#d6336c"/>
+          <g id="sh2" opacity="0"><line x1="${ccx}" y1="${ccy + 10}" x2="${ccx}" y2="${ccy - 46}" stroke="#ff3b6b" stroke-width="1.3"/><circle cx="${ccx}" cy="${ccy + 10}" r="2.5" fill="#ff3b6b"/></g>
+          <circle cx="${ccx}" cy="${ccy}" r="5" fill="#6b1d3a"/><circle cx="${ccx}" cy="${ccy}" r="2" fill="#ffb3cb"/>
+          <g id="ringL" opacity="0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M${ccx - 62},${ccy - 74} q-8,10 0,20"/><path d="M${ccx - 72},${ccy - 80} q-12,16 0,32"/>
+            <path d="M${ccx + 62},${ccy - 74} q8,10 0,20"/><path d="M${ccx + 72},${ccy - 80} q12,16 0,32"/>
+          </g>
+        </g>
+        <g id="pill" transform="translate(${ccx} ${ccy + 96}) scale(0)">
+          <rect x="-50" y="-17" width="100" height="34" rx="17" fill="#6b1d3a" filter="url(#shSoft)"/>
+          <text class="tm" x="0" y="7">${picks.time.replace(' ', ':00 ')}</text>
+        </g>
+      </g>
+    </svg>
+    <button id="replay">↻ replay</button>`;
+
+    const q = s => wrap.querySelector(s);
+    const car = q('#car'), man = q('#man'), girl = q('#girl'), door = q('#door'), hands = q('#hands');
+    const fx = q('#fx'), hearts = q('#hearts'), cap = q('#cap'), replay = q('#replay');
+    const NS = 'http://www.w3.org/2000/svg';
+
+    // ----- timeline helpers -----
+    const ease = { lin: t => t, out: t => 1 - Math.pow(1 - t, 3), in: t => t * t * t, io: t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+      back: t => 1 + 2.4 * Math.pow(t - 1, 3) + 1.4 * Math.pow(t - 1, 2) };
+    function track(keys) {
+      return t => {
+        if (t <= keys[0][0]) return keys[0][1];
+        for (let i = 1; i < keys.length; i++) {
+          const [t1, v1, e] = keys[i], [t0, v0] = keys[i - 1];
+          if (t <= t1) return v0 + (v1 - v0) * (ease[e || 'io'])((t - t0) / (t1 - t0));
+        }
+        return keys[keys.length - 1][1];
+      };
+    }
+    const S = v => v + D;   // shift story times after the widgets finish
+    const tr = {
+      widgets: track([[0, 0], [500, 1]]),
+      circle:  track([[calLand + 150, 100], [calLand + 950, 0, 'out']]),
+      calHeart:track([[calLand + 900, 0], [calLand + 1150, 1, 'back']]),
+      calPunch:track([[calLand - 40, 1], [calLand + 90, 1.13, 'out'], [calLand + 380, 1, 'back']]),
+      minute:  track([[350, 0], [clockLand, 360 * K, 'back']]),
+      ring:    track([[clockLand, 0], [clockLand + 60, 1], [clockLand + 1300, 1], [clockLand + 1500, 0]]),
+      pill:    track([[clockLand + 200, 0], [clockLand + 650, 1, 'back']]),
+      carX:    track([[0, 1300], [S(1800), 1300], [S(4400), 100, 'out'], [S(9200), 100], [S(11000), -1100, 'in']]),
+      door:    track([[S(4600), 0], [S(4900), 1], [S(6000), 1], [S(6400), 0]]),
+      manOp:   track([[S(4800), 0], [S(5100), 1], [S(8600), 1], [S(9000), 0]]),
+      manX:    track([[S(5100), 160], [S(6300), 188], [S(7800), 188], [S(8800), 112]]),
+      manY:    track([[S(5100), 616], [S(6300), 582], [S(7800), 582], [S(8800), 612]]),
+      girlOp:  track([[S(4800), 0], [S(5100), 1], [S(8600), 1], [S(9000), 0]]),
+      girlX:   track([[S(5100), 200], [S(5800), 200], [S(6600), 212], [S(7800), 212], [S(8800), 130]]),
+      girlY:   track([[S(5100), 566], [S(5800), 582], [S(7800), 582], [S(8800), 610]]),
+      hand:    track([[S(6600), 0], [S(6800), 1], [S(8500), 1], [S(8700), 0]])
+    };
+
+    let start = performance.now(), last = {}, raf, nextFw = S(11200), heartsDone = false, capShown = false, honked = false, lastBoom = 0;
+    let flipped = -1, landed = false, rung = false, scribbled = false;
+    const pgUnder = q('#pgUnder'), pgFly = q('#pgFly'), pageCache = new Map();
+    function setPage(g, dt) {
+      if (pageCache.get(g) === +dt) return; pageCache.set(g, +dt);
+      g.querySelector('.cmon').textContent = MON(dt);
+      g.querySelector('.cnum').textContent = dt.getDate();
+      g.querySelector('.cwd').textContent = WD[dt.getDay()];
+    }
+    const parts = [];
+
+    function legs(el, walking, t) {
+      const a = walking ? Math.sin(t / 70) * 22 : 0;
+      el.querySelector('.lg').setAttribute('transform', `rotate(${a} 0 -14)`);
+      el.querySelector('.rg').setAttribute('transform', `rotate(${-a} 0 -14)`);
+    }
+
+    function popHeart() {
+      const h = document.createElementNS(NS, 'text');
+      h.textContent = '💖'; h.setAttribute('font-size', '16'); h.setAttribute('text-anchor', 'middle');
+      hearts.appendChild(h);
+      parts.push({ el: h, x: 200 + (Math.random() - .5) * 20, y: 540, vx: (Math.random() - .5) * .3, vy: -.9, g: 0, life: 1600, age: 0, text: true });
+    }
+
+    function firework() {
+      const x = 50 + Math.random() * 300, ty = 375 + Math.random() * 60;
+      const colors = ['#ff3b6b', '#ffd23f', '#7cf3ff', '#b28dff', '#ff8fb1', '#9dff8a', '#ffffff'];
+      const c = colors[Math.floor(Math.random() * colors.length)];
+      const rocket = document.createElementNS(NS, 'circle');
+      rocket.setAttribute('r', 2); rocket.setAttribute('fill', '#fff'); fx.appendChild(rocket);
+      const pan = (x - 200) / 200 * .8;
+      Music.launch(pan);
+      parts.push({ el: rocket, x, y: 520, vx: 0, vy: -(520 - ty) / 45, g: 0, life: 750, age: 0, onEnd: () => {
+        const nowB = performance.now(); if (nowB - lastBoom > 120) { lastBoom = nowB; Music.burst(pan); }
+        const n = 40;
+        for (let i = 0; i < n; i++) {
+          const a = i / n * Math.PI * 2, sp = 1.2 + Math.random() * 1.1;
+          const p = document.createElementNS(NS, 'circle');
+          p.setAttribute('r', 2.8); p.setAttribute('fill', i % 3 ? c : '#fff'); fx.appendChild(p);
+          parts.push({ el: p, x, y: ty, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, g: .035, drag: .97, life: 1300, age: 0, fade: true });
+        }
+      }});
+    }
+
+    function frame(now) {
+      const t = now - start;
+      const dt = Math.min(50, now - (last.now || now)); last.now = now;
+      const w = tr.widgets(t);
+      q('#calWrap').setAttribute('opacity', w); q('#clkWrap').setAttribute('opacity', w);
+
+      // calendar pages
+      let fi = flipAt.findIndex(f => t < f + FLIP);
+      if (fi === -1) { setPage(pgUnder, pages[pages.length - 1]); pgFly.setAttribute('opacity', 0); }
+      else if (t < flipAt[fi]) { setPage(pgUnder, pages[fi]); pgFly.setAttribute('opacity', 0); }
+      else {
+        const p = (t - flipAt[fi]) / FLIP;
+        setPage(pgFly, pages[fi]); setPage(pgUnder, pages[fi + 1]);
+        pgFly.setAttribute('opacity', 1 - p * p);
+        pgFly.setAttribute('transform', `rotate(${-p * 48} -80 38) translate(${p * 30} ${p * p * 280})`);
+        if (flipped !== fi) { flipped = fi; Music.flip(); }
+      }
+      const punch = tr.calPunch(t);
+      q('#cal').setAttribute('transform', `translate(${calX} ${calY}) translate(0 110) scale(${punch}) translate(0 -110)`);
+      if (t > calLand && !landed) { landed = true; Music.thud(); }
+      if (t > calLand + 150 && !scribbled) { scribbled = true; Music.scribble(); }
+      q('#circ').setAttribute('stroke-dashoffset', tr.circle(t));
+      const ch = tr.calHeart(t);
+      q('#calHeart').setAttribute('opacity', Math.min(1, ch));
+      q('#calHeart').setAttribute('transform', `translate(44 86) rotate(18) scale(${ch * 1.6})`);
+      q('#calGlow').setAttribute('opacity', t > calLand ? .6 + .4 * Math.sin(t / 300) : 0);
+
+      // clock
+      const mAng = tr.minute(t);
+      q('#mh').setAttribute('transform', `rotate(${mAng} ${ccx} ${ccy})`);
+      q('#hh').setAttribute('transform', `rotate(${mAng / 12} ${ccx} ${ccy})`);
+      if (t > clockLand) {
+        q('#sh2').setAttribute('opacity', 1);
+        q('#sh2').setAttribute('transform', `rotate(${(t - clockLand) * .36} ${ccx} ${ccy})`);
+      }
+      const rg = tr.ring(t);
+      const shake = rg * Math.sin(t / 16) * 7;
+      q('#clk').setAttribute('transform', `rotate(${shake} ${ccx} ${ccy + 70}) translate(0 ${-rg * Math.abs(Math.sin(t / 32)) * 4})`);
+      q('#hammer').setAttribute('transform', `rotate(${rg * Math.sin(t / 10) * 28} ${ccx} ${ccy - 60})`);
+      q('#ringL').setAttribute('opacity', rg * (Math.sin(t / 60) > 0 ? 1 : .35));
+      q('#clkGlow').setAttribute('opacity', t > clockLand ? .5 + .5 * Math.sin(t / 280) : 0);
+      if (t > clockLand && !rung) { rung = true; Music.ring(); }
+      q('#pill').setAttribute('transform', `translate(${ccx} ${ccy + 96}) scale(${Math.max(0, tr.pill(t))})`);
+
+      const cx = tr.carX(t), speed = Math.abs(cx - (last.cx ?? cx)) / (dt || 16);
+      car.setAttribute('transform', `translate(${cx} 634) scale(-1 1)`);
+      ['#w1', '#w2'].forEach(s => q(s + ' .sp').setAttribute('transform', `rotate(${cx * 3})`));
+      q('#speed').setAttribute('opacity', Math.min(1, Math.max(0, (speed - .4) * 1.2)) * (cx < 100 ? 1 : 0));
+      last.cx = cx;
+
+      door.setAttribute('transform', `translate(186 0) scale(${1 - tr.door(t) * .8} 1) translate(-186 0)`);
+
+      const mx = tr.manX(t), my = tr.manY(t), gx = tr.girlX(t), gy = tr.girlY(t);
+      man.setAttribute('opacity', tr.manOp(t)); girl.setAttribute('opacity', tr.girlOp(t));
+      man.setAttribute('transform', `translate(${mx} ${my}) scale(-1 1)`);
+      girl.setAttribute('transform', `translate(${gx} ${gy})`);
+      legs(man, Math.abs(mx - (last.mx ?? mx)) + Math.abs(my - (last.my ?? my)) > .05, t);
+      legs(girl, Math.abs(gx - (last.gx ?? gx)) + Math.abs(gy - (last.gy ?? gy)) > .05, t);
+      last.mx = mx; last.my = my; last.gx = gx; last.gy = gy;
+      hands.setAttribute('x1', gx - 10); hands.setAttribute('y1', gy - 19);
+      hands.setAttribute('x2', mx + 11); hands.setAttribute('y2', my - 21);
+      hands.setAttribute('opacity', tr.hand(t));
+
+      if (t > S(4300) && !honked) { honked = true; Music.horn(); }
+      if (t > S(6800) && !heartsDone) { heartsDone = true; for (let i = 0; i < 5; i++) setTimeout(popHeart, i * 220); }
+      if (t > nextFw) { firework(); if (Math.random() < .5) firework(); nextFw = t + (t < S(17000) ? 380 + Math.random() * 300 : 1100 + Math.random() * 900); }
+      if (t > S(11800) && !capShown) { capShown = true; cap.classList.add('show'); replay.classList.add('show'); }
+
+      for (let i = parts.length - 1; i >= 0; i--) {
+        const p = parts[i];
+        p.age += dt;
+        const k = dt / 16;
+        p.vy += p.g * k; if (p.drag) { p.vx *= Math.pow(p.drag, k); p.vy *= Math.pow(p.drag, k); }
+        p.x += p.vx * k; p.y += p.vy * k;
+        if (p.text) { p.el.setAttribute('x', p.x); p.el.setAttribute('y', p.y); p.el.setAttribute('opacity', 1 - p.age / p.life); }
+        else { p.el.setAttribute('cx', p.x); p.el.setAttribute('cy', p.y); if (p.fade) p.el.setAttribute('opacity', Math.max(0, 1 - p.age / p.life)); }
+        if (p.age >= p.life) { p.el.remove(); parts.splice(i, 1); if (p.onEnd) p.onEnd(); }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    raf = requestAnimationFrame(frame);
+
+    replay.onclick = () => {
+      cancelAnimationFrame(raf);
+      runScene(wrap);
+    };
+  }
+
+  // Music starts on the first tap anywhere (browsers block sound before a tap)
+  const soundBtn = document.getElementById('sound');
+  const ICON_ON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  const ICON_OFF = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="m16 9 6 6"/><path d="m22 9-6 6"/></svg>';
+  let started = false;
+  function kick() { if (started) return; started = true; try { Music.start(); } catch (e) {} }
+  ['pointerdown', 'touchend', 'click', 'keydown'].forEach(ev => document.addEventListener(ev, kick, { capture: true }));
+  document.addEventListener('pointerdown', e => {
+    const b = e.target.closest && e.target.closest('button');
+    if (b && !b.classList.contains('dodgy') && b.id !== 'sound' && !b.disabled) Music.tap();
+  });
+  soundBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!started) { kick(); return; }
+    Music.setMuted(!Music.isMuted());
+    soundBtn.innerHTML = Music.isMuted() ? ICON_OFF : ICON_ON;
+    soundBtn.setAttribute('aria-label', Music.isMuted() ? 'Unmute music' : 'Mute music');
+  });
+
+  stepAsk();
+</script>
+</body>
+</html>
