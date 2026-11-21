@@ -54,7 +54,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><i aria-hidden="true"></i>Krishna Paul</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#work">Work</a><a href="#help">Services</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a><a href="#help">Services</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <button class="btn primary" data-story="0"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path fill="currentColor" d="M10 8.2v7.6a.6.6 0 0 0 .9.5l6-3.8a.6.6 0 0 0 0-1l-6-3.8a.6.6 0 0 0-.9.5Z"/></svg>My story</button>
   </div>
@@ -75,11 +75,6 @@
     <figure class="portrait"><img src="/profilepic.webp" alt="Krishna Paul" width="240" height="240"><figcaption>Hi, I’m Krishna</figcaption></figure>
     </div>
 
-    <div class="line-card">
-      <div class="line-head"><b>My story, in <i id="chapCount" style="font-style:normal">23</i> chapters</b><span>Tap any chapter to start there</span></div>
-      <div class="chapters" id="heroChapters"></div>
-    </div>
-
     <dl class="facts">
       <div><dt>Now</dt><dd>Founding engineer at examday.ai, Gurugram</dd></div>
       <div><dt>Based in</dt><dd>India</dd></div>
@@ -96,12 +91,6 @@
       </div>
       <div class="grid" id="featured"></div>
 
-      <div class="all">
-        <div class="all-head"><h3 id="allTitle">Every project, by year</h3></div>
-        <div class="filters" id="filters" role="group" aria-label="Filter projects by kind"></div>
-        <div id="allList"></div>
-        <button class="btn ghost" id="moreBtn" style="margin-top:16px"></button>
-      </div>
     </div>
   </section>
 
@@ -152,15 +141,6 @@
         <p>Five teams since 2020, from a junior engineer to leading architecture and client delivery.</p>
       </div>
       <div class="jobs" id="jobs"></div>
-      <h3 class="edu-h">Education</h3>
-      <div class="edu">
-        <article><h3>MCA <span class="mark">7.59 CGPA</span></h3><p class="co">University of North Bengal, Siliguri, 2017 to 2020</p>
-          <ul><li>Robotics, and taking part in robotics competitions.</li><li>Built NBU PayBill for the university during an internship.</li><li>Built an ESP32-based temperature warning system for the High Performance Computing lab.</li><li>Helped research ML-based signal detection for elephants using geosensors and Arduino.</li><li>NSS volunteer.</li></ul></article>
-        <article><h3>BCA <span class="mark">83.33%</span></h3><p class="co">P.P.K. College, Ranchi University, 2014 to 2017</p>
-          <ul><li>Taught part time at a school alongside the degree.</li><li>Repairing phones and tinkering with electronics on the side.</li></ul></article>
-        <article><h3>Schooling</h3><p class="co">Saraswati Shishu Vidya Mandir, Bundu</p>
-          <ul><li>Class 12, Jharkhand Academic Council, 2014: <b>70.2%</b></li><li>Class 10, Jharkhand Academic Council, 2012: <b>73.2%</b></li><li>The school beside Bundu’s Sun Temple, where the tinkering started and where I first wrote HTML, CSS, PHP and Visual Basic.</li></ul></article>
-      </div>
     </div>
   </section>
 
@@ -171,12 +151,34 @@
         <p>What I reach for, grouped by the kind of work.</p>
       </div>
       <div class="skills" id="skillGroups"></div>
-      <div class="inds" id="inds" aria-label="Projects by industry"></div>
-      <div class="gh">
-        <div class="gh-head"><h3>On GitHub</h3><p><b>1,765</b> commits across <b>79</b> repositories since 2017</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="github" aria-labelledby="ghTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="ghTitle">On GitHub</h2>
+      </div>
+      <div class="gh" style="margin-top:0">
+        <div class="gh-head"><h3 class="sr">Commits per year</h3><p><b>1,765</b> commits across <b>79</b> repositories since 2017</p></div>
         <div class="gh-chart" id="ghChart" role="img" aria-label="Commits per year"></div>
         <p class="gh-note">Commits in my own and personal-organisation repositories, counted from their history. Work inside employers’ private repositories isn’t included, which is why 2022 to 2024 look quiet.</p>
         <table class="sr"><caption>Commits per year</caption><tbody id="ghTable"></tbody></table>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects" aria-labelledby="allTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="allTitle">Every project, by year</h2>
+        <p>Everything I’ve shipped since 2020. Filter by kind, or open Details for my part, the tech and links.</p>
+      </div>
+      <div class="inds" style="margin:0 0 20px" id="inds" aria-label="Projects by industry"></div>
+      <div class="all" style="margin-top:0;border-top:0;padding-top:0">
+        <div class="filters" id="filters" role="group" aria-label="Filter projects by kind"></div>
+        <div id="allList"></div>
+        <button class="btn ghost" id="moreBtn" style="margin-top:16px"></button>
       </div>
     </div>
   </section>
@@ -188,6 +190,35 @@
         <p>I’m Krishna, a developer based in India. I grew up wanting to be an innovator, and the first computer I saw decided what I would build with. I studied BCA at P.P.K. College and MCA at the University of North Bengal, where I got into robotics, research and building tools for the university.</p>
         <p>Since 2020 I’ve shipped something every year. Most of my work sits where mobile, web and backend meet. I’ve taken apps from zero to launch, designed systems for client platforms, run DevOps for 20+ services, and added AI features to healthcare and consumer products. I’ve been experimenting with AI tools since 2020, and today Claude Code, GitHub Copilot and Codex are part of how I build every day.</p>
         <p>Outside work I build my own products: Face Smash, a multiplayer Android game, and astory.fun, an AI-assisted fiction platform. I also publish open source, including Gati, a TypeScript backend framework.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="chapters" aria-labelledby="chapTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="chapTitle">My story</h2>
+        <p>From Bundu to Gurugram, drawn and animated. Tap a chapter to start there, or watch from the beginning.</p>
+      </div>
+    <div class="line-card" style="margin-top:0">
+      <div class="line-head"><b><i id="chapCount" style="font-style:normal">24</i> chapters</b></div>
+      <div class="chapters" id="heroChapters"></div>
+    </div>
+    </div>
+  </section>
+
+  <section class="block" id="education" aria-labelledby="eduTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="eduTitle">Education</h2>
+      </div>
+      <div class="edu">
+        <article><h3>MCA <span class="mark">7.59 CGPA</span></h3><p class="co">University of North Bengal, Siliguri, 2017 to 2020</p>
+          <ul><li>Robotics, and taking part in robotics competitions.</li><li>Built NBU PayBill for the university during an internship.</li><li>Built an ESP32-based temperature warning system for the High Performance Computing lab.</li><li>Helped research ML-based signal detection for elephants using geosensors and Arduino.</li><li>NSS volunteer.</li></ul></article>
+        <article><h3>BCA <span class="mark">83.33%</span></h3><p class="co">P.P.K. College, Ranchi University, 2014 to 2017</p>
+          <ul><li>Taught part time at a school alongside the degree.</li><li>Repairing phones and tinkering with electronics on the side.</li></ul></article>
+        <article><h3>Schooling</h3><p class="co">Saraswati Shishu Vidya Mandir, Bundu</p>
+          <ul><li>Class 12, Jharkhand Academic Council, 2014: <b>70.2%</b></li><li>Class 10, Jharkhand Academic Council, 2012: <b>73.2%</b></li><li>The school beside Bundu’s Sun Temple, where the tinkering started and where I first wrote HTML, CSS, PHP and Visual Basic.</li></ul></article>
       </div>
     </div>
   </section>
