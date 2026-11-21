@@ -1,0 +1,20 @@
+
+@page { size: A4; margin: 9mm 13mm 7mm; }
+* { box-sizing: border-box; }
+body { font-family: Carlito, Calibri, Arial, sans-serif; font-size: 9.5pt; line-height: 1.3; color: #16191E; margin: 0; }
+h1 { font-size: 21pt; margin: 0; letter-spacing: -.01em; line-height: 1.1; }
+.title { font-size: 10.5pt; font-weight: 600; margin: 2px 0 5px; }
+.contact { font-size: 8.8pt; color: #3F4752; }
+.contact a, a.muted { color: #1F5FAD; text-decoration: none; }
+h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: .06em; margin: 8px 0 3px; padding-bottom: 3px; border-bottom: 1.2px solid #16191E; }
+p { margin: 0; }
+.job { margin-bottom: 4px; page-break-inside: avoid; }
+.row { display: flex; justify-content: space-between; gap: 12px; }
+.row b { font-size: 9.8pt; }
+.when { white-space: nowrap; font-weight: 600; }
+.sub { color: #3F4752; font-style: italic; }
+ul { margin: 2px 0 0; padding-left: 15px; }
+li { margin: 1px 0; }
+.skills p { margin: 2px 0; }
+.proj li { margin: 2.5px 0; }
+.muted { color: #3F4752; }
