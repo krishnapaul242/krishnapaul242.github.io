@@ -32,7 +32,7 @@ function prerender() {
       fill('jobs', jobsHTML(JOBS))
       fill('skillGroups', skillsHTML(SKILLS))
       fill('inds', indsHTML(projects))
-      fill('storyText', storyTextHTML(storyChapters()))
+      fill('storyPlain', storyTextHTML(storyChapters()))
       return html.replace(/(<b id="projCount">)\d+(<\/b>)/, `$1${projects.length}$2`)
     },
   }
