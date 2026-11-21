@@ -4,7 +4,32 @@ const KIND_COLOR = {Mobile:"#E0679A", Web:"#2F9E6B", Backend:"#3C6FB8", AI:"#7E6
 const KINDS = ["Mobile","Web","Backend","AI","Dashboards","Tools","Blockchain","Games"];
 const IND = {healthcare:"Healthcare", civic:"Government", realestate:"Real estate", social:"Social", food:"Food delivery", finance:"Finance", edtech:"Education", entertainment:"Entertainment", devtools:"Developer tools", productivity:"Productivity"};
 const EMAIL = "krishnapaulmailbox@gmail.com";
-const RESUME = "https://krishnapaul.in/KrishnaPaulCV.pdf";
+const CV_BASE = "https://krishnapaul.in/";
+const RESUMES = [
+  {label:"All-rounder", note:"Default: mobile, web, backend and AI", file:"KrishnaPaulCV.pdf"},
+  {label:"Mobile developer", note:"React Native, Android and iOS", file:"resume/KrishnaPaul-Mobile.pdf"},
+  {label:"Frontend & web", note:"React, Next.js and dashboards", file:"resume/KrishnaPaul-Frontend.pdf"},
+  {label:"Backend & DevOps", note:"Node.js, system design and CI/CD", file:"resume/KrishnaPaul-Backend-DevOps.pdf"},
+  {label:"AI & developer tools", note:"LLM features, MCP and test automation", file:"resume/KrishnaPaul-AI-DevTools.pdf"},
+];
+const RESUME = CV_BASE + RESUMES[0].file;
+let cvSeq = 0;
+// A split button: the main part downloads the all-rounder; the arrow lists the focused versions.
+function cvWidget(kind, label){
+  const id = "cvMenu" + (++cvSeq);
+  return `<div class="cv ${kind}"><a class="btn ${kind}" href="${RESUME}" target="_blank" rel="noopener">${esc(label)}</a><button class="btn ${kind} cv-more" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="${id}" aria-label="Other résumé versions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="cv-menu" id="${id}" hidden><p>Choose a version</p>${RESUMES.map((r,i)=>`<a href="${CV_BASE + r.file}" target="_blank" rel="noopener"><b>${esc(r.label)}${i===0?' <i>Default</i>':''}</b><span>${esc(r.note)}</span></a>`).join("")}</div></div>`;
+}
+function closeCvMenus(except){ document.querySelectorAll(".cv-more[aria-expanded='true']").forEach(b=>{ if (b !== except){ b.setAttribute("aria-expanded","false"); $(b.getAttribute("aria-controls")).hidden = true; } }); }
+document.addEventListener("click", e=>{
+  const b = e.target.closest(".cv-more");
+  if (b){ const m = $(b.getAttribute("aria-controls")), open = m.hidden; closeCvMenus(b);
+    m.hidden = !open; b.setAttribute("aria-expanded", String(open));
+    if (open){ const r = b.getBoundingClientRect(); m.classList.toggle("up", r.bottom + 330 > innerHeight && r.top > 330); m.querySelector("a").focus({preventScroll:true}); if (b.closest(".end-cta")) m.scrollIntoView({block:"nearest", behavior: reduce ? "auto" : "smooth"}); }
+    return; }
+  if (!e.target.closest(".cv-menu")) closeCvMenus();
+});
+document.addEventListener("keydown", e=>{ if (e.key === "Escape"){ const open = document.querySelector(".cv-more[aria-expanded='true']"); if (open){ closeCvMenus(); open.focus(); e.stopPropagation(); } } }, true);
+document.querySelectorAll("[data-cv]").forEach(el=>{ el.outerHTML = cvWidget(el.dataset.cv, el.dataset.label); });
 
 const JOBS = [
   {from:"Feb 2026", to:"Present", role:"Founding Engineer", co:"examday.ai (Bolimart Pvt Ltd)", place:"Gurugram", pts:["Took the examday.ai app from zero to launch on Android, iOS and the web.",
@@ -1139,7 +1164,7 @@ function setPanel(i){
   const built = $("storyBuilt");
   if (c.projects){ const list = PROJECTS.filter(p=>c.projects.includes(p.name));
     built.innerHTML = `<h3>Projects from this chapter (${list.length})</h3><ul>${list.map(p=>`<li><i style="background:${KIND_COLOR[p.kind]}"></i>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</li>`).join("")}</ul>`; }
-  else if (c.end){ built.innerHTML = `<div class="end-cta"><a class="btn primary" href="${RESUME}" target="_blank" rel="noopener">Download résumé</a><button class="btn" id="storyCopy">Copy email</button><span>${EMAIL}</span></div>`; $("storyCopy").onclick = e=>copyEmail(e.currentTarget); }
+  else if (c.end){ built.innerHTML = `<div class="end-cta">${cvWidget("primary","Download résumé")}<button class="btn" id="storyCopy">Copy email</button><span>${EMAIL}</span></div>`; $("storyCopy").onclick = e=>copyEmail(e.currentTarget); }
   else built.innerHTML = "";
   $("storyScroll").scrollTop = 0;
   $("storyPrev").disabled = i === 0;
