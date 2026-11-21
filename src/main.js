@@ -113,6 +113,14 @@ async function copyEmail(btn){
   const old = btn.textContent; btn.textContent = ok ? "Copied" : "Selected, press Ctrl+C"; setTimeout(()=>btn.textContent=old, 2200);
 }
 $("copyEmail").onclick = e=>copyEmail(e.currentTarget);
+document.querySelectorAll("[data-topic]").forEach(a=>a.addEventListener("click", ()=>{ $("topic").value = a.dataset.topic; setTimeout(()=>$("contactForm").querySelector("input").focus({preventScroll:true}), 400); }));
+// The form posts to Pageclip from the real site. Anywhere else (a preview), say so instead of failing quietly.
+const FORM_LIVE = /(^|\.)krishnapaul\.in$|github\.io$|^localhost$|^127\.0\.0\.1$/.test(location.hostname);
+$("contactForm").addEventListener("submit", e=>{
+  if (FORM_LIVE) return;
+  e.preventDefault(); const n = $("formNote"); n.dataset.tone = "warn";
+  n.textContent = `This preview can’t send messages. Please email ${EMAIL} instead, or use the form on krishnapaul.in.`;
+});
 
 /* =================================================================
    MY STORY: illustrated, animated chapters drawn on canvas

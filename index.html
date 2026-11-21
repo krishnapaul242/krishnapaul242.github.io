@@ -54,7 +54,7 @@
   <div class="wrap">
     <a class="brand" href="#top"><i aria-hidden="true"></i>Krishna Paul</a>
     <nav class="nav" aria-label="Sections">
-      <a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
+      <a href="#work">Work</a><a href="#help">Services</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
     <button class="btn primary" data-story="0"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path fill="currentColor" d="M10 8.2v7.6a.6.6 0 0 0 .9.5l6-3.8a.6.6 0 0 0 0-1l-6-3.8a.6.6 0 0 0-.9.5Z"/></svg>My story</button>
   </div>
@@ -63,11 +63,16 @@
 <main id="top">
   <div class="wrap hero">
     <h1>Krishna Paul</h1>
+    <div class="intro">
+    <div>
     <p class="lede">I build mobile apps, web platforms and the backends behind them. <span>Six years and <b id="projCount">50</b> projects, from city dashboards in Kolkata to AI clinical notes and a device farm on the VS Code Marketplace.</span></p>
     <div class="cta">
       <button class="btn primary" data-story="0"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path fill="currentColor" d="M10 8.2v7.6a.6.6 0 0 0 .9.5l6-3.8a.6.6 0 0 0 0-1l-6-3.8a.6.6 0 0 0-.9.5Z"/></svg>Watch my story</button>
       <a class="btn" href="https://krishnapaul.in/KrishnaPaulCV.pdf" target="_blank" rel="noopener">Download résumé</a>
       <a class="btn ghost" href="#contact">Get in touch</a>
+    </div>
+    </div>
+    <figure class="portrait"><img src="/profilepic.webp" alt="Krishna Paul" width="240" height="240"><figcaption>Hi, I’m Krishna</figcaption></figure>
     </div>
 
     <div class="line-card">
@@ -96,6 +101,46 @@
         <div class="filters" id="filters" role="group" aria-label="Filter projects by kind"></div>
         <div id="allList"></div>
         <button class="btn ghost" id="moreBtn" style="margin-top:16px"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="help" aria-labelledby="helpTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="helpTitle">How I can help</h2>
+        <p>Six things I’ve done often enough to do well, each with the work that proves it.</p>
+      </div>
+      <div class="help-grid">
+        <article class="offer"><span class="n">01</span><h3>Take an app from zero to launch</h3>
+          <p class="when">You have an idea or a design, and no app yet.</p>
+          <p class="what">I build it in React Native or native Kotlin and Swift, and see it through Play Store and App Store review.</p>
+          <p class="proof"><b>Done for:</b> examday.ai on Android, iOS and web · CashBook, 1,000+ downloads · Lets Partii</p></article>
+        <article class="offer"><span class="n">02</span><h3>Fix and grow an app you already have</h3>
+          <p class="when">Your app crashes, drops recordings, feels slow or only runs on one platform.</p>
+          <p class="what">I find the cause, fix it, port iOS apps to Android and add the features users ask for.</p>
+          <p class="proof"><b>Done for:</b> Companion Scribe AI and Charting Hero, iOS to Android · Amalgamate · 50+ bugs fixed at Csharptek</p></article>
+        <article class="offer"><span class="n">03</span><h3>Web platforms and dashboards</h3>
+          <p class="when">You need an admin panel, a partner portal or live data people can act on.</p>
+          <p class="what">I build them in React and Next.js, with maps, charts, real-time feeds and role-based access.</p>
+          <p class="proof"><b>Done for:</b> 13 city and pollution dashboards in Kolkata · Lets Partii and Invest Luxury admin panels</p></article>
+        <article class="offer"><span class="n">04</span><h3>Backends, DevOps and releases</h3>
+          <p class="when">Deploys are manual, environments drift or nobody owns the pipeline.</p>
+          <p class="what">I design APIs and services, containerise them, and set up CI/CD, preview environments and runbooks.</p>
+          <p class="proof"><b>Done for:</b> 20+ services at HERD · Trunking Recorder backend · Gati, my open-source framework</p></article>
+        <article class="offer"><span class="n">05</span><h3>AI features that hold up</h3>
+          <p class="when">You want AI in your product, not just a demo.</p>
+          <p class="what">I add LLM chat, streaming, summaries and concierges, with the guardrails and tooling to keep them consistent.</p>
+          <p class="proof"><b>Done for:</b> AI concierge in Lets Partii · clinical notes apps · astory.fun · Kahiye</p></article>
+        <article class="offer"><span class="n">06</span><h3>Test automation and dev tooling</h3>
+          <p class="when">Releases break on real phones, or your team repeats the same manual checks.</p>
+          <p class="what">I set up device farms, end-to-end, regression and stress tests, MCP servers and VS Code extensions.</p>
+          <p class="proof"><b>Done for:</b> MoTA, on the VS Code Marketplace · examday.ai’s internal tools</p></article>
+      </div>
+      <div class="modes">
+        <div class="mode"><h3>Full-time</h3><p>A founding or senior engineer role in mobile or full stack, for a team that ships.</p><a class="btn" href="#contact" data-topic="Full-time role">Talk about a role</a></div>
+        <div class="mode"><h3>Freelance</h3><p>A project with a clear scope, or ongoing help by the month.</p><a class="btn" href="#contact" data-topic="Freelance project">Start a project</a></div>
+        <div class="mode"><h3>A second opinion</h3><p>Send me your app or codebase and I’ll tell you what I’d fix first.</p><a class="btn" href="#contact" data-topic="App or code review">Ask for a review</a></div>
       </div>
     </div>
   </section>
@@ -148,19 +193,33 @@
   </section>
 
   <section class="contact" id="contact" aria-labelledby="contactTitle">
-    <div class="wrap">
-      <h2 id="contactTitle">Let’s build something.</h2>
-      <p>I’m open to full-time roles and freelance projects. Email is the fastest way to reach me.</p>
-      <div class="mail">
-        <code id="email">krishnapaulmailbox@gmail.com</code>
-        <button class="btn" id="copyEmail">Copy email</button>
+    <div class="wrap contact-grid">
+      <div>
+        <h2 id="contactTitle">Let’s build something.</h2>
+        <p>I’m open to full-time roles and freelance projects. Send a message here, or email me directly.</p>
+        <div class="mail">
+          <code id="email">krishnapaulmailbox@gmail.com</code>
+          <button class="btn" id="copyEmail">Copy email</button>
+        </div>
+        <div class="socials">
+          <a class="btn ghost" href="https://www.linkedin.com/in/krishna-paul-129391148/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/krishnapaul242/" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="http://npmjs.com/~krishna.paul" target="_blank" rel="noopener">npm</a>
+          <a class="btn ghost" href="https://krishnapaul.in/KrishnaPaulCV.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
       </div>
-      <div class="socials">
-        <a class="btn ghost" href="https://www.linkedin.com/in/krishna-paul-129391148/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://github.com/krishnapaul242/" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn ghost" href="http://npmjs.com/~krishna.paul" target="_blank" rel="noopener">npm</a>
-        <a class="btn ghost" href="https://krishnapaul.in/KrishnaPaulCV.pdf" target="_blank" rel="noopener">Résumé</a>
-      </div>
+      <form class="form" id="contactForm" action="https://send.pageclip.co/zKXWmL6UblXejMyBvwbrHn3XWauUJCPU" method="post">
+        <div class="two">
+          <label>Your name<input name="name" required autocomplete="name" placeholder="Alex Smith"></label>
+          <label>Email<input name="contact" type="email" required autocomplete="email" placeholder="alex@company.com"></label>
+        </div>
+        <label>What’s this about?<select name="service" id="topic">
+          <option value="">Choose one (optional)</option><option>Full-time role</option><option>Freelance project</option><option>App or code review</option><option>Something else</option>
+        </select></label>
+        <label>Message<textarea name="query" required rows="5" placeholder="What are you building, and where could I help?"></textarea></label>
+        <button class="btn contact-btn" type="submit">Send message</button>
+        <p class="note" id="formNote" aria-live="polite">I usually reply within a day or two.</p>
+      </form>
     </div>
   </section>
 </main>
