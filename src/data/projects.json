@@ -980,13 +980,19 @@
    "Web",
    "Material UI"
   ],
-  "link": "",
+  "link": "https://celltrio.com/platform.html",
   "when": "Nov 2022 - Jan 2024",
   "s": 2022,
   "e": 2024,
   "on": false,
   "f": 0,
-  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs."
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
+  "links": [
+   [
+    "Celltrio platform",
+    "https://celltrio.com/platform.html"
+   ]
+  ]
  },
  {
   "name": "16 Ana Bangalee Vendor",
