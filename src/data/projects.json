@@ -70,13 +70,19 @@
    "NFC",
    "Healthcare"
   ],
-  "link": "",
+  "link": "https://mymdcard.com/",
   "when": "May 2025 - June 2025",
   "s": 2025,
   "e": 2025,
   "on": false,
   "role": "Owned the specs, architecture, UI/UX, the mobile app and deployments.",
-  "f": 3
+  "f": 3,
+  "links": [
+   [
+    "Website",
+    "https://mymdcard.com/"
+   ]
+  ]
  },
  {
   "name": "Invest Luxury",
@@ -93,13 +99,19 @@
    "AI",
    "Payments"
   ],
-  "link": "",
+  "link": "https://www.investluxury.com/",
   "when": "August 2025 - December 2025",
   "s": 2025,
   "e": 2025,
   "on": false,
   "f": 0,
-  "role": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments."
+  "role": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments.",
+  "links": [
+   [
+    "Website",
+    "https://www.investluxury.com/"
+   ]
+  ]
  },
  {
   "name": "Lets Partii",
@@ -115,13 +127,19 @@
    "Backend",
    "AI"
   ],
-  "link": "",
+  "link": "https://letspartii.com/",
   "when": "September 2025 - January 2026",
   "s": 2025,
   "e": 2026,
   "on": false,
   "role": "Ran client discovery and specs, designed the architecture, led the team, built backend services in an Express.js monorepo and handled deployments.",
-  "f": 2
+  "f": 2,
+  "links": [
+   [
+    "Website",
+    "https://letspartii.com/"
+   ]
+  ]
  },
  {
   "name": "HERD",
@@ -157,13 +175,19 @@
    "AI",
    "Healthcare"
   ],
-  "link": "http://companionscribeai.com/",
+  "link": "https://companionscribeai.com/",
   "when": "June 2025 - July 2025",
   "s": 2025,
   "e": 2025,
   "on": false,
   "role": "Moved the app from iOS to Android, fixed recordings cut off by calls and shipped UI improvements.",
-  "f": 4
+  "f": 4,
+  "links": [
+   [
+    "Website",
+    "https://companionscribeai.com/"
+   ]
+  ]
  },
  {
   "name": "Charting Hero",
@@ -178,13 +202,19 @@
    "AI",
    "Healthcare"
   ],
-  "link": "",
+  "link": "https://chartinghero.com/",
   "when": "July 2025",
   "s": 2025,
   "e": 2025,
   "on": false,
   "f": 0,
-  "role": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements."
+  "role": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements.",
+  "links": [
+   [
+    "Website",
+    "https://chartinghero.com/"
+   ]
+  ]
  },
  {
   "name": "Connect MyTown",
@@ -364,7 +394,17 @@
   "e": 2024,
   "on": false,
   "f": 0,
-  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs."
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
+  "links": [
+   [
+    "Website",
+    "https://mycashbook.in"
+   ],
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.mycashbook"
+   ]
+  ]
  },
  {
   "name": "Phaeton Bond Marketplace",
@@ -387,7 +427,13 @@
   "e": 2022,
   "on": false,
   "f": 0,
-  "role": "Built the UI from Figma and integrated the APIs, Web3 and MetaMask."
+  "role": "Built the UI from Figma and integrated the APIs, Web3 and MetaMask.",
+  "links": [
+   [
+    "Read about it",
+    "https://phaeton-technology.medium.com/phaetons-bond-marketplace-f4f7e801bfe3"
+   ]
+  ]
  },
  {
   "name": "Phaeton Identity Dashboard",
@@ -403,13 +449,19 @@
    "Web3",
    "Metamask"
   ],
-  "link": "",
+  "link": "https://phaeton-technology.medium.com/phaeton-identity-6734af5ed478",
   "when": "August 2022 - October 2022",
   "s": 2022,
   "e": 2022,
   "on": false,
   "f": 0,
-  "role": "Set up the project structure, built the UI from Figma, and integrated the APIs, Web3 and MetaMask."
+  "role": "Set up the project structure, built the UI from Figma, and integrated the APIs, Web3 and MetaMask.",
+  "links": [
+   [
+    "Read about it",
+    "https://phaeton-technology.medium.com/phaeton-identity-6734af5ed478"
+   ]
+  ]
  },
  {
   "name": "Smart Health Card",
@@ -992,13 +1044,19 @@
    "LibGDX",
    "ML Kit"
   ],
-  "link": "",
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.facesmash",
   "when": "Ongoing",
   "s": 2026,
   "e": 2026,
   "on": true,
   "f": 0,
-  "role": "Founder. Built it in Kotlin with Jetpack Compose, LibGDX and ML Kit face tracking."
+  "role": "Founder. Built it in Kotlin with Jetpack Compose, LibGDX and ML Kit face tracking.",
+  "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.facesmash"
+   ]
+  ]
  },
  {
   "name": "astory.fun",
@@ -1034,13 +1092,27 @@
    "Maestro",
    "MCP"
   ],
-  "link": "https://marketplace.visualstudio.com/items?itemName=krishna-paul-india-sde.mota-android",
+  "link": "https://krishnapaul.in/MoTA/",
   "when": "Oct 2026 - Ongoing",
   "s": 2026,
   "e": 2026,
   "on": true,
   "f": 0,
-  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing."
+  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing.",
+  "links": [
+   [
+    "Docs",
+    "https://krishnapaul.in/MoTA/"
+   ],
+   [
+    "VS Code Marketplace",
+    "https://marketplace.visualstudio.com/items?itemName=krishna-paul-india-sde.mota-android"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/MoTA"
+   ]
+  ]
  },
  {
   "name": "ExamDay internal tools",
