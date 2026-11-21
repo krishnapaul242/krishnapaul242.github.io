@@ -1,810 +1,1249 @@
-{
-  "projects": [
-    {
-      "name": "Gati",
-      "description": "Gati is a TypeScript-first, contract-driven, cloud-native backend application framework designed to build enterprise-grade, modular, and zero-ops backend systems with strong abstractions, extensibility, and deployment flexibility.",
-      "technologies": [
-        "TypeScript",
-        "Node.js",
-        "Backend",
-        "Cloud Native",
-        "Microservices",
-        "Framework"
-      ],
-      "tools": ["VS Code", "NPM", "Docker", "Kubernetes"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["gatic", "@gati-framework/core", "@gati-framework/runtime", "@gati-framework/types", "Protobuf"],
-      "duration": "2024 - Ongoing",
-      "responsibilities": "Architected the core framework, designed the contract-based module system, implemented the runtime and operator abstractions, defined extensibility APIs for modules/plugins, and documented deployment strategies for cloud and self-hosted environments.",
-      "links": [
-        {
-          "type": "website",
-          "url": "https://krishnapaul.in/gati"
-        },
-        {
-          "type": "github",
-          "url": "https://github.com/krishnapaul242/gati"
-        },
-        {
-          "type": "npm",
-          "url": "https://www.npmjs.com/package/gatic"
-        }
-      ]
-    },
-    {
-      "name": "Trunking Recorder",
-      "description": "Trunking Recorder is a radio communication access and monitoring platform that allows authorized law enforcement officials to access live and recorded radio calls for response, auditing, tracking, and monitoring. The system is inspired by SDRTrunk concepts.",
-      "technologies": ["Web", "Backend", "Radio Systems", "Monitoring"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["Node.js"],
-      "duration": "March 2025 - May 2025",
-      "responsibilities": "Designed system architecture, set up frontend repository, developed the complete backend system, and deployed the application to QA and Production environments.",
-      "links": []
-    },
-    {
-      "name": "MyMDCard",
-      "description": "MyMDCard is a healthcare solution consisting of a public website, an internally distributed mobile application, and a backend system. It enables secure access to critical medical information via NFC tags for emergency medical technicians and medical professionals.",
-      "technologies": ["Mobile", "Web", "Backend", "NFC", "Healthcare"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native", "Node.js"],
-      "duration": "May 2025 - June 2025",
-      "responsibilities": "Handled client communication, converted business requirements into technical specifications, designed system architecture, worked on UI/UX, developed the mobile app, and managed deployments.",
-      "links": []
-    },
-    {
-      "name": "Invest Luxury",
-      "description": "Invest Luxury is a real estate technology platform consisting of a marketing website, a consumer mobile app, an agent/admin panel, and a backend system. The mobile app features video-on-demand feeds, AI concierge assistance, property listings with maps, payments, subscriptions, immersive 3D views, live chats, and appointment scheduling.",
-      "technologies": [
-        "Mobile",
-        "Web",
-        "Backend",
-        "AI",
-        "Payments",
-        "Real Estate"
-      ],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native", "Node.js"],
-      "duration": "August 2025 - December 2025",
-      "responsibilities": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments.",
-      "links": []
-    },
-    {
-      "name": "Lets Partii",
-      "description": "Lets Partii is a social event discovery and engagement platform consisting of a public website, mobile app, partner PWA, admin panel, and backend. It supports short video content, event discovery, ticketing, QR-based verification, AI concierge interactions, payments, subscriptions, chats, rewards, and notifications.",
-      "technologies": ["Mobile", "Web", "PWA", "Backend", "AI", "Payments"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native", "Express.js"],
-      "duration": "September 2025 - January 2026",
-      "responsibilities": "Managed client communication, converted business requirements into specifications, designed system architecture, supervised the technical team, implemented backend services using an Express.js monorepo, and handled deployments.",
-      "links": []
-    },
-    {
-      "name": "HERD",
-      "description": "HERD is a unified work management platform that provides end-to-end visibility across meetings, tasks, and performance in a single hub integrated with third-party applications.",
-      "technologies": ["Web", "Backend", "DevOps", "Productivity"],
-      "tools": ["Docker", "GitHub Actions", "VS Code"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["Node.js"],
-      "duration": "July 2025 - August 2025",
-      "responsibilities": "Containerized multiple platform components, set up CI/CD pipelines, created runbooks and documentation, and implemented ephemeral preview environments.",
-      "links": [{ "type": "website", "url": "https://getherd.ai" }]
-    },
-    {
-      "name": "Companion Scribe AI",
-      "description": "Companion Scribe AI is an AI-powered clinical documentation platform available on web and mobile. It records doctor–patient or solo sessions and generates structured summaries with symptoms, cautions, diagnoses, medication suggestions, and next steps.",
-      "technologies": ["Mobile", "Web", "AI", "Healthcare"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native"],
-      "duration": "June 2025 - July 2025",
-      "responsibilities": "Migrated the app from iOS to Android, fixed call interruption issues during recording, and implemented multiple UI improvements.",
-      "links": [{ "type": "website", "url": "http://companionscribeai.com/" }]
-    },
-    {
-      "name": "Charting Hero",
-      "description": "Charting Hero is an AI-powered clinical documentation platform similar in functionality to Companion Scribe AI, tailored for a different client while offering equivalent recording, transcription, and medical summarization capabilities.",
-      "technologies": ["Mobile", "Web", "AI", "Healthcare"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native"],
-      "duration": "July 2025 - July 2025",
-      "responsibilities": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements.",
-      "links": []
-    },
-    {
-      "name": "Connect MyTown",
-      "description": "Connect MyTown is a community services marketplace that connects users with local service providers for everyday and professional services through web and mobile platforms.",
-      "technologies": ["Web", "Mobile", "Marketplace"],
-      "tools": ["VS Code", "Git"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React"],
-      "duration": "August 2025 - September 2025",
-      "responsibilities": "Implemented minor feature changes, fixed bugs, and supported deployment activities.",
-      "links": [{ "type": "website", "url": "https://connectmytown.com/" }]
-    },
-    {
-      "name": "Flowmina",
-      "description": "Flowmina is a lightweight workflow visualization and automation playground that showcases building, organizing, and executing interconnected tasks (flows) via an intuitive UI.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Web",
-        "Workflow",
-        "Visualization"
-      ],
-      "tools": ["VS Code", "NPM"],
-      "languages": ["TypeScript", "JavaScript", "JSX"],
-      "libraries": ["React", "React Context"],
-      "duration": "2025 - Ongoing",
-      "responsibilities": "Designed UI/UX, implemented modular flow nodes, state management, and interactive canvas for creating and inspecting workflows.",
-      "links": [{ "type": "website", "url": "https://flowmina.krishnapaul.in" }]
-    },
-    {
-      "name": "Kahiye",
-      "description": "Kahiye is an experimental conversational AI playground focused on rapid iteration of chat UX, streaming responses, and pluggable tool/actions. It enables exploring memory strategies and structured function-style replies in a lightweight interface.",
-      "technologies": ["React", "TypeScript", "Web", "AI", "Chat"],
-      "tools": ["VS Code", "NPM"],
-      "languages": ["TypeScript", "JavaScript", "JSX"],
-      "libraries": ["React", "Streaming Fetch"],
-      "duration": "2025 - Ongoing",
-      "responsibilities": "Implemented streaming chat UI, prompt + memory management abstractions, and experimental tool invocation pipeline (design + initial hooks).",
-      "links": [{ "type": "website", "url": "https://kahiye.krishnapaul.in" }]
-    },
-    {
-      "name": "Utho CDK",
-      "description": "Unified TypeScript client + CLI + browser bundle for Utho Cloud's OpenAPI spec. Provides a programmatic API (Node.js & browser), an `utho` CLI for ad‑hoc calls & scripting, and a type-safe model layer generated from the bundled OpenAPI spec.",
-      "technologies": ["TypeScript", "Node.js", "Web", "OpenAPI", "CLI"],
-      "tools": ["VS Code", "NPM", "tsup", "MkDocs"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["openapi-typescript"],
-      "duration": "2025 - Ongoing",
-      "responsibilities": "Designed and implemented unified SDK architecture, OpenAPI spec ingestion & type generation pipeline, CLI command framework, multi-target bundling (ESM/CJS/IIFE), and documentation site (Material for MkDocs).",
-      "links": [
-        { "type": "website", "url": "https://krishnapaul.in/utho-cdk/" },
-        {
-          "type": "github",
-          "url": "https://github.com/krishnapaul242/utho-cdk"
-        },
-        { "type": "npm", "url": "https://www.npmjs.com/package/utho-cdk" }
-      ]
-    },
-    {
-      "name": "Simplify Captcha",
-      "description": "Modern React CAPTCHA component with intelligent behavior analysis, gesture tracking, and advanced fallback verification. Provides real-time mouse, touch, keyboard, and scroll analysis to distinguish humans from bots. No CSS imports required.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "JavaScript",
-        "Web",
-        "SVG",
-        "Behavior Analysis"
-      ],
-      "tools": ["VS Code", "NPM"],
-      "languages": ["TypeScript", "JavaScript", "JSX"],
-      "libraries": ["React", "simplify-captcha"],
-      "duration": "2024 - Ongoing",
-      "responsibilities": "Developed a reusable CAPTCHA component with intelligent human verification, advanced gesture and behavior analysis, SVG-based rendering, and seamless integration for React apps.",
-      "links": [
-        { "type": "website", "url": "http://simplify-captcha.krishnapaul.in/" },
-        {
-          "type": "github",
-          "url": "https://github.com/krishnapaul242/simplify-captcha"
-        },
-        {
-          "type": "npm",
-          "url": "https://www.npmjs.com/package/simplify-captcha"
-        }
-      ]
-    },
-    {
-      "name": "Amalgamate",
-      "description": "React Native-based social media application with Votes, Shorts, Chat and Social.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "JavaScript",
-        "Android",
-        "iOS",
-        "Camera"
-      ],
-      "tools": ["VS Code", "Android Studio", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React Native", "Stylesheet", "React Native Vision Camera"],
-      "duration": "February 2025 - March 2025",
-      "responsibilities": "Developed key features including user surveys, facial authentication, and ballot/voting feeds, and debugged and fixed multiple functional issues.",
-      "links": [
-        {
-          "type": "playstore",
-          "url": "https://play.google.com/store/apps/details?id=com.amalgamate"
-        }
-      ]
-    },
-    {
-      "name": "My Cash Book",
-      "description": "React Native-based Accounting and GST mobile application for small and medium businesses.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "JavaScript",
-        "Android",
-        "Expo"
-      ],
-      "tools": ["VS Code", "Android Studio", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["ReactJS", "React Native", "Tailwind + Nativewind", "Expo"],
-      "duration": "May 2024 - September 2024",
-      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
-      "links": [
-        {
-          "type": "website",
-          "url": "https://mycashbook.in"
-        }
-      ]
-    },
-    {
-      "name": "Phaeton Bond Marketplace",
-      "description": "This web app is a public blockchain-based marketplace that helps users buy and sell bonds.",
-      "technologies": ["NextJS", "TypeScript", "Web", "Web3", "Metamask"],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["NextJS", "Redux Toolkit", "Bootstrap", "Axios"],
-      "duration": "March 2022 - August 2022",
-      "responsibilities": "UI implementation from Figma Design, API integration, Web3 & Metamask integration, and Bug Management.",
-      "links": [
-        {
-          "type": "website",
-          "url": "https://phaeton-technology.medium.com/phaetons-bond-marketplace-f4f7e801bfe3"
-        }
-      ]
-    },
-    {
-      "name": "Phaeton Identity Dashboard",
-      "description": "This web app is a dashboard that helps users manage registration and onboarding in Phaeton Blockchain.",
-      "technologies": ["React", "TypeScript", "Web", "Web3", "Metamask"],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["ReactJS", "Redux Toolkit", "Styled-Components", "Axios"],
-      "duration": "August 2022 - October 2022",
-      "responsibilities": "Project Structure, UI implementation from Figma Design, API integration, Web3 & Metamask integration, and Bug Management.",
-      "links": []
-    },
-    {
-      "name": "Smart Health Card",
-      "description": "This Application is an extended and temporary rewrite of the NKDA Citizen Covid App, it includes measuring and recording health statistics, reports, and prescriptions, as well as setting medication reminders, and checking the news.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "iOS",
-        "Location",
-        "Image Processing"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio", "XCode"],
-      "languages": ["TypeScript", "JavaScript", "Java", "Swift"],
-      "libraries": [
-        "React Native",
-        "React",
-        "Redux Toolkit",
-        "React-Native-Location",
-        "Axios",
-        "Image Processing"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "NKDA SWM Scanner",
-      "description": "This application is used to scan a card and update data regarding location and time by identifying the card with NFC.",
-      "technologies": [
-        "React Native",
-        "JavaScript",
-        "Android",
-        "NFC",
-        "Location"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["JavaScript", "Java"],
-      "libraries": [
-        "React Native",
-        "React",
-        "React-Native-Location",
-        "Axios",
-        "React-Native-NFC-Manager"
-      ],
-      "duration": "2021",
-      "responsibilities": "Updated APIs, business logic.",
-      "links": []
-    },
-    {
-      "name": "Smart Card Verifier",
-      "description": "SmartCard Verifier application is used to verify the Smart tags installed in designated houses/places with their geolocation and image.",
-      "technologies": [
-        "React Native",
-        "JavaScript",
-        "Android",
-        "NFC",
-        "Location"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["JavaScript", "Java"],
-      "libraries": [
-        "React Native",
-        "React",
-        "React-Native-Location",
-        "Axios",
-        "React-Native-NFC-Manager"
-      ],
-      "duration": "2021",
-      "responsibilities": "Forked NKDA_SWM_Scanner, Updated UI, APIs and implemented business logic.",
-      "links": []
-    },
-    {
-      "name": "NKDA Smart Home Tags Dashboard",
-      "description": "The motive of this project is to prepare a dashboard to show the information, statistics and visualize the same in eye pleasing manner. The dashboard here will consume data from multiple different kind of services and display them in one place.",
-      "technologies": ["React", "TypeScript", "Web", "Maps", "Dashboard"],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
-      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps"],
-      "duration": "Jan 2022 - Mar 2022",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "WBPCB ANMS Dashboard",
-      "description": "This Dashboard displays the Noise Pollution data from REST APIs in Maps, Charts, and Datagrid. Multiple instances are deployed with mock logins.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Web",
-        "Charts",
-        "Datagrid",
-        "Maps"
-      ],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
-      "libraries": [
-        "React",
-        "Redux",
-        "Axios",
-        "Bootstrap",
-        "React-Maps",
-        "Charts",
-        "Datagrid"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "NKDA Air Quality Dashboard",
-      "description": "This is a web-based dashboard to display Air Quality Information in an eye-pleasing manner by consuming REST APIs.",
-      "technologies": ["React", "TypeScript", "Web", "Air Quality", "Maps"],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript", "HTML", "CSS"],
-      "libraries": ["React", "Redux", "Axios", "Bootstrap", "React-Maps"],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "WBPCB Paribesh App Admin Panel",
-      "description": "This Web-based dashboard is for administrative works of the Paribesh Mobile App.",
-      "technologies": ["React", "JavaScript", "Web", "Admin Panel", "Maps"],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["JavaScript", "HTML", "CSS"],
-      "libraries": [
-        "React",
-        "Redux",
-        "Axios",
-        "Bootstrap",
-        "React-Maps",
-        "Argon React Dashboard"
-      ],
-      "duration": "2021",
-      "responsibilities": "Added new features and UI. Fixed some prevalent bugs.",
-      "links": []
-    },
-    {
-      "name": "WBPCB Paribesh App",
-      "description": "This Application is a rewrite of the existing Paribesh app (but not a fork) is used to provide pollution-related data, forms for lodging complaints, and some events regarding WBPCB.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "iOS",
-        "Location",
-        "Environment"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio", "XCode"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java", "Swift"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
-      "links": [
-        {
-          "type": "playstore",
-          "url": "https://play.google.com/store/apps/details?id=in.gov.wbpcb.paribeshapp"
-        }
-      ]
-    },
-    {
-      "name": "NKDA Parking Assistant",
-      "description": "This Application is used to provide information and actions to help the attendees in Parking Lots to check and manage the space in parking as well as calculate and collect an appropriate fee.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Location",
-        "Parking"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, and Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "Paribesh Tree Image Uploader",
-      "description": "This Application is used to capture images of a planted tree and upload its picture with its location and other details fed by the operator.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Location",
-        "Tree Management",
-        "Image Upload"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, and Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "NKDA Citizen Covid App",
-      "description": "This Application is to help citizens update their information on health conditions, request sanitization or desolation, and get information and guidelines.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Location",
-        "Chatbot",
-        "Health"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location",
-        "Chatbot"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
-      "links": [
-        {
-          "type": "playstore",
-          "url": "https://play.google.com/store/apps/details?id=com.nkda_health_card"
-        }
-      ]
-    },
-    {
-      "name": "NKDA Sanitization Worker App",
-      "description": "This Application is to help the sanitization workers to get their assignments, and capture and submit images with locations to confirm their work.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Location",
-        "Sanitization"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
-      "links": []
-    },
-    {
-      "name": "NKDA Trams",
-      "description": "This Application displays the trams, tram stations, and tram routes as well as historical information on trams.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Location",
-        "Transit"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI as well as OTA Updates.",
-      "links": [
-        {
-          "type": "playstore",
-          "url": "https://play.google.com/store/apps/details?id=com.nkda_trams"
-        }
-      ]
-    },
-    {
-      "name": "WBTC Trams",
-      "description": "This Application is rewrite of NKDA Trams, it displays the trams, tram stations and tram routes as well as historical information on trams. Development is on hold due to dependency on APIs which are yet to be done.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "iOS",
-        "Location",
-        "Transit"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": [
-        "React",
-        "React-Native",
-        "Redux",
-        "Axios",
-        "React-Native-Maps",
-        "React-Native-Location"
-      ],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "WBPCB Command & Control Center",
-      "description": "This Dashboard displays the information collected from multiple sources and administrative works, reports, manage master data.",
-      "technologies": [
-        "NextJS",
-        "TypeScript",
-        "Web",
-        "Docker",
-        "Maps",
-        "Datagrid"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Docker"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React", "Redux", "NextJS", "Maps", "Datagrid"],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed some Components and UI.",
-      "links": []
-    },
-    {
-      "name": "PIS MQTT Tabular Dashboard",
-      "description": "This Dashboard displays live information from MQTT services on PIS systems.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Web",
-        "MQTT",
-        "Datagrid",
-        "Real-time"
-      ],
-      "tools": ["VS Code", "Postman"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React", "Datagrid", "MQTT"],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "Display Configuration Dashboard",
-      "description": "This is a Drag'n'Drop web-based dashboard to feed data to display in their appropriate display boards as well as customize the content to be displayed at display boards.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Web",
-        "Drag & Drop",
-        "Display Config"
-      ],
-      "tools": ["VS Code", "Postman", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React", "Redux", "Hook Forms", "Drag'n'Drop"],
-      "duration": "2020-2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "Quest Mall Display",
-      "description": "This is a rewrite in React of Quest Mall Display with additional features such as present Google Slides or videos stored in Google Drive with a schedule and interval.",
-      "technologies": [
-        "React",
-        "TypeScript",
-        "Web",
-        "Google Drive",
-        "Digital Display"
-      ],
-      "tools": ["VS Code", "Postman"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React", "Redux"],
-      "duration": "2020-2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": []
-    },
-    {
-      "name": "WBPCB ANMS Display",
-      "description": "This is a single page application which could display a customized content while updating some data with an interval.",
-      "technologies": ["React", "TypeScript", "Web", "Display", "Auto-refresh"],
-      "tools": ["VS Code", "Postman"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": ["React"],
-      "duration": "2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": [
-        {
-          "type": "website",
-          "url": "http://anms.wbpcb.wtlprojects.com/"
-        }
-      ]
-    },
-    {
-      "name": "Radio New Town",
-      "description": "This is an internet radio app that lets the user listen to the channel by Newtown.",
-      "technologies": ["iOS", "Swift", "Radio", "Audio Streaming"],
-      "tools": ["XCode"],
-      "languages": ["Swift"],
-      "libraries": ["Storyboard"],
-      "duration": "2021",
-      "responsibilities": "Added Stop and Play features to the app with button controls as well as background play and a widget in the notification bar.",
-      "links": []
-    },
-    {
-      "name": "React Clock Counter",
-      "description": "This library provides a hook to create a counter with custom DateTime and update the clock on the provided interval.",
-      "technologies": ["React", "TypeScript", "NPM", "Hook"],
-      "tools": ["VS Code", "NPM"],
-      "languages": ["TypeScript", "JSX"],
-      "libraries": [],
-      "duration": "2021",
-      "responsibilities": "Developed this library from scratch using the Create React library module.",
-      "links": [
-        {
-          "type": "npm",
-          "url": "https://www.npmjs.com/package/react-clock-counter"
-        }
-      ]
-    },
-    {
-      "name": "React Native Dropdown Step",
-      "description": "An easy-to-use dropdown step component for React Native.",
-      "technologies": ["React Native", "TypeScript", "NPM", "Component"],
-      "tools": ["VS Code", "NPM"],
-      "languages": ["TypeScript", "JSX"],
-      "libraries": ["React", "React-Native"],
-      "duration": "2021",
-      "responsibilities": "Developed this library from scratch using the Create React library module.",
-      "links": [
-        {
-          "type": "npm",
-          "url": "https://www.npmjs.com/package/react-native-dropdown-step"
-        }
-      ]
-    },
-    {
-      "name": "16 Ana Bangalee Client",
-      "description": "A food delivery application for a restaurant.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Food Delivery"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": ["React", "React-Native", "Redux", "Axios"],
-      "duration": "Aug 2020 - Dec 2020",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI.",
-      "links": [
-        {
-          "type": "playstore",
-          "url": "https://play.google.com/store/apps/details?id=com.ba16_client"
-        }
-      ]
-    },
-    {
-      "name": "Bioflow: Biobanking Monitoring System",
-      "description": "BioFlow is a platform software for RoboCell (real robot).",
-      "technologies": ["React", "TypeScript", "Web", "Material UI"],
-      "tools": ["VS Code", "Visual Studio", "Figma"],
-      "languages": ["TypeScript", "JavaScript"],
-      "libraries": [
-        "ReactJS",
-        "React Context",
-        "Material UI",
-        "React Big Calendar"
-      ],
-      "duration": "Nov 2022 - Jan 2024",
-      "responsibilities": "UI implementation from Figma Design, API integration, and Bug Management.",
-      "links": []
-    },
-    {
-      "name": "16 Ana Bangalee Vendor",
-      "description": "This application lets the admin track and manage orders, and edit, add, and delete food products.",
-      "technologies": [
-        "React Native",
-        "TypeScript",
-        "Android",
-        "Vendor App",
-        "Food Management"
-      ],
-      "tools": ["VS Code", "Postman", "Figma", "Android Studio"],
-      "languages": ["TypeScript", "JavaScript", "CSS", "Java"],
-      "libraries": ["React", "React-Native", "Redux", "Axios"],
-      "duration": "Dec 2020 - Mar 2021",
-      "responsibilities": "Developed and implemented the system architecture, Integrated APIs, Developed Components and UI, as well as OTA Update.",
-      "links": []
-    }
+[
+ {
+  "name": "Gati",
+  "kind": "Backend",
+  "ind": [
+   "devtools"
   ],
-  "summary": {
-    "totalProjects": 35,
-    "technologies": {
-      "frameworks": ["React", "React Native", "NextJS"],
-      "languages": ["TypeScript", "JavaScript", "Java", "Swift", "HTML", "CSS"],
-      "platforms": ["Web", "Android", "iOS", "NPM"],
-      "specializations": [
-        "Web3",
-        "Blockchain",
-        "NFC",
-        "Location Services",
-        "MQTT",
-        "Docker"
-      ]
-    },
-    "projectTypes": [
-      "Mobile Applications",
-      "Web Dashboards",
-      "NPM Libraries",
-      "Blockchain Applications",
-      "IoT Applications",
-      "Food Delivery Systems",
-      "Environmental Monitoring",
-      "Healthcare Applications"
-    ]
-  }
-}
+  "desc": "A TypeScript-first, contract-driven backend framework for modular, cloud-native services, with production-hardening, AWS and API-contract packages.",
+  "tech": [
+   "TypeScript",
+   "Node.js",
+   "Backend",
+   "Cloud Native",
+   "Microservices"
+  ],
+  "link": "https://krishnapaul.in/gati",
+  "when": "2024 - Ongoing",
+  "s": 2024,
+  "e": 2024,
+  "on": true,
+  "role": "Designed the framework, its module system and runtime. Published on npm.",
+  "links": [
+   [
+    "Website",
+    "https://krishnapaul.in/gati"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/gati"
+   ],
+   [
+    "npm",
+    "https://www.npmjs.com/package/gatic"
+   ]
+  ],
+  "f": 6
+ },
+ {
+  "name": "Trunking Recorder",
+  "kind": "Backend",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Gives authorized law enforcement officials access to live and recorded radio calls for response, auditing and tracking.",
+  "tech": [
+   "Web",
+   "Backend",
+   "Radio Systems",
+   "Monitoring"
+  ],
+  "link": "",
+  "when": "March 2025 - May 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "role": "Designed the architecture, built the whole backend and deployed to QA and production.",
+  "f": 5
+ },
+ {
+  "name": "MyMDCard",
+  "kind": "Mobile",
+  "ind": [
+   "healthcare"
+  ],
+  "desc": "Gives EMTs and doctors secure access to a patient's critical medical information by tapping an NFC tag.",
+  "tech": [
+   "Mobile",
+   "Web",
+   "Backend",
+   "NFC",
+   "Healthcare"
+  ],
+  "link": "https://mymdcard.com/",
+  "when": "May 2025 - June 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "role": "Owned the specs, architecture, UI/UX, the mobile app and deployments.",
+  "f": 3,
+  "links": [
+   [
+    "Website",
+    "https://mymdcard.com/"
+   ]
+  ]
+ },
+ {
+  "name": "Invest Luxury",
+  "kind": "AI",
+  "ind": [
+   "realestate",
+   "finance"
+  ],
+  "desc": "Real estate investing platform with video feeds, an AI concierge, map listings, payments, 3D property views and live chat.",
+  "tech": [
+   "Mobile",
+   "Web",
+   "Backend",
+   "AI",
+   "Payments"
+  ],
+  "link": "https://www.investluxury.com/",
+  "when": "August 2025 - December 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "f": 0,
+  "role": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments.",
+  "links": [
+   [
+    "Website",
+    "https://www.investluxury.com/"
+   ]
+  ]
+ },
+ {
+  "name": "Lets Partii",
+  "kind": "Mobile",
+  "ind": [
+   "social"
+  ],
+  "desc": "Event discovery platform with short videos, ticketing, QR check-in, an AI concierge, payments, chat and rewards.",
+  "tech": [
+   "Mobile",
+   "Web",
+   "PWA",
+   "Backend",
+   "AI"
+  ],
+  "link": "https://letspartii.com/",
+  "when": "September 2025 - January 2026",
+  "s": 2025,
+  "e": 2026,
+  "on": false,
+  "role": "Ran client discovery and specs, designed the architecture, led the team, built backend services in an Express.js monorepo and handled deployments.",
+  "f": 2,
+  "links": [
+   [
+    "Website",
+    "https://letspartii.com/"
+   ]
+  ]
+ },
+ {
+  "name": "HERD",
+  "kind": "Backend",
+  "ind": [
+   "productivity"
+  ],
+  "desc": "Work management hub that brings meetings, tasks and performance together, connected to third-party apps.",
+  "tech": [
+   "Web",
+   "Backend",
+   "DevOps",
+   "Productivity"
+  ],
+  "link": "https://getherd.ai",
+  "when": "July 2025 - August 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "f": 0,
+  "role": "Containerized multiple platform components, set up CI/CD pipelines, created runbooks and documentation, and implemented ephemeral preview environments."
+ },
+ {
+  "name": "Companion Scribe AI",
+  "kind": "AI",
+  "ind": [
+   "healthcare"
+  ],
+  "desc": "Records doctor–patient sessions and turns them into structured clinical notes: symptoms, diagnoses, medication suggestions and next steps.",
+  "tech": [
+   "Mobile",
+   "Web",
+   "AI",
+   "Healthcare"
+  ],
+  "link": "https://companionscribeai.com/",
+  "when": "June 2025 - July 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "role": "Moved the app from iOS to Android, fixed recordings cut off by calls and shipped UI improvements.",
+  "f": 4,
+  "links": [
+   [
+    "Website",
+    "https://companionscribeai.com/"
+   ]
+  ]
+ },
+ {
+  "name": "Charting Hero",
+  "kind": "AI",
+  "ind": [
+   "healthcare"
+  ],
+  "desc": "AI clinical documentation for a second client, with recording, transcription and medical summaries.",
+  "tech": [
+   "Mobile",
+   "Web",
+   "AI",
+   "Healthcare"
+  ],
+  "link": "https://chartinghero.com/",
+  "when": "July 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "f": 0,
+  "role": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements.",
+  "links": [
+   [
+    "Website",
+    "https://chartinghero.com/"
+   ]
+  ]
+ },
+ {
+  "name": "Connect MyTown",
+  "kind": "Mobile",
+  "ind": [
+   "realestate"
+  ],
+  "desc": "Marketplace that connects people with local service providers on web and mobile.",
+  "tech": [
+   "Web",
+   "Mobile",
+   "Marketplace"
+  ],
+  "link": "https://connectmytown.com/",
+  "when": "August 2025 - September 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "f": 0,
+  "role": "Implemented minor feature changes, fixed bugs, and supported deployment activities."
+ },
+ {
+  "name": "Flowmina",
+  "kind": "Web",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "A visual playground for building, organizing and running connected workflow steps.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Workflow",
+   "Visualization"
+  ],
+  "link": "https://flowmina.krishnapaul.in",
+  "when": "2025 - Ongoing",
+  "s": 2025,
+  "e": 2025,
+  "on": true,
+  "f": 0,
+  "role": "Designed UI/UX, implemented modular flow nodes, state management, and interactive canvas for creating and inspecting workflows."
+ },
+ {
+  "name": "Kahiye",
+  "kind": "AI",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "A conversational AI playground for streaming chat, memory strategies and tool calls.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "AI",
+   "Chat"
+  ],
+  "link": "https://kahiye.krishnapaul.in",
+  "when": "2025 - Ongoing",
+  "s": 2025,
+  "e": 2025,
+  "on": true,
+  "f": 0,
+  "role": "Implemented streaming chat UI, prompt + memory management abstractions, and experimental tool invocation pipeline (design + initial hooks)."
+ },
+ {
+  "name": "Utho CDK",
+  "kind": "Backend",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "TypeScript client, command-line tool and browser bundle for Utho Cloud's API.",
+  "tech": [
+   "TypeScript",
+   "Node.js",
+   "Web",
+   "OpenAPI",
+   "CLI"
+  ],
+  "link": "https://krishnapaul.in/utho-cdk/",
+  "when": "2025 - Ongoing",
+  "s": 2025,
+  "e": 2025,
+  "on": true,
+  "f": 0,
+  "role": "Designed and implemented unified SDK architecture, OpenAPI spec ingestion & type generation pipeline, CLI command framework, multi-target bundling (ESM/CJS/IIFE), and documentation site (Material for MkDocs).",
+  "links": [
+   [
+    "Docs",
+    "https://krishnapaul.in/utho-cdk/"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/utho-cdk"
+   ],
+   [
+    "npm",
+    "https://www.npmjs.com/package/utho-cdk"
+   ]
+  ]
+ },
+ {
+  "name": "Simplify Captcha",
+  "kind": "Web",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "A React CAPTCHA that checks behaviour and gestures, with fallback verification.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "JavaScript",
+   "Web",
+   "SVG"
+  ],
+  "link": "http://simplify-captcha.krishnapaul.in/",
+  "when": "2024 - Ongoing",
+  "s": 2024,
+  "e": 2024,
+  "on": true,
+  "f": 0,
+  "role": "Developed a reusable CAPTCHA component with intelligent human verification, advanced gesture and behavior analysis, SVG-based rendering, and seamless integration for React apps.",
+  "links": [
+   [
+    "Demo",
+    "http://simplify-captcha.krishnapaul.in/"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/simplify-captcha"
+   ],
+   [
+    "npm",
+    "https://www.npmjs.com/package/simplify-captcha"
+   ]
+  ]
+ },
+ {
+  "name": "Amalgamate",
+  "kind": "Mobile",
+  "ind": [
+   "social"
+  ],
+  "desc": "Social app with face authentication, surveys, voting feeds, short videos and chat.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "JavaScript",
+   "Android",
+   "iOS"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=com.amalgamate",
+  "when": "February 2025 - March 2025",
+  "s": 2025,
+  "e": 2025,
+  "on": false,
+  "f": 0,
+  "role": "Developed key features including user surveys, facial authentication, and ballot/voting feeds, and debugged and fixed multiple functional issues."
+ },
+ {
+  "name": "My Cash Book",
+  "kind": "Mobile",
+  "ind": [
+   "finance"
+  ],
+  "desc": "Fintech app for accounting and GST. I deployed it on Google Play, where it passed 1,000 downloads.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "JavaScript",
+   "Android",
+   "Expo"
+  ],
+  "link": "https://mycashbook.in",
+  "when": "May 2024 - September 2024",
+  "s": 2024,
+  "e": 2024,
+  "on": false,
+  "f": 0,
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
+  "links": [
+   [
+    "Website",
+    "https://mycashbook.in"
+   ],
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.mycashbook"
+   ]
+  ]
+ },
+ {
+  "name": "Phaeton Bond Marketplace",
+  "kind": "Blockchain",
+  "ind": [
+   "realestate",
+   "finance"
+  ],
+  "desc": "Public blockchain marketplace for buying and selling bonds.",
+  "tech": [
+   "NextJS",
+   "TypeScript",
+   "Web",
+   "Web3",
+   "Metamask"
+  ],
+  "link": "https://phaeton-technology.medium.com/phaetons-bond-marketplace-f4f7e801bfe3",
+  "when": "March 2022 - August 2022",
+  "s": 2022,
+  "e": 2022,
+  "on": false,
+  "f": 0,
+  "role": "Built the UI from Figma and integrated the APIs, Web3 and MetaMask.",
+  "links": [
+   [
+    "Read about it",
+    "https://phaeton-technology.medium.com/phaetons-bond-marketplace-f4f7e801bfe3"
+   ]
+  ]
+ },
+ {
+  "name": "Phaeton Identity Dashboard",
+  "kind": "Blockchain",
+  "ind": [
+   "finance"
+  ],
+  "desc": "Registration and onboarding dashboard for the Phaeton blockchain.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Web3",
+   "Metamask"
+  ],
+  "link": "https://phaeton-technology.medium.com/phaeton-identity-6734af5ed478",
+  "when": "August 2022 - October 2022",
+  "s": 2022,
+  "e": 2022,
+  "on": false,
+  "f": 0,
+  "role": "Set up the project structure, built the UI from Figma, and integrated the APIs, Web3 and MetaMask.",
+  "links": [
+   [
+    "Read about it",
+    "https://phaeton-technology.medium.com/phaeton-identity-6734af5ed478"
+   ]
+  ]
+ },
+ {
+  "name": "Smart Health Card",
+  "kind": "Mobile",
+  "ind": [
+   "healthcare",
+   "civic"
+  ],
+  "desc": "Health readings and reports for New Town residents, extending the Citizen Covid app.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "iOS",
+   "Location"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "NKDA SWM Scanner",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Scans NFC cards and records where and when each scan happened.",
+  "tech": [
+   "React Native",
+   "JavaScript",
+   "Android",
+   "NFC",
+   "Location"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Updated the APIs and business logic."
+ },
+ {
+  "name": "Smart Card Verifier",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Verifies smart tags installed at homes and sites, with location and a photo.",
+  "tech": [
+   "React Native",
+   "JavaScript",
+   "Android",
+   "NFC",
+   "Location"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Forked the SWM Scanner, then updated the UI and APIs and built the verification logic."
+ },
+ {
+  "name": "NKDA Smart Home Tags Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Statistics and maps for New Town's smart home tags.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Maps",
+   "Dashboard"
+  ],
+  "link": "",
+  "when": "Jan 2022 - Mar 2022",
+  "s": 2022,
+  "e": 2022,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "WBPCB ANMS Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Noise pollution data on maps, charts and data grids.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Charts",
+   "Datagrid"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "NKDA Air Quality Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Live air quality readings for New Town on a web dashboard.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Air Quality",
+   "Maps"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "WBPCB Paribesh App Admin Panel",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Admin panel behind the Paribesh environment app.",
+  "tech": [
+   "React",
+   "JavaScript",
+   "Web",
+   "Admin Panel",
+   "Maps"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Added features and UI, and fixed long-standing bugs."
+ },
+ {
+  "name": "WBPCB Paribesh App",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Pollution data, complaint forms and events from the West Bengal Pollution Control Board, on Google Play and the App Store with OTA updates.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "iOS",
+   "Location"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=in.gov.wbpcb.paribeshapp",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
+ },
+ {
+  "name": "NKDA Parking Assistant",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Helps parking attendants manage spaces and work out charges.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Location",
+   "Parking"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "Paribesh Tree Image Uploader",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Field app to photograph planted trees and upload them with location and details.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Location",
+   "Tree Management"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "NKDA Citizen Covid App",
+  "kind": "Mobile",
+  "ind": [
+   "healthcare",
+   "civic"
+  ],
+  "desc": "Let residents report their health, request sanitization and read Covid guidance.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Location",
+   "Chatbot"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=com.nkda_health_card",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
+ },
+ {
+  "name": "NKDA Sanitization Worker App",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Assignments for sanitization workers, with geotagged photos as proof of work.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Location",
+   "Sanitization"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
+ },
+ {
+  "name": "NKDA Trams",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Tram routes, stations and history for New Town.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Location",
+   "Transit"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=com.nkda_trams",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
+ },
+ {
+  "name": "WBTC Trams",
+  "kind": "Mobile",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Rebuilt tram app for the West Bengal Transport Corporation, on Android and iOS.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "iOS",
+   "Location"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "WBPCB Command & Control Center",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Command centre that combines data, reports and admin work from many sources.",
+  "tech": [
+   "NextJS",
+   "TypeScript",
+   "Web",
+   "Docker",
+   "Maps"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built parts of the UI."
+ },
+ {
+  "name": "PIS MQTT Tabular Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Live tables of data streamed over MQTT.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "MQTT",
+   "Datagrid"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "Display Configuration Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "Drag-and-drop tool to choose what each display board shows.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Drag & Drop",
+   "Display Config"
+  ],
+  "link": "",
+  "when": "2020-2021",
+  "s": 2020,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "Quest Mall Display",
+  "kind": "Dashboards",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "Mall display software that schedules Google Slides and videos from Google Drive.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Google Drive",
+   "Digital Display"
+  ],
+  "link": "",
+  "when": "2020-2021",
+  "s": 2020,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "WBPCB ANMS Display",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Auto-refreshing public screens for noise monitoring data.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Display",
+   "Auto-refresh"
+  ],
+  "link": "http://anms.wbpcb.wtlprojects.com/",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "Radio New Town",
+  "kind": "Mobile",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "Internet radio app for New Town's channel, built in Swift.",
+  "tech": [
+   "iOS",
+   "Swift",
+   "Radio",
+   "Audio Streaming"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Added play and stop controls, background playback and a notification-bar widget, in Swift."
+ },
+ {
+  "name": "React Clock Counter",
+  "kind": "Web",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "React hook for clocks and countdowns, published on npm.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "NPM",
+   "Hook"
+  ],
+  "link": "https://www.npmjs.com/package/react-clock-counter",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Wrote and published the library on npm."
+ },
+ {
+  "name": "React Native Dropdown Step",
+  "kind": "Mobile",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "Step-by-step dropdown component for React Native, published on npm.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "NPM",
+   "Component"
+  ],
+  "link": "https://www.npmjs.com/package/react-native-dropdown-step",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Wrote and published the library on npm."
+ },
+ {
+  "name": "16 Ana Bangalee Client",
+  "kind": "Mobile",
+  "ind": [
+   "food"
+  ],
+  "desc": "Food ordering and delivery app for a restaurant.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Food Delivery"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=com.ba16_client",
+  "when": "Aug 2020 - Dec 2020",
+  "s": 2020,
+  "e": 2020,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "BioFlow",
+  "kind": "Web",
+  "ind": [
+   "healthcare"
+  ],
+  "desc": "Software for a bio lab automation robot, built for Celltrio, a South Korean client.",
+  "tech": [
+   "React",
+   "TypeScript",
+   "Web",
+   "Material UI"
+  ],
+  "link": "https://celltrio.com/platform.html",
+  "when": "Nov 2022 - Jan 2024",
+  "s": 2022,
+  "e": 2024,
+  "on": false,
+  "f": 0,
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
+  "links": [
+   [
+    "Celltrio platform",
+    "https://celltrio.com/platform.html"
+   ]
+  ]
+ },
+ {
+  "name": "16 Ana Bangalee Vendor",
+  "kind": "Mobile",
+  "ind": [
+   "food"
+  ],
+  "desc": "Order and menu management app for the same restaurant.",
+  "tech": [
+   "React Native",
+   "TypeScript",
+   "Android",
+   "Vendor App",
+   "Food Management"
+  ],
+  "link": "",
+  "when": "Dec 2020 - Mar 2021",
+  "s": 2020,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
+ },
+ {
+  "name": "examday.ai app",
+  "kind": "Mobile",
+  "ind": [
+   "edtech"
+  ],
+  "desc": "Built and launched the examday.ai app on Android, iOS and the web.",
+  "tech": [
+   "React Native",
+   "iOS",
+   "Android",
+   "Web"
+  ],
+  "link": "https://examday.ai",
+  "when": "Feb 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "role": "Founding engineer at examday.ai (Bolimart Pvt Ltd), Gurugram.",
+  "f": 1
+ },
+ {
+  "name": "Face Smash",
+  "kind": "Games",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "An Android multiplayer combat game you play with your face: ML Kit face tracking, server-authoritative matchmaking, coins and XP, and 32 languages.",
+  "tech": [
+   "Kotlin",
+   "Jetpack Compose",
+   "LibGDX",
+   "ML Kit"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.facesmash",
+  "when": "Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 0,
+  "role": "Founder. Built it in Kotlin with Jetpack Compose, LibGDX and ML Kit face tracking.",
+  "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.facesmash"
+   ]
+  ]
+ },
+ {
+  "name": "astory.fun",
+  "kind": "AI",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "An AI-assisted platform for writing and reading long-form fiction, built to stop AI drift over long stories. I used it to write a 320,000-word novel.",
+  "tech": [
+   "AI",
+   "Web",
+   "Writing"
+  ],
+  "link": "https://astory.fun",
+  "when": "Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 0,
+  "role": "Founder. Built it in under a week, with a living story bible, a consistency checker and MCP tools."
+ },
+ {
+  "name": "MoTA",
+  "kind": "Tools",
+  "ind": [
+   "devtools"
+  ],
+  "desc": "VS Code extension that turns Android phones into a local device farm: live screens, multi-device installs, logcat, performance stats, recording and replay, and Maestro and AI-driven test runs. Published on the VS Code Marketplace.",
+  "tech": [
+   "TypeScript",
+   "VS Code API",
+   "ADB",
+   "Maestro",
+   "MCP"
+  ],
+  "link": "https://krishnapaul.in/MoTA/",
+  "when": "Oct 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 0,
+  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing.",
+  "links": [
+   [
+    "Docs",
+    "https://krishnapaul.in/MoTA/"
+   ],
+   [
+    "VS Code Marketplace",
+    "https://marketplace.visualstudio.com/items?itemName=krishna-paul-india-sde.mota-android"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/MoTA"
+   ]
+  ]
+ },
+ {
+  "name": "ExamDay internal tools",
+  "kind": "Tools",
+  "ind": [
+   "edtech",
+   "devtools"
+  ],
+  "desc": "MCP servers, VS Code extensions and internal tools that speed up how the examday.ai team builds and tests.",
+  "tech": [
+   "MCP",
+   "VS Code",
+   "TypeScript"
+  ],
+  "link": "",
+  "when": "2026",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 0,
+  "role": "Set up the MCP servers and built the VS Code extensions and internal tools."
+ },
+ {
+  "name": "NKDA Covid Call Center Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic",
+   "healthcare"
+  ],
+  "desc": "Helped the administration contact, record and follow up on Covid patients from bulk CSV and Excel data.",
+  "tech": [
+   "TypeScript",
+   "React",
+   "Maps",
+   "Redux"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built parts of the UI."
+ },
+ {
+  "name": "WBPCB AQI Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Air pollution data on maps, charts and data grids, deployed as several instances.",
+  "tech": [
+   "TypeScript",
+   "React",
+   "Maps",
+   "Datagrid"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
+ },
+ {
+  "name": "Distronix Task Logger",
+  "kind": "Mobile",
+  "ind": [
+   "productivity"
+  ],
+  "desc": "Internal app and admin server for logging assigned tasks and confirming client sign-off.",
+  "tech": [
+   "TypeScript",
+   "React Native",
+   "Blitz"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed the architecture of the app and its admin server, and built the UI."
+ },
+ {
+  "name": "WBTC Tram Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Dashboard to monitor trams, pull reports and edit vehicle and stop data.",
+  "tech": [
+   "TypeScript",
+   "React",
+   "Redux",
+   "Maps"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed part of the architecture, integrated some APIs and built early components."
+ },
+ {
+  "name": "NKDA PIS Dashboard",
+  "kind": "Dashboards",
+  "ind": [
+   "civic"
+  ],
+  "desc": "Dashboard for New Town's Passenger Information System: monitoring, reports and vehicle and stop data.",
+  "tech": [
+   "TypeScript",
+   "React",
+   "Redux",
+   "Maps"
+  ],
+  "link": "",
+  "when": "2021",
+  "s": 2021,
+  "e": 2021,
+  "on": false,
+  "f": 0,
+  "role": "Designed part of the architecture, integrated some APIs and built early components."
+ }
+]
