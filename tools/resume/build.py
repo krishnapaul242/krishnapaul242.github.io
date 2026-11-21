@@ -9,7 +9,8 @@ from playwright.async_api import async_playwright
 OUT = pathlib.Path(__file__).resolve().parents[2] / "public"  # PDFs land where the site serves them
 OUT.mkdir(exist_ok=True)
 
-CONTACT = ('Gurugram, India · +91 96798 66193 · krishnapaulmailbox@gmail.com · '
+CONTACT = ('Gurugram, India · <a href="tel:+919679866193">+91 96798 66193</a> · '
+           '<a href="mailto:krishnapaulmailbox@gmail.com">krishnapaulmailbox@gmail.com</a> · '
            '<a href="https://krishnapaul.in">krishnapaul.in</a> · '
            '<a href="https://www.linkedin.com/in/krishna-paul-129391148/">linkedin.com/in/krishna-paul-129391148</a> · '
            '<a href="https://github.com/krishnapaul242">github.com/krishnapaul242</a> · '
