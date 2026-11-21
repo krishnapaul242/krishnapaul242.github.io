@@ -134,6 +134,14 @@ section.block{padding-block:clamp(56px,9vw,104px) 0}
 .row b a{text-underline-offset:3px}
 .row p{grid-column:1;color:var(--muted);font-size:15px}
 .row .kind{grid-row:1;grid-column:2;font-size:13px;color:var(--muted);font-weight:600}
+.row details{grid-column:1 / -1;font-size:14px}
+.row summary{cursor:pointer;color:var(--muted);font-weight:600;width:max-content;padding-block:2px}
+.row summary:hover{color:var(--ink,#16191E)}
+.row .more{display:flex;flex-direction:column;gap:6px;padding:8px 0 4px 14px;border-left:2px solid var(--line);margin-top:6px}
+.row .more p{color:inherit;font-size:14px;margin:0}
+.row .more .tags{display:flex;flex-wrap:wrap;gap:6px}
+.row .more .tags span{font-size:12px;padding:2px 8px;border-radius:10px;background:rgba(22,25,30,.06)}
+.row .more .ln{display:flex;flex-wrap:wrap;gap:4px 14px}
 @media (max-width:560px){ .yr{grid-template-columns:1fr} .yr h4{margin-bottom:8px} }
 
 /* Experience */

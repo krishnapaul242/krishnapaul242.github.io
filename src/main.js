@@ -60,6 +60,15 @@ PROJECTS.filter(p=>p.f).sort((a,b)=>a.f-b.f).forEach(p=>{
 });
 
 /* ---------- All projects ---------- */
+function rowMore(p){
+  const links = p.links || (p.link ? [["Visit project", p.link]] : []);
+  return `<details><summary>Details<span class="sr"> for ${esc(p.name)}</span></summary><div class="more">
+    <p><b>When:</b> ${esc(p.when)}</p>
+    ${p.role?`<p><b>My part:</b> ${esc(p.role)}</p>`:""}
+    <div class="tags">${p.tech.map(t=>`<span>${esc(t)}</span>`).join("")}</div>
+    ${links.length?`<div class="ln">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(l)}<span class="sr"> for ${esc(p.name)}</span></a>`).join("")}</div>`:""}
+  </div></details>`;
+}
 let filter = "All", showAll = false;
 function renderAll(){
   const list = PROJECTS.filter(p=>filter==="All"||p.kind===filter);
@@ -73,7 +82,7 @@ function renderAll(){
   const shown = sorted.slice(0, limit);
   const years = [...new Set(shown.map(p=>p.s))];
   $("allList").innerHTML = years.map(y=>`<div class="yr"><h4>${y}</h4><div class="rows">${
-    shown.filter(p=>p.s===y).map(p=>`<div class="row"><b>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</b>${kindTag(p.kind)}<p>${esc(p.desc)}</p></div>`).join("")
+    shown.filter(p=>p.s===y).map(p=>`<div class="row"><b>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</b>${kindTag(p.kind)}<p>${esc(p.desc)}</p>${rowMore(p)}</div>`).join("")
   }</div></div>`).join("");
   const more = $("moreBtn");
   more.hidden = sorted.length <= 12;
@@ -619,7 +628,7 @@ const CH = [
      suitcase(70, GY-36);
      if (lt > 1.3){ box(40, GY-268, 300, 70, "#FFFFFF", 14); txt("“We’re building the house.", 190, GY-243, 16, "#16191E", 700); txt("Come home?”", 190, GY-218, 16, "#16191E", 700); }
    }},
- { title:"BioFlow, with Celltrio", era:"Daynil Group, from Bundu", when:"Daynil Group, working from home in Bundu, from November 2022", projects:["Bioflow"],
+ { title:"BioFlow, with Celltrio", era:"Daynil Group, from Bundu", when:"Daynil Group, working from home in Bundu, from November 2022", projects:["BioFlow"],
    text:"He took a work-from-home role at Daynil Group, writing code on the verandah while the walls went up. His main project was BioFlow, software for a bio lab automation robot, built for Celltrio, a South Korean client.",
    draw(t, lt){
      sky("#A9D6F0","#F3F6EC"); sun(520, 300, 26, "#FFF4D0"); clouds(t, 110); hills("#B5CFA0", GY-60, 60, 7); sunTemple(300, GY-40, 0.36, t); ground("#CDB98E","#B09C70");

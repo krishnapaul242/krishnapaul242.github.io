@@ -98,7 +98,8 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments."
  },
  {
   "name": "Lets Partii",
@@ -140,7 +141,8 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Containerized multiple platform components, set up CI/CD pipelines, created runbooks and documentation, and implemented ephemeral preview environments."
  },
  {
   "name": "Companion Scribe AI",
@@ -177,15 +179,16 @@
    "Healthcare"
   ],
   "link": "",
-  "when": "July 2025 - July 2025",
+  "when": "July 2025",
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements."
  },
  {
   "name": "Connect MyTown",
-  "kind": "Web",
+  "kind": "Mobile",
   "ind": [
    "realestate"
   ],
@@ -200,11 +203,12 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Implemented minor feature changes, fixed bugs, and supported deployment activities."
  },
  {
   "name": "Flowmina",
-  "kind": "Backend",
+  "kind": "Web",
   "ind": [
    "devtools"
   ],
@@ -221,7 +225,8 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Designed UI/UX, implemented modular flow nodes, state management, and interactive canvas for creating and inspecting workflows."
  },
  {
   "name": "Kahiye",
@@ -242,7 +247,8 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Implemented streaming chat UI, prompt + memory management abstractions, and experimental tool invocation pipeline (design + initial hooks)."
  },
  {
   "name": "Utho CDK",
@@ -263,7 +269,22 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Designed and implemented unified SDK architecture, OpenAPI spec ingestion & type generation pipeline, CLI command framework, multi-target bundling (ESM/CJS/IIFE), and documentation site (Material for MkDocs).",
+  "links": [
+   [
+    "Docs",
+    "https://krishnapaul.in/utho-cdk/"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/utho-cdk"
+   ],
+   [
+    "npm",
+    "https://www.npmjs.com/package/utho-cdk"
+   ]
+  ]
  },
  {
   "name": "Simplify Captcha",
@@ -284,7 +305,22 @@
   "s": 2024,
   "e": 2024,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Developed a reusable CAPTCHA component with intelligent human verification, advanced gesture and behavior analysis, SVG-based rendering, and seamless integration for React apps.",
+  "links": [
+   [
+    "Demo",
+    "http://simplify-captcha.krishnapaul.in/"
+   ],
+   [
+    "GitHub",
+    "https://github.com/krishnapaul242/simplify-captcha"
+   ],
+   [
+    "npm",
+    "https://www.npmjs.com/package/simplify-captcha"
+   ]
+  ]
  },
  {
   "name": "Amalgamate",
@@ -305,7 +341,8 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Developed key features including user surveys, facial authentication, and ballot/voting feeds, and debugged and fixed multiple functional issues."
  },
  {
   "name": "My Cash Book",
@@ -326,7 +363,8 @@
   "s": 2024,
   "e": 2024,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs."
  },
  {
   "name": "Phaeton Bond Marketplace",
@@ -348,7 +386,8 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Built the UI from Figma and integrated the APIs, Web3 and MetaMask."
  },
  {
   "name": "Phaeton Identity Dashboard",
@@ -369,7 +408,8 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Set up the project structure, built the UI from Figma, and integrated the APIs, Web3 and MetaMask."
  },
  {
   "name": "Smart Health Card",
@@ -391,7 +431,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "NKDA SWM Scanner",
@@ -412,7 +453,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Updated the APIs and business logic."
  },
  {
   "name": "Smart Card Verifier",
@@ -433,7 +475,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Forked the SWM Scanner, then updated the UI and APIs and built the verification logic."
  },
  {
   "name": "NKDA Smart Home Tags Dashboard",
@@ -454,7 +497,8 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "WBPCB ANMS Dashboard",
@@ -475,7 +519,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "NKDA Air Quality Dashboard",
@@ -496,7 +541,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "WBPCB Paribesh App Admin Panel",
@@ -517,7 +563,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Added features and UI, and fixed long-standing bugs."
  },
  {
   "name": "WBPCB Paribesh App",
@@ -538,7 +585,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
   "name": "NKDA Parking Assistant",
@@ -559,7 +607,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "Paribesh Tree Image Uploader",
@@ -580,7 +629,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "NKDA Citizen Covid App",
@@ -602,7 +652,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
   "name": "NKDA Sanitization Worker App",
@@ -623,7 +674,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
   "name": "NKDA Trams",
@@ -644,7 +696,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
   "name": "WBTC Trams",
@@ -665,7 +718,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "WBPCB Command & Control Center",
@@ -686,7 +740,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built parts of the UI."
  },
  {
   "name": "PIS MQTT Tabular Dashboard",
@@ -707,7 +762,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "Display Configuration Dashboard",
@@ -728,7 +784,8 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "Quest Mall Display",
@@ -749,7 +806,8 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "WBPCB ANMS Display",
@@ -770,7 +828,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "Radio New Town",
@@ -790,7 +849,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Added play and stop controls, background playback and a notification-bar widget, in Swift."
  },
  {
   "name": "React Clock Counter",
@@ -810,7 +870,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Wrote and published the library on npm."
  },
  {
   "name": "React Native Dropdown Step",
@@ -830,7 +891,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Wrote and published the library on npm."
  },
  {
   "name": "16 Ana Bangalee Client",
@@ -850,10 +912,11 @@
   "s": 2020,
   "e": 2020,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
-  "name": "Bioflow",
+  "name": "BioFlow",
   "kind": "Web",
   "ind": [
    "healthcare"
@@ -870,7 +933,8 @@
   "s": 2022,
   "e": 2024,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs."
  },
  {
   "name": "16 Ana Bangalee Vendor",
@@ -891,7 +955,8 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
   "name": "examday.ai app",
@@ -920,18 +985,20 @@
   "ind": [
    "entertainment"
   ],
-  "desc": "A multiplayer combat game for Android that I founded.",
+  "desc": "An Android multiplayer combat game you play with your face: ML Kit face tracking, server-authoritative matchmaking, coins and XP, and 32 languages.",
   "tech": [
-   "Android",
-   "Multiplayer",
-   "Game"
+   "Kotlin",
+   "Jetpack Compose",
+   "LibGDX",
+   "ML Kit"
   ],
   "link": "",
   "when": "Ongoing",
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Founder. Built it in Kotlin with Jetpack Compose, LibGDX and ML Kit face tracking."
  },
  {
   "name": "astory.fun",
@@ -939,7 +1006,7 @@
   "ind": [
    "entertainment"
   ],
-  "desc": "An AI-assisted platform for writing and reading long-form fiction, which I founded.",
+  "desc": "An AI-assisted platform for writing and reading long-form fiction, built to stop AI drift over long stories. I used it to write a 320,000-word novel.",
   "tech": [
    "AI",
    "Web",
@@ -950,7 +1017,8 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Founder. Built it in under a week, with a living story bible, a consistency checker and MCP tools."
  },
  {
   "name": "MoTA",
@@ -971,7 +1039,8 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing."
  },
  {
   "name": "ExamDay internal tools",
@@ -991,7 +1060,8 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0
+  "f": 0,
+  "role": "Set up the MCP servers and built the VS Code extensions and internal tools."
  },
  {
   "name": "NKDA Covid Call Center Dashboard",
@@ -1012,7 +1082,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built parts of the UI."
  },
  {
   "name": "WBPCB AQI Dashboard",
@@ -1032,7 +1103,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
   "name": "Distronix Task Logger",
@@ -1051,7 +1123,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed the architecture of the app and its admin server, and built the UI."
  },
  {
   "name": "WBTC Tram Dashboard",
@@ -1071,7 +1144,8 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed part of the architecture, integrated some APIs and built early components."
  },
  {
   "name": "NKDA PIS Dashboard",
@@ -1091,6 +1165,7 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0
+  "f": 0,
+  "role": "Designed part of the architecture, integrated some APIs and built early components."
  }
 ]
