@@ -34,8 +34,9 @@ const SKILLS = [
   ["DevOps & cloud", ["Docker","Kubernetes","AWS","CI/CD","Preview environments","Runbooks"]],
   ["Testing & dev tooling", ["Device farms","Maestro E2E","Performance profiling","Regression & stress testing","TDD","MCP servers","VS Code extensions","npm packages"]],
   ["AI", ["LLM features","Streaming chat","AI concierges","Clinical summaries","Python"]],
+  ["AI coding tools, since 2020", ["Claude Code","GitHub Copilot","OpenAI Codex","MCP servers","Agentic workflows"]],
   ["Data & Web3", ["Dashboards","Real-time data","Charts & maps","Web3","MetaMask"]],
-  ["Tools", ["Git","VS Code","Android Studio","Xcode","Figma","Adobe XD","Postman","Jira","Slack"]],
+  ["Tools", ["Git","GitHub","GitLab","Bitbucket","npm","VS Code","Android Studio","Xcode","Figma","Adobe XD","Framer","Postman","Jira","Asana","Slack","MS Teams"]],
   ["Languages", ["English (fluent)","Hindi (fluent)","Bengali (intermediate)"]],
 ];
 
@@ -449,7 +450,7 @@ const CH = [
      const me = hero("child", 220, GY, POSE.stand(t), {expr:"awe"});
      if (lt > 1.3) for (let i=0;i<5;i++){ const a = t*1.2 + i*1.26; sparkle(me.head[0] + Math.cos(a)*36, me.head[1] - 24 + Math.sin(a)*24, 5+2*Math.sin(t*4+i), i%2?"#9CF5D5":"#F4C20D"); }
    }},
- { title:"Learning, friends and phones", era:"Growing up", when:"Saraswati Shishu Vidya Mandir, Bundu", text:"He learned everything he could, played with friends, and tinkered with anything that had a circuit inside. Before long he was opening up phones and repairing them.",
+ { title:"Learning, friends and phones", era:"Growing up", when:"Saraswati Shishu Vidya Mandir, Bundu", text:"He learned everything he could, from HTML, CSS and PHP to Visual Basic, played with friends, and tinkered with anything that had a circuit inside. Before long he was opening up phones and repairing them.",
    draw(t, lt){
      sky("#8EC9EC","#E9F5F8"); clouds(t, 110); hills("#A9C99A", GY-120, 70, 2);
      sunTemple(120, GY-140, 0.55, t); shishuMandir(420, GY-140, 0.9);
@@ -849,9 +850,9 @@ function floatCards(c, lt, t){
 function autoDur(i){ const n = (CH[i].projects||[]).length, k = (SKILLS_LEARNED[i]||[]).length; return Math.max(6, 1.0 + n*1.3 + 1.0, 1.0 + k*1.4 + 1.2); }
 
 /* ---------- skills learned, floating up from Krishna ---------- */
-const SKILLS_LEARNED = {1:["HTML","CSS"], 2:["Phone repair","Electronics"], 3:["Programming","Teaching"], 4:["Robotics"], 5:["ESP32","Web services"], 6:["Arduino","Machine learning"], 7:["React Native","Freelancing"],
-  8:["React","TypeScript"], 9:["NFC","Maps & location"], 10:["Next.js","MQTT","Docker"], 11:["Web3","MetaMask"], 14:["Material UI","Remote work"], 15:["Node.js","Kubernetes","Open source"],
-  16:["Expo","Play Store releases"], 17:["System design","Client leadership"], 18:["AI integration","iOS to Android"], 19:["CI/CD","DevOps"], 20:["Building from zero"], 22:["Device farms","Maestro E2E","MCP servers","VS Code extensions"]};
+const SKILLS_LEARNED = {2:["HTML","CSS","PHP","Visual Basic","Phone repair","Electronics"], 3:["Programming","Teaching"], 4:["Robotics"], 5:["ESP32","Web services"], 6:["Arduino","Machine learning"], 7:["React Native","Freelancing","AI tools"],
+  8:["React","TypeScript"], 9:["NFC","Maps & location"], 10:["Next.js","MQTT","Docker","GitHub Copilot"], 11:["Web3","MetaMask"], 14:["Material UI","Remote work"], 15:["Node.js","Kubernetes","Open source"],
+  16:["Expo","Play Store releases"], 17:["System design","Client leadership"], 18:["AI integration","iOS to Android","Codex"], 19:["CI/CD","DevOps"], 20:["Building from zero"], 21:["Claude Code"], 22:["Device farms","Maestro E2E","MCP servers","VS Code extensions"]};
 function skillBadges(i, lt, t){
   // One "Learned …" toast at a time, in a band across the top of the stage that nothing else uses.
   const list = SKILLS_LEARNED[i]; if (!list) return;
