@@ -315,3 +315,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ride-scroll{transition:opacity .25s}
 @media (max-width:560px){ .ride-top strong{display:none} .ride-controls .btn{padding:0 14px} }
 @media (prefers-reduced-motion:reduce){ .ride-scroll{transition:none} }
+
+/* The story as readable text, under the chapter grid */
+.story-text{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:4px 20px}
+.story-text summary{cursor:pointer;font-weight:700;padding:14px 0;list-style-position:inside}
+.story-text ol{margin:0 0 16px;padding-left:22px;display:flex;flex-direction:column;gap:14px;max-width:72ch}
+.story-text h3{font-size:20px;font-weight:850}
+.story-text h3 a{color:inherit;text-underline-offset:3px}
+.story-text .st-when{color:var(--muted);font-size:14px;font-weight:600;margin:2px 0 4px}

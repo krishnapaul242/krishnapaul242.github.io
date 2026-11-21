@@ -5,7 +5,7 @@
 All versions come from the same facts in `build.py`. Each bullet is tagged with the perspectives it serves; a variant leads with its own bullets and fills in with the all-rounder ones.
 
 ```bash
-pip install playwright && playwright install chromium
+pip install playwright pypdf && playwright install chromium
 python3 tools/resume/build.py
 ```
 

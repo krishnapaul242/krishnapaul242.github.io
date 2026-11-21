@@ -151,6 +151,23 @@ async def main():
             pg = await b.new_page(); await pg.goto(hp.as_uri()); await pg.wait_for_timeout(200)
             await pg.pdf(path=str(path), format="A4", prefer_css_page_size=True, print_background=True)
             await pg.close()
+            set_metadata(path, v)
         await b.close()
+
+def set_metadata(path, v):
+    """Give each PDF a real title, author and keywords: search engines show these, and ATS tools read them."""
+    try:
+        from pypdf import PdfReader, PdfWriter
+    except ImportError:
+        print("pypdf not installed; skipping PDF metadata"); return
+    w = PdfWriter(clone_from=PdfReader(path))
+    w.add_metadata({
+        "/Title": f"Krishna Paul – Résumé ({v['label']})",
+        "/Author": "Krishna Paul",
+        "/Subject": v["title"],
+        "/Keywords": ", ".join(["Krishna Paul", "résumé", "CV", v["label"], *v["title"].split(" · ")[1:]]),
+        "/Creator": "krishnapaul.in",
+    })
+    with open(path, "wb") as f: w.write(f)
 
 asyncio.run(main())
