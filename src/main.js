@@ -166,7 +166,7 @@ function sit(p){ return Object.assign({}, p, {ll:1.5,lk:-1.5,rl:1.55,rk:-1.55,si
 
 function person(o){
   const P = o.pose, dir = o.dir||1, h = o.h, kid = !!o.kid;
-  const hr = h*(kid?0.14:0.105), leg = h*(kid?0.2:0.235), th = h*(kid?0.27:0.3), w = h*(kid?0.08:0.07);
+  const hr = h*(kid?0.14:0.105)*(o.headScale||1), leg = h*(kid?0.2:0.235), th = h*(kid?0.27:0.3), w = h*(kid?0.08:0.07);
   const ua = h*0.155, fa = h*0.145;
   const drop = P.sit ? leg : 0;
   const hipX = o.x, hipY = o.y - leg*2 + drop + (P.bob||0);
@@ -182,6 +182,13 @@ function person(o){
   // torso
   const tw = h*(kid?0.2:0.2), cx = (shX+hipX)/2, top = shY - hr*0.3;
   ctx.fillStyle = shirt; ctx.beginPath(); ctx.moveTo(shX - tw/2, top); ctx.lineTo(shX + tw/2, top); ctx.lineTo(hipX + tw/2, hipY + w*0.3); ctx.lineTo(hipX - tw/2, hipY + w*0.3); ctx.closePath(); ctx.fill();
+  if (o.check){ // a checked shirt: thin crossing lines inside the torso
+    ctx.save(); ctx.clip(); ctx.strokeStyle = o.check; ctx.globalAlpha = 0.55; ctx.lineWidth = Math.max(1, w*0.16);
+    const s = w*0.75; ctx.beginPath();
+    for (let x = cx - tw; x < cx + tw; x += s){ ctx.moveTo(x, top - 4); ctx.lineTo(x + (hipX - shX), hipY + w); }
+    for (let y = top; y < hipY + w; y += s){ ctx.moveTo(cx - tw, y); ctx.lineTo(cx + tw, y); }
+    ctx.stroke(); ctx.restore(); }
+  if (o.buttons){ for (let k=1;k<=4;k++){ const u = k/5; circ(shX + (hipX-shX)*u + dir*tw*0.06, top + (hipY - top)*u, Math.max(0.8, w*0.1), sh(shirt,0.6)); } }
   if (o.jacket){ ctx.fillStyle = o.jacket; ctx.beginPath(); ctx.moveTo(shX - tw/2, top); ctx.lineTo(shX + dir*tw*0.05, top); ctx.lineTo(hipX + dir*tw*0.02, hipY+w*0.3); ctx.lineTo(hipX - tw/2, hipY+w*0.3); ctx.closePath(); ctx.fill();
     if (dir<0){ ctx.beginPath(); ctx.moveTo(shX + tw/2, top); ctx.lineTo(shX + tw*0.05, top); ctx.lineTo(hipX + tw*0.02, hipY+w*0.3); ctx.lineTo(hipX + tw/2, hipY+w*0.3); ctx.fill(); } }
   if (o.lanyard){ line(shX, top+2, shX + dir*tw*0.18, top + th*0.45, "#2C7BE5", 2); box(shX + dir*tw*0.18 - 5, top + th*0.45, 10, 13, "#FFFFFF", 2); }
@@ -193,6 +200,12 @@ function person(o){
   // head
   const hX = shX + dir*hr*0.12, hY = shY - hr*1.05 + (P.nod ? Math.max(0,P.nod)*hr : 0);
   box(shX - w*0.35, shY - hr*0.4, w*0.7, hr*0.5, sh(skin,0.9));
+  if (o.collar){ // shirt collar points either side of the neck
+    ctx.fillStyle = o.collar;
+    ctx.beginPath(); ctx.moveTo(shX - w*0.75, shY - hr*0.3); ctx.lineTo(shX - w*0.05, shY + hr*0.35); ctx.lineTo(shX - w*0.85, shY + hr*0.2); ctx.closePath(); ctx.fill();
+    ctx.beginPath(); ctx.moveTo(shX + w*0.75, shY - hr*0.3); ctx.lineTo(shX + w*0.05, shY + hr*0.35); ctx.lineTo(shX + w*0.85, shY + hr*0.2); ctx.closePath(); ctx.fill(); }
+  if (o.hs === "me"){ meHead(hX, hY, hr, dir, o, (Math.sin(timeNow*0.9 + (o.seed||0)*3) > 0.985) ? 0.15 : 1); }
+  else {
   if (o.hs === "long"){ box(hX - dir*hr*0.9 - (dir>0?0:-hr*0.0) - hr*0.15, hY - hr*0.3, hr*1.2, hr*1.9, o.hair, hr*0.4); }
   circ(hX, hY, hr, skin);
   circ(hX - dir*hr*0.15, hY + hr*0.05, hr*0.16, sh(skin,0.88)); // ear
@@ -213,20 +226,64 @@ function person(o){
   else if (o.expr === "awe"){ circ(hX + dir*hr*0.45, hY + hr*0.42, hr*0.13, "#5A2A22"); }
   else { ctx.strokeStyle = "#5A2A22"; ctx.lineWidth = Math.max(1.2, hr*0.09); ctx.beginPath(); ctx.arc(hX + dir*hr*0.42, hY + hr*0.22, hr*0.2, 0.2*Math.PI, 0.8*Math.PI); ctx.stroke(); }
   if (kid){ ctx.globalAlpha = 0.25; circ(hX + dir*hr*0.7, hY + hr*0.25, hr*0.14, "#E0574A"); ctx.globalAlpha = 1; }
+  }
   if (o.onHead) o.onHead(hX, hY - hr);
   // front arm
   const fh = limb(shX, shY, P.ra, P.re, ua, fa, dir, w, sleeve, armLow); circ(fh[0], fh[1], w*0.55, skin);
   if (o.item) o.item(fh[0], fh[1], dir);
   return {hand:fh, head:[hX,hY], top:hY-hr};
 }
-const ME = {skin:"#B57E55", hair:"#1C1715", hs:"short", shirt:"#F4C20D", seed:1};
+// Krishna's own head: wheatish skin, a full round face, thick dark hair swept back with volume
+// on top, heavy brows and (as an adult) a full, neatly trimmed beard joined to the moustache.
+function meHead(hX, hY, hr, dir, o, blink=1){
+  const skin = o.skin, hair = o.hair, X = k => hX + dir*hr*k;
+  // hair at the back of the head, behind the face
+  ctx.fillStyle = hair; ctx.beginPath(); ctx.ellipse(X(-0.5), hY - hr*0.32, hr*0.5, hr*0.58, 0, 0, 7); ctx.fill();
+  // a full, round face with soft cheeks
+  ctx.fillStyle = skin; ctx.beginPath(); ctx.ellipse(hX, hY + hr*0.02, hr*1.02, hr*1.06, 0, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(X(0.12), hY + hr*0.36, hr*0.96, hr*0.72, 0, 0, 7); ctx.fill();
+  // beard: covers the jaw and chin, follows the cheek line up to the sideburn, joins the moustache
+  if (o.beard){
+    ctx.save(); ctx.globalAlpha = o.beard*0.92;
+    ctx.beginPath(); ctx.ellipse(hX, hY + hr*0.02, hr*1.04, hr*1.09, 0, 0, 7); ctx.ellipse(X(0.12), hY + hr*0.4, hr*0.99, hr*0.76, 0, 0, 7); ctx.clip();
+    ctx.fillStyle = o.beardColor || hair; ctx.beginPath();
+    ctx.moveTo(X(-0.36), hY + hr*0.5); ctx.lineTo(X(-0.06), hY - hr*0.1); ctx.lineTo(X(0.06), hY - hr*0.1);
+    ctx.quadraticCurveTo(X(0.1), hY + hr*0.34, X(0.3), hY + hr*0.36); ctx.lineTo(X(0.36), hY + hr*0.3);
+    ctx.lineTo(X(0.72), hY + hr*0.3); ctx.quadraticCurveTo(X(0.95), hY + hr*0.34, X(1.3), hY + hr*0.3);
+    ctx.lineTo(X(1.3), hY + hr*2); ctx.lineTo(X(-1.3), hY + hr*2); ctx.lineTo(X(-1.3), hY + hr*0.7); ctx.closePath(); ctx.fill();
+    ctx.restore();
+    ctx.save(); ctx.globalAlpha = o.beard*0.92; ctx.fillStyle = o.beardColor || hair; ctx.beginPath(); ctx.ellipse(X(0.36), hY + hr*0.98, hr*0.62, hr*0.3, 0, 0, 7); ctx.fill(); ctx.restore(); // fuller chin
+  }
+  circ(X(-0.2), hY + hr*0.1, hr*0.17, sh(skin,0.88)); // ear
+  // hair on top: swept back, with height at the front
+  ctx.fillStyle = hair;
+  ctx.beginPath(); ctx.arc(hX, hY - hr*0.18, hr*1.09, Math.PI*1.06, Math.PI*1.94); ctx.closePath(); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(X(0.12), hY - hr*0.92, hr*0.98, hr*0.44, dir*-0.12, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(X(0.62), hY - hr*0.78, hr*0.5, hr*0.34, dir*0.45, 0, 7); ctx.fill();
+  ctx.beginPath(); ctx.ellipse(X(-0.74), hY - hr*0.42, hr*0.34, hr*0.46, 0, 0, 7); ctx.fill();
+  ctx.strokeStyle = sh(hair, 2.6); ctx.globalAlpha = 0.6; ctx.lineWidth = Math.max(1, hr*0.07); // sheen on the swept-back strands
+  ctx.beginPath(); ctx.moveTo(X(0.75), hY - hr*0.86); ctx.quadraticCurveTo(X(0.1), hY - hr*1.32, X(-0.75), hY - hr*0.9); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(X(0.55), hY - hr*0.62); ctx.quadraticCurveTo(X(0.0), hY - hr*1.0, X(-0.6), hY - hr*0.62); ctx.stroke(); ctx.globalAlpha = 1;
+  // heavy brows, eyes, nose, a small smile
+  ctx.strokeStyle = hair; ctx.lineCap = "round"; ctx.lineWidth = Math.max(1.4, hr*0.11);
+  [0.24, 0.66].forEach(k=>{ ctx.beginPath(); ctx.moveTo(X(k-0.15), hY - hr*0.2); ctx.quadraticCurveTo(X(k), hY - hr*0.29, X(k+0.15), hY - hr*0.22); ctx.stroke(); });
+  ctx.fillStyle = "#1C1715"; [0.24, 0.66].forEach(k=>{ ctx.beginPath(); ctx.ellipse(X(k), hY + hr*0.02, hr*0.08, hr*0.1*blink, 0, 0, 7); ctx.fill(); });
+  ctx.strokeStyle = sh(skin, 0.72); ctx.lineWidth = Math.max(1, hr*0.07); ctx.beginPath(); ctx.moveTo(X(0.5), hY + hr*0.06); ctx.quadraticCurveTo(X(0.62), hY + hr*0.24, X(0.48), hY + hr*0.27); ctx.stroke();
+  if (o.expr === "awe"){ circ(X(0.42), hY + hr*0.48, hr*0.12, "#5A2A22"); }
+  else { ctx.fillStyle = "#B8685C"; ctx.beginPath(); ctx.ellipse(X(0.44), hY + hr*0.47, hr*0.19, hr*0.07, 0, 0, 7); ctx.fill();
+    ctx.strokeStyle = "#5A2A22"; ctx.lineWidth = Math.max(1, hr*0.06); ctx.beginPath(); ctx.arc(X(0.44), hY + hr*0.38, hr*0.2, 0.25*Math.PI, 0.75*Math.PI); ctx.stroke(); }
+  ctx.lineCap = "butt";
+  if (o.glasses){ ctx.strokeStyle = "#1C1715"; ctx.lineWidth = 1.6; [0.24,0.66].forEach(k=>{ ctx.strokeRect(X(k) - hr*0.17, hY - hr*0.12, hr*0.34, hr*0.26); }); }
+}
+
+const ME = {skin:"#D9A27E", hair:"#1D1814", hs:"me", headScale:1.14, beardColor:"#2B211B", seed:1};
 const LOOKS = {
-  child: {...ME, kid:true, h:96, pants:"#3D72B8", shorts:true},
-  teen:  {...ME, h:128, pants:"#2F4A6E"},
-  student:{...ME, h:146, pants:"#2F4A6E", bag:"#B5462F"},
-  young: {...ME, h:148, pants:"#3B4656", long:true},
-  pro:   {...ME, h:150, pants:"#2C3440", jacket:"#22344F", lanyard:true},
-  work:  {...ME, h:150, pants:"#2C3440", long:true},
+  child: {...ME, kid:true, h:96, shirt:"#F4C20D", pants:"#3D72B8", shorts:true},
+  teen:  {...ME, h:128, shirt:"#EEF2F6", collar:"#FFFFFF", buttons:true, pants:"#2F4A6E", belt:"#2A2420"},
+  student:{...ME, h:146, shirt:"#7A2E3A", check:"#2E4F8A", collar:"#8E3D48", buttons:true, pants:"#2F4A6E", bag:"#B5462F", beard:0.55},
+  young: {...ME, h:148, shirt:"#2D5C9C", check:"#16253F", collar:"#3A6BAE", buttons:true, pants:"#2E3744", belt:"#2A2420", long:true, beard:1},
+  pro:   {...ME, h:150, shirt:"#C9DCF0", collar:"#E6EFF8", buttons:true, pants:"#2C3440", belt:"#2A2420", jacket:"#28344A", lanyard:true, beard:1},
+  work:  {...ME, h:150, shirt:"#23406E", check:"#0F1B30", collar:"#2E4F82", buttons:true, pants:"#2C3440", belt:"#2A2420", long:true, beard:1},
 };
 // Krishna, walking in from the left on each new chapter
 const PEOPLE = {
@@ -822,10 +879,8 @@ function skillBadges(i, lt, t){
 /* ---------- vehicles ---------- */
 function miniHead(x, y, r, look){ const L = LOOKS[look] || LOOKS.pro;
   box(x-r*0.45, y+r*0.7, r*0.9, r*0.8, L.jacket || L.shirt, 3);
-  circ(x, y, r, L.skin); circ(x - r*0.15, y + r*0.05, r*0.16, sh(L.skin,0.88));
-  ctx.fillStyle = L.hair; ctx.beginPath(); ctx.arc(x, y, r*1.05, Math.PI*0.92, Math.PI*2.08); ctx.fill(); ctx.beginPath(); ctx.ellipse(x - r*0.45, y - r*0.05, r*0.62, r*0.82, 0, 0, 7); ctx.fill(); ctx.beginPath(); ctx.ellipse(x + r*0.35, y - r*0.72, r*0.55, r*0.28, 0.35, 0, 7); ctx.fill();
-  circ(x + r*0.2, y - r*0.05, r*0.1, "#1C1715"); circ(x + r*0.62, y - r*0.05, r*0.1, "#1C1715");
-  ctx.strokeStyle = "#5A2A22"; ctx.lineWidth = Math.max(1, r*0.1); ctx.beginPath(); ctx.arc(x + r*0.42, y + r*0.22, r*0.22, 0.2*Math.PI, 0.8*Math.PI); ctx.stroke(); }
+  if (L.collar) box(x-r*0.22, y+r*0.72, r*0.44, r*0.22, L.collar, 2);
+  meHead(x, y, r, 1, L); }
 function glass(x, y, w, h, r){ ctx.fillStyle = "rgba(255,255,255,.28)"; ctx.beginPath(); ctx.moveTo(x+w*0.15, y+h); ctx.lineTo(x+w*0.55, y); ctx.lineTo(x+w*0.75, y); ctx.lineTo(x+w*0.35, y+h); ctx.fill(); }
 const VEHICLES = {"3-4":"bus", "7-8":"bus", "10-11":"train", "12-13":"train", "19-20":"plane"};
 function bus(x, y, dir, t, moving, rider){ ctx.save(); ctx.translate(x, y); ctx.scale(dir, 1);
