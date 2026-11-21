@@ -1,45 +1,34 @@
 # Krishna Paul - Portfolio Website
 
-My personal portfolio website built with React and Vite, showcasing my experience as a Full Stack Developer.
+My personal portfolio website, built with vanilla JavaScript, Canvas and Vite.
 
 ## 🚀 Features
 
-- **React-based SPA** - Modern component architecture
-- **Responsive Design** - Mobile-first approach
-- **Interactive Timeline** - Experience showcase
-- **Project Filtering** - Filter projects by technology
-- **Smooth Scrolling Navigation** - Enhanced UX
-- **Dynamic Content** - JSON-driven data
+- **Standard portfolio** - featured work, all projects with filters, experience, skills, GitHub activity and contact
+- **"Watch my story"** - a 24-chapter illustrated canvas story of my life and career, portrait-first so it plays well on phones
+- **Story details** - city landmarks, walking and vehicle transitions, floating project cards in platform frames, "Learned …" skill badges and per-era GitHub commit counts
+- **Autoplay** - progress bar, auto-scrolling text, keyboard and swipe controls, and `#story-N` deep links
+- **Accessible** - respects reduced motion, announces chapters to screen readers and gives the canvas text alternatives
 
 ## 🛠️ Tech Stack
 
-- **React 18** - UI Library
-- **Vite** - Build tool and development server
-- **CSS3** - Styling with custom properties
-- **Font Awesome** - Icons
-- **Google Fonts** - Typography
+- **Vanilla JavaScript + Canvas 2D** - no framework
+- **Vite** - build tool and development server
+- **Google Fonts** - Archivo and Inter
 
 ## 📁 Project Structure
 
 ```
+index.html            # Page markup (portfolio + story overlay)
 src/
-├── components/         # React components
-│   ├── Header.jsx     # Navigation header
-│   ├── Hero.jsx       # Main hero section
-│   ├── Services.jsx   # Services showcase
-│   ├── Experience.jsx # Work experience timeline
-│   ├── Projects.jsx   # Projects grid with filtering
-│   └── Footer.jsx     # Footer component
-├── data/              # JSON data files
-│   ├── services.json
-│   ├── experience.json
-│   ├── projects.json
-│   └── social-links.json
-├── App.jsx           # Main app component
-├── main.jsx          # React entry point
-├── index.css         # Global styles
-└── App.css           # App-specific styles
+├── main.js           # Portfolio rendering, story chapters and canvas drawing
+├── style.css         # All styles
+└── data/
+    └── projects.json # Projects: name, kind, industries, description, tech, links, dates
+public/               # Static files (résumé PDF, CNAME, favicon, /date page, …)
 ```
+
+To add a project, add it to `src/data/projects.json`. To show it in the story, add its name to a chapter's `projects` list in `src/main.js`.
 
 ## 🚀 Development
 
