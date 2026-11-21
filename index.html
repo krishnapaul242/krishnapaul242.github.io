@@ -3,9 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Krishna Paul — founding engineer at examday.ai. Mobile apps, web platforms and the backends behind them, told as an illustrated story." />
+    <title>Krishna Paul – Founding Engineer, React Native & Full Stack Developer</title>
+    <meta name="description" content="Krishna Paul is a founding engineer at examday.ai in Gurugram, India, building mobile apps, web platforms and backends with React Native, TypeScript, Node.js and Kotlin. 50+ projects since 2020." />
+    <meta name="author" content="Krishna Paul" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#F4C20D" />
+    <link rel="canonical" href="https://krishnapaul.in/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Krishna Paul</title>
+    <link rel="apple-touch-icon" href="/profilepic.webp" />
+
+    <!-- Link previews (LinkedIn, WhatsApp, Slack, X) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Krishna Paul" />
+    <meta property="og:url" content="https://krishnapaul.in/" />
+    <meta property="og:title" content="Krishna Paul – Founding Engineer, React Native & Full Stack" />
+    <meta property="og:description" content="Mobile apps, web platforms and the backends behind them. Founding engineer at examday.ai, builder of MoTA and Gati, and a 24-chapter illustrated career story." />
+    <meta property="og:image" content="https://krishnapaul.in/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Krishna Paul, Founding Engineer · React Native, TypeScript, Node.js, Kotlin" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="profile:first_name" content="Krishna" />
+    <meta property="profile:last_name" content="Paul" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Krishna Paul – Founding Engineer, React Native & Full Stack" />
+    <meta name="twitter:description" content="Mobile apps, web platforms and the backends behind them. Founding engineer at examday.ai, builder of MoTA and Gati." />
+    <meta name="twitter:image" content="https://krishnapaul.in/og-image.png" />
+
+    <!-- Who this page is about, for search engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "url": "https://krishnapaul.in/",
+      "name": "Krishna Paul – Founding Engineer, React Native & Full Stack Developer",
+      "mainEntity": {
+        "@type": "Person",
+        "@id": "https://krishnapaul.in/#person",
+        "name": "Krishna Paul",
+        "url": "https://krishnapaul.in/",
+        "image": "https://krishnapaul.in/profilepic.webp",
+        "jobTitle": "Founding Engineer",
+        "description": "Software engineer building mobile apps, web platforms and backends with React Native, TypeScript, Node.js and Kotlin.",
+        "worksFor": { "@type": "Organization", "name": "examday.ai", "url": "https://examday.ai" },
+        "address": { "@type": "PostalAddress", "addressLocality": "Gurugram", "addressRegion": "Haryana", "addressCountry": "IN" },
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "University of North Bengal" },
+          { "@type": "CollegeOrUniversity", "name": "Ranchi University" }
+        ],
+        "knowsAbout": ["React Native", "Android", "iOS", "Kotlin", "Swift", "React", "Next.js", "TypeScript", "Node.js", "System design", "DevOps", "Docker", "Kubernetes", "CI/CD", "LLM features", "MCP servers", "Test automation", "Claude Code", "GitHub Copilot"],
+        "knowsLanguage": ["English", "Hindi", "Bengali"],
+        "sameAs": [
+          "https://www.linkedin.com/in/krishna-paul-129391148/",
+          "https://github.com/krishnapaul242",
+          "https://www.npmjs.com/~krishna.paul",
+          "https://dev.to/krishnapaul",
+          "https://gitlab.com/krishnapaul242",
+          "https://play.google.com/store/apps/details?id=in.krishnapaul.facesmash"
+        ]
+      }
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -68,7 +126,7 @@
     <p class="lede">I build mobile apps, web platforms and the backends behind them. <span>Six years and <b id="projCount">50</b> projects, from city dashboards in Kolkata to AI clinical notes and a device farm on the VS Code Marketplace.</span></p>
     <div class="cta">
       <button class="btn primary" data-story="0"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor" opacity=".18"/><path fill="currentColor" d="M10 8.2v7.6a.6.6 0 0 0 .9.5l6-3.8a.6.6 0 0 0 0-1l-6-3.8a.6.6 0 0 0-.9.5Z"/></svg>Watch my story</button>
-      <a class="btn" href="https://krishnapaul.in/KrishnaPaulCV.pdf" target="_blank" rel="noopener">Download résumé</a>
+      <div class="cv" data-cv="" data-label="Download résumé"></div>
       <a class="btn ghost" href="#contact">Get in touch</a>
     </div>
     </div>
@@ -204,6 +262,10 @@
       <div class="line-head"><b><i id="chapCount" style="font-style:normal">24</i> chapters</b></div>
       <div class="chapters" id="heroChapters"></div>
     </div>
+    <details class="story-text">
+      <summary>Read the story as text</summary>
+      <ol id="storyText"></ol>
+    </details>
     </div>
   </section>
 
@@ -236,7 +298,7 @@
           <a class="btn ghost" href="https://www.linkedin.com/in/krishna-paul-129391148/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn ghost" href="https://github.com/krishnapaul242/" target="_blank" rel="noopener">GitHub</a>
           <a class="btn ghost" href="http://npmjs.com/~krishna.paul" target="_blank" rel="noopener">npm</a>
-          <a class="btn ghost" href="https://krishnapaul.in/KrishnaPaulCV.pdf" target="_blank" rel="noopener">Résumé</a>
+          <div class="cv" data-cv="ghost" data-label="Résumé"></div>
         </div>
       </div>
       <form class="form" id="contactForm" action="https://send.pageclip.co/zKXWmL6UblXejMyBvwbrHn3XWauUJCPU" method="post">

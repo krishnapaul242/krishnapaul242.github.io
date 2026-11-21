@@ -1,103 +1,57 @@
 import PROJECTS from "./data/projects.json";
-
-const KIND_COLOR = {Mobile:"#E0679A", Web:"#2F9E6B", Backend:"#3C6FB8", AI:"#7E6BE0", Dashboards:"#D99A10", Blockchain:"#B05CC8", Games:"#E04A4A", Tools:"#4F8FA8"};
-const KINDS = ["Mobile","Web","Backend","AI","Dashboards","Tools","Blockchain","Games"];
-const IND = {healthcare:"Healthcare", civic:"Government", realestate:"Real estate", social:"Social", food:"Food delivery", finance:"Finance", edtech:"Education", entertainment:"Entertainment", devtools:"Developer tools", productivity:"Productivity"};
+import { JOBS, SKILLS } from "./data/profile.js";
+import { KIND_COLOR, esc, featuredHTML, filtersHTML, allListHTML, jobsHTML, skillsHTML, indsHTML } from "./render.js";
 const EMAIL = "krishnapaulmailbox@gmail.com";
-const RESUME = "https://krishnapaul.in/KrishnaPaulCV.pdf";
-
-const JOBS = [
-  {from:"Feb 2026", to:"Present", role:"Founding Engineer", co:"examday.ai (Bolimart Pvt Ltd)", place:"Gurugram", pts:["Took the examday.ai app from zero to launch on Android, iOS and the web.",
-    "Built MoTA, a VS Code extension that runs a local Android device farm for performance, end-to-end, regression and stress testing; published on the VS Code Marketplace.",
-    "Set up MCP servers, VS Code extensions and internal tools for the engineering team."]},
-  {from:"Feb 2025", to:"Feb 2026", role:"Software Engineer", co:"Csharptek (Cloudgarner Solutions)", place:"Ranchi, Jharkhand", pts:[
-    "Led system design and architecture across 10+ web, mobile and backend platforms.",
-    "Technical and client-facing lead for 15+ stakeholders: discovery, specifications and delivery.",
-    "Owned DevOps for 20+ services with containers, CI/CD, ephemeral environments and runbooks."]},
-  {from:"Nov 2022", to:"Dec 2024", role:"React.js Developer", co:"Daynil Group Solutions", place:"Deoghar, Jharkhand (remote)", pts:[
-    "Built BioFlow for Celltrio, a South Korean client: 20+ interfaces for a bio lab automation robot.",
-    "Deployed CashBook, a React Native fintech app, on Google Play, where it passed 1,000 downloads.",
-    "Integrated 32 third-party APIs into the fintech application."]},
-  {from:"Apr 2022", to:"Oct 2022", role:"Software Engineer, Frontend", co:"Zeeve DeepTech", place:"Dehradun, Uttarakhand", pts:[
-    "Built onboarding and registration dashboards on the Phaeton blockchain, raising user landings by 121%.",
-    "Engineered 19 responsive web components and worked with backend on API design."]},
-  {from:"Nov 2020", to:"Mar 2022", role:"Software Engineer", co:"Distronix LLC", place:"Kolkata, West Bengal", pts:[
-    "Joined as a junior software engineer and was promoted, as the team’s sole frontend developer through the COVID period.",
-    "Developed 30+ web and mobile apps for city agencies and businesses.",
-    "Shipped 5 apps through CI/CD with over-the-air updates, and integrated 12 third-party services."]},
+const CV_BASE = "https://krishnapaul.in/";
+const RESUMES = [
+  {label:"All-rounder", note:"Default: mobile, web, backend and AI", file:"KrishnaPaulCV.pdf"},
+  {label:"Mobile developer", note:"React Native, Android and iOS", file:"resume/KrishnaPaul-Mobile.pdf"},
+  {label:"Frontend & web", note:"React, Next.js and dashboards", file:"resume/KrishnaPaul-Frontend.pdf"},
+  {label:"Backend & DevOps", note:"Node.js, system design and CI/CD", file:"resume/KrishnaPaul-Backend-DevOps.pdf"},
+  {label:"AI & developer tools", note:"LLM features, MCP and test automation", file:"resume/KrishnaPaul-AI-DevTools.pdf"},
 ];
-
-const SKILLS = [
-  ["Mobile", ["React Native","Expo","Android","iOS","Kotlin","Swift","Redux Toolkit","NFC","Maps & location","OTA updates","Play Store & App Store releases"]],
-  ["Web & frontend", ["React","Next.js","TypeScript","JavaScript","HTML","CSS","Redux","Tailwind CSS","Material UI","Bootstrap","Chakra UI","PWA"]],
-  ["Backend & architecture", ["Node.js","Express.js","tRPC","REST APIs","API contracts","Microservices","MQTT","Payments","System design"]],
-  ["DevOps & cloud", ["Docker","Kubernetes","AWS","CI/CD","Preview environments","Runbooks"]],
-  ["Testing & dev tooling", ["Device farms","Maestro E2E","Performance profiling","Regression & stress testing","TDD","MCP servers","VS Code extensions","npm packages"]],
-  ["AI", ["LLM features","Streaming chat","AI concierges","Clinical summaries","Python"]],
-  ["AI coding tools, since 2020", ["Claude Code","GitHub Copilot","OpenAI Codex","MCP servers","Agentic workflows"]],
-  ["Data & Web3", ["Dashboards","Real-time data","Charts & maps","Web3","MetaMask"]],
-  ["Tools", ["Git","GitHub","GitLab","Bitbucket","npm","VS Code","Android Studio","Xcode","Figma","Adobe XD","Framer","Postman","Jira","Asana","Slack","MS Teams"]],
-  ["Languages", ["English (fluent)","Hindi (fluent)","Bengali (intermediate)"]],
-];
+const RESUME = CV_BASE + RESUMES[0].file;
+let cvSeq = 0;
+// A split button: the main part downloads the all-rounder; the arrow lists the focused versions.
+function cvWidget(kind, label){
+  const id = "cvMenu" + (++cvSeq);
+  return `<div class="cv ${kind}"><a class="btn ${kind}" href="${RESUME}" target="_blank" rel="noopener">${esc(label)}</a><button class="btn ${kind} cv-more" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="${id}" aria-label="Other résumé versions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="cv-menu" id="${id}" hidden><p>Choose a version</p>${RESUMES.map((r,i)=>`<a href="${CV_BASE + r.file}" target="_blank" rel="noopener"><b>${esc(r.label)}${i===0?' <i>Default</i>':''}</b><span>${esc(r.note)}</span></a>`).join("")}</div></div>`;
+}
+function closeCvMenus(except){ document.querySelectorAll(".cv-more[aria-expanded='true']").forEach(b=>{ if (b !== except){ b.setAttribute("aria-expanded","false"); $(b.getAttribute("aria-controls")).hidden = true; } }); }
+document.addEventListener("click", e=>{
+  const b = e.target.closest(".cv-more");
+  if (b){ const m = $(b.getAttribute("aria-controls")), open = m.hidden; closeCvMenus(b);
+    m.hidden = !open; b.setAttribute("aria-expanded", String(open));
+    if (open){ const r = b.getBoundingClientRect(); m.classList.toggle("up", r.bottom + 330 > innerHeight && r.top > 330); m.querySelector("a").focus({preventScroll:true}); if (b.closest(".end-cta")) m.scrollIntoView({block:"nearest", behavior: reduce ? "auto" : "smooth"}); }
+    return; }
+  if (!e.target.closest(".cv-menu")) closeCvMenus();
+});
+document.addEventListener("keydown", e=>{ if (e.key === "Escape"){ const open = document.querySelector(".cv-more[aria-expanded='true']"); if (open){ closeCvMenus(); open.focus(); e.stopPropagation(); } } }, true);
+document.querySelectorAll("[data-cv]").forEach(el=>{ el.outerHTML = cvWidget(el.dataset.cv, el.dataset.label); });
 
 /* ---------- Small helpers ---------- */
 const $ = id => document.getElementById(id);
 function el(tag, attrs={}, html){ const e=document.createElement(tag); for(const k in attrs){ if(k==="class") e.className=attrs[k]; else e.setAttribute(k,attrs[k]); } if(html!=null) e.innerHTML=html; return e; }
-function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
-function kindTag(k){ return `<span class="kind"><i style="background:${KIND_COLOR[k]}"></i>${k}</span>`; }
 
 $("projCount").textContent = PROJECTS.length;
-/* ---------- Featured ---------- */
-PROJECTS.filter(p=>p.f).sort((a,b)=>a.f-b.f).forEach(p=>{
-  const links = p.links || (p.link ? [["Visit project", p.link]] : []);
-  const c = el("article",{class:"card"});
-  c.innerHTML = `<div class="meta">${kindTag(p.kind)}<span>${esc(p.when)}</span></div>
-    <h3>${esc(p.name.replace(" app",""))}</h3>
-    <p>${esc(p.desc)}</p>
-    ${p.role?`<p class="part"><b>My part:</b> ${esc(p.role)}</p>`:""}
-    <div class="tags">${p.tech.map(t=>`<span>${esc(t)}</span>`).join("")}</div>
-    ${links.length?`<div class="links">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${l}<span class="sr"> for ${esc(p.name)}</span></a>`).join("")}</div>`:""}`;
-  $("featured").appendChild(c);
-});
-
-/* ---------- All projects ---------- */
-function rowMore(p){
-  const links = p.links || (p.link ? [["Visit project", p.link]] : []);
-  return `<details><summary>Details<span class="sr"> for ${esc(p.name)}</span></summary><div class="more">
-    <p><b>When:</b> ${esc(p.when)}</p>
-    ${p.role?`<p><b>My part:</b> ${esc(p.role)}</p>`:""}
-    <div class="tags">${p.tech.map(t=>`<span>${esc(t)}</span>`).join("")}</div>
-    ${links.length?`<div class="ln">${links.map(([l,u])=>`<a href="${u}" target="_blank" rel="noopener">${esc(l)}<span class="sr"> for ${esc(p.name)}</span></a>`).join("")}</div>`:""}
-  </div></details>`;
-}
+/* ---------- Featured, all projects, experience, skills, industries ---------- */
+// The build writes this content into index.html already; rendering it again here keeps dev mode and filters working.
+$("featured").innerHTML = featuredHTML(PROJECTS);
 let filter = "All", showAll = false;
 function renderAll(){
-  const list = PROJECTS.filter(p=>filter==="All"||p.kind===filter);
-  $("filters").innerHTML = ["All",...KINDS].map(k=>{
-    const n = k==="All" ? PROJECTS.length : PROJECTS.filter(p=>p.kind===k).length;
-    return `<button aria-pressed="${k===filter}" data-k="${k}">${k==="All"?"All":kindTag(k)} <span>${n}</span></button>`;
-  }).join("");
+  $("filters").innerHTML = filtersHTML(PROJECTS, filter);
   $("filters").querySelectorAll("button").forEach(b=>b.onclick=()=>{ filter=b.dataset.k; showAll=false; renderAll(); $("filters").querySelector(`[data-k="${filter}"]`).focus(); });
-  const sorted = [...list].sort((a,b)=>b.s-a.s || (b.f?1:0)-(a.f?1:0));
-  const limit = showAll ? sorted.length : Math.min(sorted.length, 12);
-  const shown = sorted.slice(0, limit);
-  const years = [...new Set(shown.map(p=>p.s))];
-  $("allList").innerHTML = years.map(y=>`<div class="yr"><h4>${y}</h4><div class="rows">${
-    shown.filter(p=>p.s===y).map(p=>`<div class="row"><b>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</b>${kindTag(p.kind)}<p>${esc(p.desc)}</p>${rowMore(p)}</div>`).join("")
-  }</div></div>`).join("");
+  const {html, total} = allListHTML(PROJECTS, {filter, limit: showAll ? Infinity : 12});
+  $("allList").innerHTML = html;
   const more = $("moreBtn");
-  more.hidden = sorted.length <= 12;
-  more.textContent = showAll ? "Show fewer" : `Show all ${sorted.length} projects`;
+  more.hidden = total <= 12;
+  more.textContent = showAll ? "Show fewer" : `Show all ${total} projects`;
 }
 $("moreBtn").onclick = ()=>{ showAll = !showAll; renderAll(); };
 renderAll();
-
-/* ---------- Experience, skills, industries ---------- */
-$("jobs").innerHTML = JOBS.map(j=>`<article class="job"><div class="when"><b>${j.from.slice(-4)}${j.to==="Present"?"–now":j.to.slice(-4)!==j.from.slice(-4)?"–"+j.to.slice(-4):""}</b>${j.from} to ${j.to}</div>
-  <div><h3>${esc(j.role)}</h3><p class="co">${esc(j.co)}, ${esc(j.place)}</p><ul>${j.pts.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div></article>`).join("");
-$("skillGroups").innerHTML = SKILLS.map(([h,items])=>`<div><h3>${h}</h3><ul>${items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
-const indCount = {}; PROJECTS.forEach(p=>p.ind.forEach(i=>indCount[i]=(indCount[i]||0)+1));
-$("inds").innerHTML = Object.entries(indCount).sort((a,b)=>b[1]-a[1]).map(([k,n])=>`<span><b>${n}</b>${IND[k]||k}</span>`).join("");
+$("jobs").innerHTML = jobsHTML(JOBS);
+$("skillGroups").innerHTML = skillsHTML(SKILLS);
+$("inds").innerHTML = indsHTML(PROJECTS);
 
 /* ---------- GitHub commits ---------- */
 const GH_YEARS = {"2020": 190, "2021": 62, "2022": 30, "2023": 2, "2024": 16, "2025": 430, "2026": 1033};
@@ -1139,7 +1093,7 @@ function setPanel(i){
   const built = $("storyBuilt");
   if (c.projects){ const list = PROJECTS.filter(p=>c.projects.includes(p.name));
     built.innerHTML = `<h3>Projects from this chapter (${list.length})</h3><ul>${list.map(p=>`<li><i style="background:${KIND_COLOR[p.kind]}"></i>${p.link?`<a href="${p.link}" target="_blank" rel="noopener">${esc(p.name)}</a>`:esc(p.name)}</li>`).join("")}</ul>`; }
-  else if (c.end){ built.innerHTML = `<div class="end-cta"><a class="btn primary" href="${RESUME}" target="_blank" rel="noopener">Download résumé</a><button class="btn" id="storyCopy">Copy email</button><span>${EMAIL}</span></div>`; $("storyCopy").onclick = e=>copyEmail(e.currentTarget); }
+  else if (c.end){ built.innerHTML = `<div class="end-cta">${cvWidget("primary","Download résumé")}<button class="btn" id="storyCopy">Copy email</button><span>${EMAIL}</span></div>`; $("storyCopy").onclick = e=>copyEmail(e.currentTarget); }
   else built.innerHTML = "";
   $("storyScroll").scrollTop = 0;
   $("storyPrev").disabled = i === 0;

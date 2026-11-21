@@ -65,3 +65,9 @@ This site is automatically deployed to GitHub Pages using GitHub Actions when ch
 ## 📄 License
 
 GNU GPL v3 License
+
+## 🔎 SEO
+
+- `vite.config.js` pre-renders the projects, experience, skills and the story's text into `index.html` at build time, using the same functions as the browser (`src/render.js`), so crawlers and link previews see the content without JavaScript.
+- `index.html` carries the title, description, canonical URL, Open Graph and Twitter tags, and JSON-LD (`ProfilePage` + `Person`).
+- `public/og-image.png` is the 1200×630 link-preview image; `public/robots.txt` and `public/sitemap.xml` point search engines at the site.
