@@ -1191,7 +1191,8 @@ $("storyAuto").onclick = ()=>{ if (auto) stopAuto(); else startAuto(); };
 // The same ElevenLabs tracks as the story video. Browsers only allow sound after the visitor interacts,
 // so music starts when the story is opened by a tap or click, or on the first tap if it opened from a link.
 const sound = (()=>{
-  const base = import.meta.env.BASE_URL + "audio/", MUSIC = 0.3, DUCKED = 0.13;
+  // Previews build with a base like "/pr-21" (no trailing slash), so join the path carefully.
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, "/") + "audio/", MUSIC = 0.3, DUCKED = 0.13;
   let on = true, music = null, fadeTimer = 0, duckUntil = 0, waiting = false;
   try { on = localStorage.getItem("storySound") !== "off"; } catch(e){}
   const btn = $("storySound");
