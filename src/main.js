@@ -1132,7 +1132,7 @@ function drawTrip(T, now){
 }
 /* ---------- panel ---------- */
 const chips = $("storyChips");
-CH.forEach((c,i)=>{ const b = el("button", {"data-i":String(i), "aria-label":`Chapter ${i+1}: ${c.title}`}, String(i+1)); b.onclick = ()=>{ stopAuto(); go(i); }; chips.appendChild(b); });
+CH.forEach((c,i)=>{ const b = el("button", {"data-i":String(i), "aria-label":`Chapter ${i+1}: ${c.title}`}, String(i+1)); b.onclick = ()=>go(i); chips.appendChild(b); });
 function setStrip(i){ chips.querySelectorAll("button").forEach((b,k)=>{ if (k===i) b.setAttribute("aria-current","step"); else b.removeAttribute("aria-current"); b.classList.toggle("seen", seen.has(k)); }); const c = chips.children[i]; if (c && chips.scrollWidth > chips.clientWidth) chips.scrollLeft = c.offsetLeft - chips.clientWidth/2 + c.clientWidth/2; }
 const ERA_COMMITS = {
   "University of North Bengal": {n:119, when:"from college days, 2017 to October 2020"},
@@ -1233,14 +1233,15 @@ const sound = (()=>{
     chime(delay){ setTimeout(()=>sfx("chime", 0.9), delay*1000); },
   };
 })();
-$("storyNext").onclick = ()=>{ if (cur === CH.length-1) closeStory(); else { stopAuto(); go(cur+1); } };
-$("storyPrev").onclick = ()=>{ stopAuto(); go(cur-1); };
+// Moving between chapters keeps autoplay running; only the Pause button stops it.
+$("storyNext").onclick = ()=>{ if (cur === CH.length-1) closeStory(); else go(cur+1); };
+$("storyPrev").onclick = ()=>go(cur-1);
 $("storyExit").onclick = ()=>closeStory();
 let swipeX = null, swipeY = 0;
 canvas.addEventListener("pointerdown", e=>{ swipeX = e.clientX; swipeY = e.clientY; });
 canvas.addEventListener("pointerup", e=>{ if (swipeX === null) return; const dx = e.clientX - swipeX, dy = e.clientY - swipeY; swipeX = null;
-  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)){ stopAuto(); go(cur + (dx < 0 ? 1 : -1)); }
-  else if (Math.abs(dx) < 10 && Math.abs(dy) < 10){ stopAuto(); go(cur + 1); } });
+  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy))go(cur + (dx < 0 ? 1 : -1));
+  else if (Math.abs(dx) < 10 && Math.abs(dy) < 10)go(cur + 1); });
 
 function openStory(i){
   lastFocus = document.activeElement;
@@ -1261,8 +1262,8 @@ document.querySelectorAll("[data-story]").forEach(b=>b.addEventListener("click",
 addEventListener("keydown", e=>{
   if (story.hidden) return;
   if (e.key === "Escape"){ e.preventDefault(); closeStory(); }
-  else if (e.key === "ArrowRight"){ e.preventDefault(); stopAuto(); go(cur+1); }
-  else if (e.key === "ArrowLeft"){ e.preventDefault(); stopAuto(); go(cur-1); }
+  else if (e.key === "ArrowRight"){ e.preventDefault(); go(cur+1); }
+  else if (e.key === "ArrowLeft"){ e.preventDefault(); go(cur-1); }
   else if (e.key === "Tab"){
     const f = [...story.querySelectorAll("button:not([disabled]), a[href]")].filter(x=>x.offsetParent!==null);
     if (!f.length) return; const a = f[0], z = f[f.length-1];
