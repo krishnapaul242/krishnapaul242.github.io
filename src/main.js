@@ -1172,6 +1172,7 @@ function go(i){
   const trip = Math.abs(i - from) === 1 ? (TRIPS[key] || null) : null, dur = trip ? 7.5 : 1.2;
   trans = {from, to:i, start:now, dir, trip, dur};
   startTimes[i] = now + dur - 0.3;
+  sound.move(trip, dur); if (i === CH.length-1) sound.chime(dur);
   cur = i; slidePanel(i, dir);
 }
 let panelAnim = null;
@@ -1183,7 +1184,54 @@ function slidePanel(i, dir){
   panelAnim.onfinish = ()=>{ setPanel(i); panelAnim = inner.animate([{transform:`translateY(${dir*36}px)`, opacity:0}, {transform:"translateY(0)", opacity:1}], {duration:340, easing:"cubic-bezier(.2,.8,.2,1)", fill:"forwards"}); panelAnim.onfinish = ()=>{ panelAnim = null; }; };
 }
 function stopAuto(){ auto = false; $("storyAuto").setAttribute("aria-pressed","false"); $("storyAuto").textContent = "Autoplay"; }
-$("storyAuto").onclick = ()=>{ if (auto){ stopAuto(); return; } auto = true; arrivedAt = performance.now()/1000; $("storyAuto").setAttribute("aria-pressed","true"); $("storyAuto").textContent = "Pause"; };
+function startAuto(){ auto = true; arrivedAt = performance.now()/1000; $("storyAuto").setAttribute("aria-pressed","true"); $("storyAuto").textContent = "Pause"; }
+$("storyAuto").onclick = ()=>{ if (auto) stopAuto(); else startAuto(); };
+
+/* ---------- Story sound: soft music, a whoosh per walk, vehicles on journeys, a chime at the end ---------- */
+// The same ElevenLabs tracks as the story video. Browsers only allow sound after the visitor interacts,
+// so music starts when the story is opened by a tap or click, or on the first tap if it opened from a link.
+const sound = (()=>{
+  const base = import.meta.env.BASE_URL + "audio/", MUSIC = 0.3, DUCKED = 0.13;
+  let on = true, music = null, fadeTimer = 0, duckUntil = 0, waiting = false;
+  try { on = localStorage.getItem("storySound") !== "off"; } catch(e){}
+  const btn = $("storySound");
+  const paint = ()=>{ btn.setAttribute("aria-pressed", String(on)); btn.classList.toggle("muted", !on); btn.querySelector("span").textContent = on ? "Sound on" : "Sound off"; };
+  const fadeTo = (target, ms, done)=>{
+    clearInterval(fadeTimer); if (!music) return;
+    const from = music.volume, steps = Math.max(1, Math.round(ms/40)); let k = 0;
+    fadeTimer = setInterval(()=>{ k++; music.volume = Math.max(0, Math.min(1, from + (target - from)*k/steps)); if (k >= steps){ clearInterval(fadeTimer); done && done(); } }, 40);
+  };
+  const level = ()=> performance.now() < duckUntil ? DUCKED : MUSIC;
+  function play(){
+    if (!on || story.hidden) return;
+    if (!music){ music = new Audio(base + "story-music.mp3"); music.loop = true; music.preload = "auto"; }
+    music.volume = 0;
+    music.play().then(()=>{ waiting = false; fadeTo(level(), 1500); }).catch(()=>{ waiting = true; }); // blocked until the visitor taps
+  }
+  function sfx(name, vol=1){
+    if (!on || story.hidden) return;
+    const a = new Audio(base + `sfx-${name}.mp3`); a.volume = vol; a.play().catch(()=>{});
+  }
+  const resume = ()=>{ if (waiting && !story.hidden) play(); };
+  ["pointerdown","keydown"].forEach(t=>addEventListener(t, resume, true));
+  document.addEventListener("visibilitychange", ()=>{ if (!music) return; if (document.hidden) music.pause(); else if (on && !story.hidden) music.play().catch(()=>{}); });
+  btn.onclick = ()=>{ on = !on; paint(); try { localStorage.setItem("storySound", on ? "on" : "off"); } catch(e){}
+    if (on) play(); else if (music) fadeTo(0, 300, ()=>music.pause()); };
+  paint();
+  return {
+    start: play,
+    stop(){ waiting = false; if (music) fadeTo(0, 500, ()=>music.pause()); },
+    // a walk gets a soft whoosh; a journey gets its vehicle, with the music dipping underneath
+    move(trip, dur){
+      if (!trip){ sfx("whoosh", 0.6); return; }
+      duckUntil = performance.now() + (dur - 1.5)*1000;
+      if (music && on) fadeTo(DUCKED, 500);
+      setTimeout(()=>sfx(trip.v), 600);
+      setTimeout(()=>{ if (music && on && !story.hidden) fadeTo(MUSIC, 1200); }, (dur - 1.5)*1000);
+    },
+    chime(delay){ setTimeout(()=>sfx("chime", 0.9), delay*1000); },
+  };
+})();
 $("storyNext").onclick = ()=>{ if (cur === CH.length-1) closeStory(); else { stopAuto(); go(cur+1); } };
 $("storyPrev").onclick = ()=>{ stopAuto(); go(cur-1); };
 $("storyExit").onclick = ()=>closeStory();
@@ -1198,10 +1246,13 @@ function openStory(i){
   story.hidden = false; document.body.style.overflow = "hidden"; resize();
   cur = Math.max(0, Math.min(CH.length-1, i||0)); const now = performance.now()/1000; startTimes[cur] = now; arrivedAt = now; trans = null; entering = true; setPanel(cur);
   cancelAnimationFrame(rafId); rafId = requestAnimationFrame(frame);
+  // Autoplay is on by default; visitors who prefer reduced motion start paused and step through themselves.
+  if (!reduce && cur < CH.length-1) startAuto(); else stopAuto();
+  sound.start();
   $("storyNext").focus();
 }
 function closeStory(){
-  stopAuto(); cancelAnimationFrame(rafId); story.hidden = true; document.body.style.overflow = "";
+  stopAuto(); sound.stop(); cancelAnimationFrame(rafId); story.hidden = true; document.body.style.overflow = "";
   try { history.replaceState(null, "", location.pathname + location.search); } catch(e){}
   if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
 }

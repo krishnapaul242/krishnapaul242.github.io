@@ -323,3 +323,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .story-text h3{font-size:20px;font-weight:850}
 .story-text h3 a{color:inherit;text-underline-offset:3px}
 .story-text .st-when{color:var(--muted);font-size:14px;font-weight:600;margin:2px 0 4px}
+
+/* Story sound toggle, next to Close story */
+.ride-sound{display:inline-flex;align-items:center;gap:6px;margin-right:8px}
+.ride-sound svg{width:18px;height:18px;flex:none}
+.ride-sound .off{display:none}
+.ride-sound.muted .on{display:none}
+.ride-sound.muted .off{display:inline}
+@media (max-width:640px){ .ride-sound span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap} .ride-sound{padding-inline:10px} }
