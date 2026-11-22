@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Paul - Full Stack Developer</title>
+    
+    <!-- Redirect to handle SPA routing for GitHub Pages -->
+    <script>
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      
+      // Get the current path and search params
+      var l = window.location;
+      var pathName = l.pathname;
+      var search = l.search;
+      var hash = l.hash;
+      
+      // Check if we're in a PR preview path
+      var prMatch = pathName.match(/^\/pr-(\d+)(\/.*)?$/);
+      
+      if (prMatch) {
+        // For PR previews, redirect to the PR's index.html with path as query
+        var prNumber = prMatch[1];
+        var subPath = prMatch[2] || '/';
+        
+        // Encode the path as a query parameter for the SPA to handle
+        var redirectUrl = '/pr-' + prNumber + '/?/' + subPath.slice(1);
+        if (search) {
+          redirectUrl += '&' + search.slice(1);
+        }
+        if (hash) {
+          redirectUrl += hash;
+        }
+        
+        window.location.replace(redirectUrl);
+      } else if (pathName !== '/') {
+        // For main site, redirect to root with path as query
+        var redirectUrl = '/?/' + pathName.slice(1);
+        if (search) {
+          redirectUrl += '&' + search.slice(1);
+        }
+        if (hash) {
+          redirectUrl += hash;
+        }
+        
+        window.location.replace(redirectUrl);
+      }
+    </script>
+  </head>
+  <body>
+    <div style="color: white; background: black; padding: 20px; font-family: monospace; text-align: center;">
+      <h2>Redirecting...</h2>
+      <p>Loading Krishna Paul's Portfolio</p>
+    </div>
+  </body>
+</html>
