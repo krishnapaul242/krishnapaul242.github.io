@@ -33,7 +33,7 @@
     "https://www.npmjs.com/package/gatic"
    ]
   ],
-  "f": 6
+  "f": 9
  },
  {
   "name": "Trunking Recorder",
@@ -54,7 +54,7 @@
   "e": 2025,
   "on": false,
   "role": "Designed the architecture, built the whole backend and deployed to QA and production.",
-  "f": 5
+  "f": 8
  },
  {
   "name": "MyMDCard",
@@ -76,7 +76,6 @@
   "e": 2025,
   "on": false,
   "role": "Owned the specs, architecture, UI/UX, the mobile app and deployments.",
-  "f": 3,
   "links": [
    [
     "Website",
@@ -104,7 +103,6 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0,
   "role": "Led client communication, translated business needs into specifications, designed system architecture, supervised the technical team, and managed deployments.",
   "links": [
    [
@@ -133,7 +131,6 @@
   "e": 2026,
   "on": false,
   "role": "Ran client discovery and specs, designed the architecture, led the team, built backend services in an Express.js monorepo and handled deployments.",
-  "f": 2,
   "links": [
    [
     "Website",
@@ -159,7 +156,6 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0,
   "role": "Containerized multiple platform components, set up CI/CD pipelines, created runbooks and documentation, and implemented ephemeral preview environments."
  },
  {
@@ -181,7 +177,7 @@
   "e": 2025,
   "on": false,
   "role": "Moved the app from iOS to Android, fixed recordings cut off by calls and shipped UI improvements.",
-  "f": 4,
+  "f": 7,
   "links": [
    [
     "Website",
@@ -207,7 +203,6 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0,
   "role": "Migrated the mobile app from iOS to Android, resolved recording interruption issues, and delivered multiple UI fixes and stability improvements.",
   "links": [
    [
@@ -233,7 +228,6 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0,
   "role": "Implemented minor feature changes, fixed bugs, and supported deployment activities."
  },
  {
@@ -255,7 +249,6 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0,
   "role": "Designed UI/UX, implemented modular flow nodes, state management, and interactive canvas for creating and inspecting workflows."
  },
  {
@@ -277,7 +270,6 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0,
   "role": "Implemented streaming chat UI, prompt + memory management abstractions, and experimental tool invocation pipeline (design + initial hooks)."
  },
  {
@@ -299,7 +291,6 @@
   "s": 2025,
   "e": 2025,
   "on": true,
-  "f": 0,
   "role": "Designed and implemented unified SDK architecture, OpenAPI spec ingestion & type generation pipeline, CLI command framework, multi-target bundling (ESM/CJS/IIFE), and documentation site (Material for MkDocs).",
   "links": [
    [
@@ -335,7 +326,6 @@
   "s": 2024,
   "e": 2024,
   "on": true,
-  "f": 0,
   "role": "Developed a reusable CAPTCHA component with intelligent human verification, advanced gesture and behavior analysis, SVG-based rendering, and seamless integration for React apps.",
   "links": [
    [
@@ -371,7 +361,6 @@
   "s": 2025,
   "e": 2025,
   "on": false,
-  "f": 0,
   "role": "Developed key features including user surveys, facial authentication, and ballot/voting feeds, and debugged and fixed multiple functional issues."
  },
  {
@@ -393,7 +382,6 @@
   "s": 2024,
   "e": 2024,
   "on": false,
-  "f": 0,
   "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
   "links": [
    [
@@ -426,7 +414,6 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0,
   "role": "Built the UI from Figma and integrated the APIs, Web3 and MetaMask.",
   "links": [
    [
@@ -454,7 +441,6 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0,
   "role": "Set up the project structure, built the UI from Figma, and integrated the APIs, Web3 and MetaMask.",
   "links": [
    [
@@ -483,7 +469,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -505,7 +490,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Updated the APIs and business logic."
  },
  {
@@ -527,7 +511,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Forked the SWM Scanner, then updated the UI and APIs and built the verification logic."
  },
  {
@@ -549,7 +532,6 @@
   "s": 2022,
   "e": 2022,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -571,7 +553,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -593,7 +574,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -615,7 +595,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Added features and UI, and fixed long-standing bugs."
  },
  {
@@ -637,7 +616,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
@@ -659,7 +637,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -681,7 +658,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -704,7 +680,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
@@ -726,7 +701,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
@@ -748,7 +722,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
@@ -770,7 +743,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -792,7 +764,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built parts of the UI."
  },
  {
@@ -814,7 +785,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -836,7 +806,6 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -858,7 +827,6 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -880,7 +848,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -901,7 +868,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Added play and stop controls, background playback and a notification-bar widget, in Swift."
  },
  {
@@ -922,7 +888,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Wrote and published the library on npm."
  },
  {
@@ -943,7 +908,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Wrote and published the library on npm."
  },
  {
@@ -964,7 +928,6 @@
   "s": 2020,
   "e": 2020,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -985,7 +948,7 @@
   "s": 2022,
   "e": 2024,
   "on": false,
-  "f": 0,
+  "f": 6,
   "role": "Built the UI from Figma designs, integrated the APIs and fixed bugs.",
   "links": [
    [
@@ -1013,7 +976,6 @@
   "s": 2020,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs, built the UI and set up over-the-air updates."
  },
  {
@@ -1035,7 +997,21 @@
   "e": 2026,
   "on": true,
   "role": "Founding engineer at examday.ai (Bolimart Pvt Ltd), Gurugram.",
-  "f": 1
+  "f": 1,
+  "links": [
+   [
+    "Website",
+    "https://examday.ai"
+   ],
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=com.dalvoy.appone"
+   ],
+   [
+    "App Store",
+    "https://apps.apple.com/in/app/examday-dalvoy/id6759721340"
+   ]
+  ]
  },
  {
   "name": "Face Smash",
@@ -1055,7 +1031,7 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0,
+  "f": 5,
   "role": "Founder. Built it in Kotlin with Jetpack Compose, LibGDX and ML Kit face tracking.",
   "links": [
    [
@@ -1081,7 +1057,6 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0,
   "role": "Founder. Built it in under a week, with a living story bible, a consistency checker and MCP tools."
  },
  {
@@ -1090,11 +1065,12 @@
   "ind": [
    "devtools"
   ],
-  "desc": "VS Code extension that turns Android phones into a local device farm: live screens, multi-device installs, logcat, performance stats, recording and replay, and Maestro and AI-driven test runs. Published on the VS Code Marketplace.",
+  "desc": "VS Code extension that turns Android phones into a local device farm: live screens, multi-device installs, logcat, performance stats, recording and replay, Maestro and AI-driven test runs, and storage, memory and multi-app pressure tests. Published on the VS Code Marketplace.",
   "tech": [
    "TypeScript",
    "VS Code API",
    "ADB",
+   "scrcpy",
    "Maestro",
    "MCP"
   ],
@@ -1103,8 +1079,8 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0,
-  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing.",
+  "f": 2,
+  "role": "Designed and built the whole extension: ADB device management, scrcpy live screens, recording and replay, Maestro and AI test runs, an MCP server that lets Claude and other AI agents share phones safely, and Marketplace publishing (v0.8).",
   "links": [
    [
     "Docs",
@@ -1117,6 +1093,68 @@
    [
     "GitHub",
     "https://github.com/krishnapaul242/MoTA"
+   ]
+  ]
+ },
+ {
+  "name": "Brick Survivors",
+  "kind": "Games",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "A brick breaker that plays like a survivors-like: aim a volley of plasma orbs at a marching alien swarm, level up mid-fight and fuse 11 orb infusions into 14 hybrids, against 33 alien types and chapter bosses.",
+  "tech": [
+   "Godot",
+   "GDScript",
+   "Supabase",
+   "Postgres",
+   "GitHub Actions"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.brickbreaker",
+  "when": "Nov 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 3,
+  "role": "Solo developer. Built a data-driven game where enemies, upgrades, balance, art and whole themes ship over the air from Supabase without a Play Store update, plus telemetry, cloud save and CI that builds signed Android releases.",
+  "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.brickbreaker"
+   ],
+   [
+    "Website",
+    "https://krishnapaul.in/brick-breaker/"
+   ]
+  ]
+ },
+ {
+  "name": "Fruit Sorter",
+  "kind": "Games",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "A calm puzzle game: tap a basket and every matching fruit in the bottom row hops in. 100 levels in 10 chapters, each with a par, tap limits, mystery fruit, odd board shapes and power-ups.",
+  "tech": [
+   "Godot",
+   "GDScript",
+   "Procedural generation"
+  ],
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.fruitsorter",
+  "when": "Nov 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 4,
+  "role": "Solo developer. Wrote a level generator that simulates a player so every level is solvable and tuned to a target difficulty, and a branch-and-bound solver that finds each level's par. All art is drawn in code.",
+  "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.fruitsorter"
+   ],
+   [
+    "Website",
+    "https://krishnapaul.in/fruit-sorter/"
    ]
   ]
  },
@@ -1138,7 +1176,6 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0,
   "role": "Set up the MCP servers and built the VS Code extensions and internal tools."
  },
  {
@@ -1160,7 +1197,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built parts of the UI."
  },
  {
@@ -1181,7 +1217,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture, integrated the APIs and built the UI."
  },
  {
@@ -1201,7 +1236,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed the architecture of the app and its admin server, and built the UI."
  },
  {
@@ -1222,7 +1256,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed part of the architecture, integrated some APIs and built early components."
  },
  {
@@ -1243,7 +1276,6 @@
   "s": 2021,
   "e": 2021,
   "on": false,
-  "f": 0,
   "role": "Designed part of the architecture, integrated some APIs and built early components."
  }
 ]
