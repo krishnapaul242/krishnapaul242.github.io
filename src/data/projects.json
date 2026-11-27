@@ -1135,14 +1135,18 @@
    "Postgres",
    "GitHub Actions"
   ],
-  "link": "https://krishnapaul.in/brick-breaker/",
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.brickbreaker",
   "when": "Nov 2026 - Ongoing",
   "s": 2026,
   "e": 2026,
   "on": true,
   "f": 3,
-  "role": "Solo developer. Built a data-driven game where enemies, upgrades, balance, art and whole themes ship over the air from Supabase without a Play Store update, plus telemetry, cloud save and CI that builds signed Android releases. Heading to Google Play.",
+  "role": "Solo developer. Built a data-driven game where enemies, upgrades, balance, art and whole themes ship over the air from Supabase without a Play Store update, plus telemetry, cloud save and CI that builds signed Android releases.",
   "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.brickbreaker"
+   ],
    [
     "Website",
     "https://krishnapaul.in/brick-breaker/"
@@ -1161,14 +1165,18 @@
    "GDScript",
    "Procedural generation"
   ],
-  "link": "https://krishnapaul.in/fruit-sorter/",
+  "link": "https://play.google.com/store/apps/details?id=in.krishnapaul.fruitsorter",
   "when": "Nov 2026 - Ongoing",
   "s": 2026,
   "e": 2026,
   "on": true,
   "f": 4,
-  "role": "Solo developer. Wrote a level generator that simulates a player so every level is solvable and tuned to a target difficulty, and a branch-and-bound solver that finds each level's par. All art is drawn in code. Heading to Google Play.",
+  "role": "Solo developer. Wrote a level generator that simulates a player so every level is solvable and tuned to a target difficulty, and a branch-and-bound solver that finds each level's par. All art is drawn in code.",
   "links": [
+   [
+    "Google Play",
+    "https://play.google.com/store/apps/details?id=in.krishnapaul.fruitsorter"
+   ],
    [
     "Website",
     "https://krishnapaul.in/fruit-sorter/"
