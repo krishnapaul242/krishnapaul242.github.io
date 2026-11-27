@@ -33,7 +33,7 @@
     "https://www.npmjs.com/package/gatic"
    ]
   ],
-  "f": 6
+  "f": 9
  },
  {
   "name": "Trunking Recorder",
@@ -54,7 +54,7 @@
   "e": 2025,
   "on": false,
   "role": "Designed the architecture, built the whole backend and deployed to QA and production.",
-  "f": 5
+  "f": 8
  },
  {
   "name": "MyMDCard",
@@ -76,7 +76,7 @@
   "e": 2025,
   "on": false,
   "role": "Owned the specs, architecture, UI/UX, the mobile app and deployments.",
-  "f": 3,
+  "f": 6,
   "links": [
    [
     "Website",
@@ -133,7 +133,7 @@
   "e": 2026,
   "on": false,
   "role": "Ran client discovery and specs, designed the architecture, led the team, built backend services in an Express.js monorepo and handled deployments.",
-  "f": 2,
+  "f": 5,
   "links": [
    [
     "Website",
@@ -181,7 +181,7 @@
   "e": 2025,
   "on": false,
   "role": "Moved the app from iOS to Android, fixed recordings cut off by calls and shipped UI improvements.",
-  "f": 4,
+  "f": 7,
   "links": [
    [
     "Website",
@@ -1090,11 +1090,12 @@
   "ind": [
    "devtools"
   ],
-  "desc": "VS Code extension that turns Android phones into a local device farm: live screens, multi-device installs, logcat, performance stats, recording and replay, and Maestro and AI-driven test runs. Published on the VS Code Marketplace.",
+  "desc": "VS Code extension that turns Android phones into a local device farm: live screens, multi-device installs, logcat, performance stats, recording and replay, Maestro and AI-driven test runs, and storage, memory and multi-app pressure tests. Published on the VS Code Marketplace.",
   "tech": [
    "TypeScript",
    "VS Code API",
    "ADB",
+   "scrcpy",
    "Maestro",
    "MCP"
   ],
@@ -1103,8 +1104,8 @@
   "s": 2026,
   "e": 2026,
   "on": true,
-  "f": 0,
-  "role": "Designed and built the whole extension: ADB device management, live screens, recording and replay, Maestro and AI test runs, an MCP server, and Marketplace publishing.",
+  "f": 2,
+  "role": "Designed and built the whole extension: ADB device management, scrcpy live screens, recording and replay, Maestro and AI test runs, an MCP server that lets Claude and other AI agents share phones safely, and Marketplace publishing (v0.8).",
   "links": [
    [
     "Docs",
@@ -1117,6 +1118,60 @@
    [
     "GitHub",
     "https://github.com/krishnapaul242/MoTA"
+   ]
+  ]
+ },
+ {
+  "name": "Brick Survivors",
+  "kind": "Games",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "A brick breaker that plays like a survivors-like: aim a volley of plasma orbs at a marching alien swarm, level up mid-fight and fuse 11 orb infusions into 14 hybrids, against 33 alien types and chapter bosses.",
+  "tech": [
+   "Godot",
+   "GDScript",
+   "Supabase",
+   "Postgres",
+   "GitHub Actions"
+  ],
+  "link": "https://krishnapaul.in/brick-breaker/",
+  "when": "Nov 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 3,
+  "role": "Solo developer. Built a data-driven game where enemies, upgrades, balance, art and whole themes ship over the air from Supabase without a Play Store update, plus telemetry, cloud save and CI that builds signed Android releases. Heading to Google Play.",
+  "links": [
+   [
+    "Website",
+    "https://krishnapaul.in/brick-breaker/"
+   ]
+  ]
+ },
+ {
+  "name": "Fruit Sorter",
+  "kind": "Games",
+  "ind": [
+   "entertainment"
+  ],
+  "desc": "A calm puzzle game: tap a basket and every matching fruit in the bottom row hops in. 100 levels in 10 chapters, each with a par, tap limits, mystery fruit, odd board shapes and power-ups.",
+  "tech": [
+   "Godot",
+   "GDScript",
+   "Procedural generation"
+  ],
+  "link": "https://krishnapaul.in/fruit-sorter/",
+  "when": "Nov 2026 - Ongoing",
+  "s": 2026,
+  "e": 2026,
+  "on": true,
+  "f": 4,
+  "role": "Solo developer. Wrote a level generator that simulates a player so every level is solvable and tuned to a target difficulty, and a branch-and-bound solver that finds each level's par. All art is drawn in code. Heading to Google Play.",
+  "links": [
+   [
+    "Website",
+    "https://krishnapaul.in/fruit-sorter/"
    ]
   ]
  },
